@@ -1,0 +1,8 @@
+brew 'awscli'
+brew 'direnv'
+brew 'fish'
+brew 'git'
+brew 'hub'
+brew 'peco'
+brew 'tig'
+brew 'tmux'

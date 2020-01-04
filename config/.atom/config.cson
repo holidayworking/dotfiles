@@ -1,0 +1,31 @@
+"*":
+  "atom-ide-ui":
+    "atom-ide-code-format":
+      formatOnSave: true
+  core:
+    disabledPackages: [
+      "linter"
+    ]
+    telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "monokai"
+    ]
+  editor:
+    autoIndentOnPaste: false
+    fontFamily: "Ricty"
+    fontSize: 16
+    lineHeight: 1
+    preferredLineLength: 130
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+  "exception-reporting":
+    userId: "c60125b0-32ec-440c-93e6-6829689154d7"
+  "go-plus":
+    disabledBundledPackages: [
+      "linter"
+    ]
+  welcome:
+    showOnStartup: false
