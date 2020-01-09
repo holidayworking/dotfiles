@@ -13,7 +13,6 @@ brew 'tig'
 brew 'tmux'
 
 cask 'appcleaner'
-cask 'atok'
 cask 'atom'
 cask 'authy'
 cask 'charles'
