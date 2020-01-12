@@ -12,6 +12,7 @@ brew 'ricty', args: ['with-powerline']
 brew 'sshfs'
 brew 'tig'
 brew 'tmux'
+brew 'yarn', args: ['ignore-dependencies']
 
 cask 'appcleaner'
 cask 'atom'
