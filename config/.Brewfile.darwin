@@ -32,6 +32,7 @@ cask 'microsoft-edge'
 cask 'microsoft-office'
 cask 'onyx'
 cask 'osxfuse'
+cask 'sequel-pro'
 cask 'vagrant'
 cask 'virtualbox'
 
