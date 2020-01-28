@@ -18,6 +18,6 @@ execute "cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf #{ENV['HOME']}/Librar
   not_if "test -f #{ENV['HOME']}/Library/Fonts/Ricty-Bold.ttf"
 end
 
-%w[sahara vagrant-hostsupdater vagrant-vbguest].each do |plugin|
+%w[sahara vagrant-hostsupdater vagrant-notify-forwarder vagrant-vbguest].each do |plugin|
   vagrant_plugin plugin
 end
