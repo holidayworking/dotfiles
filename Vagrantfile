@@ -4,7 +4,9 @@ Vagrant.configure('2') do |config|
   config.vm.network 'private_network', ip: '192.168.33.10'
   config.vm.hostname = 'devbox'
 
-  config.vm.synced_folder "#{Dir.home}/src", '/home/vagrant/src'
+  config.vm.synced_folder "#{Dir.home}/src", '/home/vagrant/src', type: 'nfs',
+                                                                  mount_options: ['rw', 'vers=3', 'tcp'],
+                                                                  linux__nfs_options: %w[rw no_subtree_check all_squash async]
 
   config.vm.provider 'virtualbox' do |vb|
     vb.cpus = 2
