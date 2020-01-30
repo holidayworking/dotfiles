@@ -37,7 +37,6 @@ cask 'vagrant'
 cask 'virtualbox'
 
 mas '1Password 7', id: 1333542190
-mas 'Fantastical', id: 975937182
 mas 'GarageBand', id: 682658836
 mas 'iMovie', id: 408981434
 mas 'Keynote', id: 409183694
