@@ -16,3 +16,10 @@ define :vagrant_plugin do
     not_if "vagrant plugin list | grep #{params[:name]}"
   end
 end
+
+define :vscode_extension do
+  execute "code --install-extension #{params[:name]}" do
+    user node[:user]
+    not_if "code --list-extensions | grep #{params[:name]}"
+  end
+end
