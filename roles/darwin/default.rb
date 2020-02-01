@@ -21,25 +21,3 @@ end
 %w[sahara vagrant-hostsupdater vagrant-notify-forwarder vagrant-vbguest].each do |plugin|
   vagrant_plugin plugin
 end
-
-directory "#{ENV['HOME']}/Library/Application Support/Code/User" do
-  user node[:user]
-end
-
-link "#{ENV['HOME']}/Library/Application Support/Code/User/settings.json" do
-  user node[:user]
-  to File.expand_path("../../../config/vscode/settings.json", __FILE__)
-end
-
-%w[
-  eamodio.gitlens
-  GitHub.vscode-pull-request-github
-  kaiwood.endwise
-  ms-azuretools.vscode-docker
-  octref.vetur
-  sianglim.slim
-  Tyriar.sort-lines
-  vscode-icons-team.vscode-icons
-].each do |extension|
-  vscode_extension extension
-end
