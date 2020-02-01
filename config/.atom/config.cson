@@ -24,5 +24,9 @@
     disabledBundledPackages: [
       "linter"
     ]
+  "platformio-ide-terminal":
+    style:
+      fontFamily: "Ricty for Powerline"
+      theme: "solarized-dark"
   welcome:
     showOnStartup: false
