@@ -1,7 +1,4 @@
 "*":
-  "atom-ide-ui":
-    "atom-ide-code-format":
-      formatOnSave: true
   core:
     disabledPackages: [
       "linter"
