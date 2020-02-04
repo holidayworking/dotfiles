@@ -1,5 +1,6 @@
 tap 'sanemat/font'
 
+brew 'aws-cdk'
 brew 'awscli'
 brew 'direnv'
 brew 'fish'
@@ -14,7 +15,7 @@ brew 'ricty', args: ['with-powerline']
 brew 'sshfs'
 brew 'tig'
 brew 'tmux'
-brew 'yarn', args: ['ignore-dependencies']
+brew 'yarn'
 
 cask 'appcleaner'
 cask 'atom'

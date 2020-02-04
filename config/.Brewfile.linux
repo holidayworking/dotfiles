@@ -1,3 +1,4 @@
+brew 'aws-cdk'
 brew 'awscli'
 brew 'direnv'
 brew 'docker-compose'
@@ -10,4 +11,4 @@ brew 'hub'
 brew 'peco'
 brew 'tig'
 brew 'tmux'
-brew 'yarn', args: ['ignore-dependencies']
+brew 'yarn'
