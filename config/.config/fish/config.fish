@@ -22,4 +22,4 @@ set -gx PATH $HOME/.rbenv/bin $PATH
 status --is-interactive; and source (rbenv init -|psub)
 
 bind \c] peco_select_ghq_repository
-bind \cr peco_select_history (commandline -b)
+bind \cr peco_select_history
