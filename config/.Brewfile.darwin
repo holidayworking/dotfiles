@@ -9,6 +9,7 @@ brew 'git'
 brew 'git-lfs'
 brew 'git-now'
 brew 'hub'
+brew 'jq'
 brew 'mas'
 brew 'peco'
 brew 'ricty', args: ['with-powerline']
