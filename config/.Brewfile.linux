@@ -1,3 +1,6 @@
+tap 'cybozu/assam'
+
+brew 'assam'
 brew 'aws-cdk'
 brew 'awscli'
 brew 'direnv'
