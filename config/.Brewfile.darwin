@@ -38,6 +38,7 @@ cask 'microsoft-office'
 cask 'onyx'
 cask 'osxfuse'
 cask 'sequel-pro'
+cask 'session-manager-plugin'
 cask 'vagrant'
 cask 'virtualbox'
 
