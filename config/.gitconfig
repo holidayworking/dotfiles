@@ -1,10 +1,12 @@
 [user]
   name = Hidekazu Tanaka
   email = hidekazu.tanaka@gmail.com
+[alias]
+  delete-merged-branch = "!f () { git checkout $1 && git pull origin $1 && git push origin $1 && git branch --merged | grep -vE 'master' | xargs -I % git branch -d % && git fetch --all --prune;};f"
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 [ghq]
   root = ~/src
