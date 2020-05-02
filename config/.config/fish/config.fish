@@ -8,6 +8,8 @@ if command -sq /usr/libexec/path_helper
   eval (env PATH='' /usr/libexec/path_helper -c)
 end
 
+set -g theme_display_date no
+
 set -gx EDITOR vim
 
 set -gx SHELL (which fish)
