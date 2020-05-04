@@ -21,7 +21,6 @@ brew 'tmux'
 brew 'yarn'
 
 cask 'appcleaner'
-cask 'atom'
 cask 'authy'
 cask 'charles'
 cask 'cyberduck'

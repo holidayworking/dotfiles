@@ -1,6 +1,5 @@
 .vagrant
 bin/mitamae*
-config/.atom
 config/.config/fish/completions
 config/.config/fish/conf.d
 config/.config/fish/fish_variables
