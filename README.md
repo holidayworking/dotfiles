@@ -10,4 +10,5 @@ $ cd ~/src/github.com/holidayworking
 $ git clone --recursive git@github.com:holidayworking/dotfiles.git
 $ cd dotfiles
 $ ./install.sh
+$ curl -sL https://git.io/fisher | source && fisher update
 ```
