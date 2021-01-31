@@ -3,7 +3,6 @@ node.reverse_merge!(
     user: node[:user],
     global: '14.15.0',
     versions: %w[
-      12.14.1
       14.15.0
     ],
   }
