@@ -8,7 +8,6 @@ include_cookbook 'rbenv'
 include_cookbook 'tig'
 include_cookbook 'tmux'
 
-dotfile '.config/karabiner'
 dotfile '.macos'
 
 execute "#{ENV['HOME']}/.macos"
