@@ -1,4 +1,3 @@
-.vagrant
 bin/mitamae*
 config/.config/fish/completions
 config/.config/fish/conf.d

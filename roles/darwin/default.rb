@@ -11,7 +11,3 @@ include_cookbook 'tmux'
 dotfile '.macos'
 
 execute "#{ENV['HOME']}/.macos"
-
-%w[sahara vagrant-hostsupdater vagrant-notify-forwarder vagrant-vbguest].each do |plugin|
-  vagrant_plugin plugin
-end

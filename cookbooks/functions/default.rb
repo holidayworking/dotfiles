@@ -9,10 +9,3 @@ define :dotfile, source: nil do
     to File.expand_path("../../../config/#{source}", __FILE__)
   end
 end
-
-define :vagrant_plugin do
-  execute "vagrant plugin install #{params[:name]}" do
-    user node[:user]
-    not_if "vagrant plugin list | grep #{params[:name]}"
-  end
-end
