@@ -9,7 +9,6 @@ set -gx EDITOR vim
 set -gx SHELL (which fish)
 
 direnv hook fish | source
-hub alias | source
 
 set -gx PATH $HOME/.rbenv/bin $PATH
 status --is-interactive; and source (rbenv init -|psub)
