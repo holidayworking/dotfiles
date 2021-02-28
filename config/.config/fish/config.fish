@@ -13,5 +13,5 @@ direnv hook fish | source
 set -gx PATH $HOME/.rbenv/bin $PATH
 status --is-interactive; and source (rbenv init -|psub)
 
-bind \c] peco_select_ghq_repository
+bind \cg peco_select_ghq_repository
 bind \cr peco_select_history
