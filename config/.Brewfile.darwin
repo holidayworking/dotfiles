@@ -17,7 +17,6 @@ brew 'tmux'
 brew 'yarn'
 
 cask 'appcleaner'
-cask 'authy'
 cask 'docker'
 cask 'font-fira-code'
 cask 'google-chrome'
