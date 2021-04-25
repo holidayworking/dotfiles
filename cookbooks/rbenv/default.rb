@@ -1,9 +1,9 @@
 node.reverse_merge!(
   rbenv: {
     user: node[:user],
-    global: '2.7.2',
+    global: '3.0.1',
     versions: %w[
-      2.7.2
+      3.0.1
     ]
   }
 )
