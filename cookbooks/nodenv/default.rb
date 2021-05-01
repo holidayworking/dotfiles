@@ -22,9 +22,8 @@ end
 
 file "#{node[:nodenv][:nodenv_root]}/default-packages" do
   content node[:'nodenv-default-packages'][:'default-packages'].join("\n") + "\n"
-  mode    '664'
+  mode '664'
   owner node[:nodenv][:user]
-  group node[:nodenv][:user]
 end
 
 nodenv_init = <<-EOS
