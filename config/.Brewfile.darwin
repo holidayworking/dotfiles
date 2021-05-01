@@ -15,7 +15,6 @@ brew 'pam_reattach'
 brew 'peco'
 brew 'tig'
 brew 'tmux'
-brew 'yarn'
 
 cask 'appcleaner'
 cask 'docker'
