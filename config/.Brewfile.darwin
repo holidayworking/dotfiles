@@ -1,13 +1,10 @@
 tap 'homebrew/cask-fonts'
 
-brew 'awscli'
 brew 'direnv'
 brew 'fish'
 brew 'ghq'
 brew 'git'
-brew 'git-lfs'
 brew 'git-now'
-brew 'jq'
 brew 'mas'
 brew 'peco'
 brew 'tig'
