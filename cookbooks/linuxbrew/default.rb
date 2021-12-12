@@ -1,4 +1,6 @@
-package 'build-essential'
+%w[build-essential git].each do |pkg|
+  package pkg
+end
 
 execute 'install linuxbrew' do
   user node[:user]
