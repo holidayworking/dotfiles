@@ -1,5 +1,6 @@
 include_role 'base'
 
+include_cookbook 'awscli'
 include_cookbook 'homebrew'
 include_cookbook 'fish'
 include_cookbook 'git'

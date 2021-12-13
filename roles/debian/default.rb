@@ -9,6 +9,7 @@ unless devcontainer?
   include_cookbook 'rbenv'
 end
 
+include_cookbook 'awscli'
 include_cookbook 'fish'
 include_cookbook 'git'
 include_cookbook 'git-now'
