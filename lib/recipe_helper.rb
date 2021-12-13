@@ -9,7 +9,15 @@ MItamae::RecipeContext.class_eval do
     include_recipe File.join(root_dir, 'roles', name, 'default')
   end
 
+  def codespaces?
+    ENV['CODESPACES'] == 'true'
+  end
+
+  def remote_containers?
+    ENV['REMOTE_CONTAINERS'] == 'true'
+  end
+
   def devcontainer?
-    ENV['CODESPACES'] == 'true' || ENV['REMOTE_CONTAINERS'] == 'true'
+    codespaces? || remote_containers?
   end
 end

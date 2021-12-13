@@ -1,4 +1,4 @@
 package 'git'
 
-dotfile '.gitconfig' unless devcontainer?
+dotfile '.gitconfig' unless remote_containers?
 dotfile '.gitignore_global'
