@@ -1,1 +1,3 @@
+package 'tig'
+
 dotfile '.tigrc'

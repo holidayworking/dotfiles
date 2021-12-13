@@ -1,14 +1,8 @@
 tap 'homebrew/cask-fonts'
 
 brew 'direnv'
-brew 'fish'
 brew 'ghq'
-brew 'git'
-brew 'git-now'
 brew 'mas'
-brew 'peco'
-brew 'tig'
-brew 'tmux'
 
 cask 'appcleaner'
 cask 'font-fira-code'

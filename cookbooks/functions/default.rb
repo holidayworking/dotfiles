@@ -7,5 +7,6 @@ define :dotfile, source: nil do
   link File.join(ENV['HOME'], params[:name]) do
     user node[:user]
     to File.expand_path("../../../config/#{source}", __FILE__)
+    not_if "test -f #{File.join(ENV['HOME'], params[:name])}"
   end
 end
