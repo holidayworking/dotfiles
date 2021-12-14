@@ -6,16 +6,16 @@ set -g theme_display_date no
 
 set -gx SHELL (which fish)
 
-if command -v direnv &> /dev/null
+if command -v direnv > /dev/null
   direnv hook fish | source
 end
 
-if command -v nodenv &> /dev/null
+if command -v nodenv > /dev/null
   set -gx PATH $HOME/.nodenv/bin $PATH
   status --is-interactive; and source (nodenv init -|psub)
 end
 
-if command -v rbenv &> /dev/null
+if command -v rbenv > /dev/null
   set -gx PATH $HOME/.rbenv/bin $PATH
   status --is-interactive; and source (rbenv init -|psub)
 end
