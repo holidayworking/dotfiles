@@ -10,13 +10,13 @@ if command -v direnv > /dev/null
   direnv hook fish | source
 end
 
+set -gx PATH $HOME/.nodenv/bin $PATH
 if command -v nodenv > /dev/null
-  set -gx PATH $HOME/.nodenv/bin $PATH
   status --is-interactive; and source (nodenv init -|psub)
 end
 
+set -gx PATH $HOME/.rbenv/bin $PATH
 if command -v rbenv > /dev/null
-  set -gx PATH $HOME/.rbenv/bin $PATH
   status --is-interactive; and source (rbenv init -|psub)
 end
 
