@@ -5,6 +5,7 @@ end
 set -g theme_display_date no
 
 set -gx SHELL (which fish)
+set -gx PATH $HOME/.local/share/aquaproj-aqua/bin $PATH
 
 if command -v direnv > /dev/null
   direnv hook fish | source

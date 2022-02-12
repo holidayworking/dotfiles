@@ -1,0 +1,11 @@
+---
+# aqua - Declarative CLI Version Manager
+# https://aquaproj.github.io/
+registries:
+  - type: standard
+    ref: v1.1.1 # renovate: depName=aquaproj/aqua-registry
+
+packages:
+  - name: direnv/direnv@v2.30.2
+  - name: peco/peco@v0.5.10
+  - name: x-motemen/ghq@v1.2.1

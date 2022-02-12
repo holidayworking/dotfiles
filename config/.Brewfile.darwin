@@ -1,7 +1,5 @@
 tap 'homebrew/cask-fonts'
 
-brew 'direnv'
-brew 'ghq'
 brew 'mas'
 
 cask 'appcleaner'
