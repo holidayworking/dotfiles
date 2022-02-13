@@ -1,7 +1,6 @@
 include_recipe 'recipe_helper'
 
 node.reverse_merge!(
-  home: ENV['HOME'],
   user: ENV['SUDO_USER'] || ENV['USER']
 )
 

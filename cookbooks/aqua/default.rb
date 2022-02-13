@@ -1,4 +1,4 @@
-aqua_bin_path = "#{node[:home]}/.local/share/aquaproj-aqua/bin/aqua"
+aqua_bin_path = "#{ENV['HOME']}/.local/share/aquaproj-aqua/bin/aqua"
 
 execute 'install aqua' do
   user node[:user]
@@ -6,10 +6,10 @@ execute 'install aqua' do
   not_if "test -f #{aqua_bin_path}"
 end
 
-dotfile '.aqua.yml'
+dotfile '.config/aquaproj-aqua'
 
 execute 'install tools' do
   user node[:user]
-  cwd node[:home]
+  cwd "#{ENV['HOME']}/.config/aquaproj-aqua"
   command "#{aqua_bin_path} install"
 end
