@@ -1,6 +1,3 @@
-[submodule "plugins/itamae-plugin-recipe-docker"]
-	path = plugins/itamae-plugin-recipe-docker
-	url = https://github.com/k0kubun/itamae-plugin-recipe-docker.git
 [submodule "plugins/itamae-plugin-recipe-nodenv"]
 	path = plugins/itamae-plugin-recipe-nodenv
 	url = https://github.com/masawada/itamae-plugin-recipe-nodenv.git

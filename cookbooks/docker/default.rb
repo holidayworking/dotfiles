@@ -1,15 +1,20 @@
 node.reverse_merge!(
-  docker: {
-    users: [
-      node[:user]
-    ]
-  },
   docker_compose: {
     version: '2.2.3'
   }
 )
 
-include_recipe 'docker::install'
+execute 'curl -sSL https://get.docker.com/ | sh' do
+  not_if 'which docker'
+end
+
+service 'docker' do
+  action [:enable, :start]
+end
+
+execute "usermod -aG docker #{node[:user]}" do
+  not_if "groups #{node[:user]} | grep docker -w"
+end
 
 execute 'mkdir -p /usr/local/lib/docker/cli-plugins' do
   not_if 'test -d /usr/local/lib/docker/cli-plugins'
