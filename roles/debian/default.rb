@@ -3,7 +3,6 @@ include_role 'base'
 include_cookbook 'apt'
 
 unless devcontainer?
-  include_cookbook 'linuxbrew'
   include_cookbook 'docker'
   include_cookbook 'nodenv'
   include_cookbook 'rbenv'
