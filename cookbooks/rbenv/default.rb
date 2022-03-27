@@ -4,7 +4,8 @@ node.reverse_merge!(
     global: '3.0.3',
     versions: %w[
       3.0.3
-    ]
+    ],
+    scheme: 'https'
   }
 )
 
