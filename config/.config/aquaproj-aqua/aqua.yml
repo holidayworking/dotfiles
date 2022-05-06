@@ -8,4 +8,4 @@ registries:
 packages:
   - name: direnv/direnv@v2.31.0
   - name: peco/peco@v0.5.10
-  - name: x-motemen/ghq@v1.2.1
+  - name: x-motemen/ghq@v1.3.0
