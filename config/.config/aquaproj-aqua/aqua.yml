@@ -6,6 +6,6 @@ registries:
     ref: v2.21.0 # renovate: depName=aquaproj/aqua-registry
 
 packages:
-  - name: direnv/direnv@v2.31.0
+  - name: direnv/direnv@v2.32.0
   - name: peco/peco@v0.5.10
   - name: x-motemen/ghq@v1.3.0
