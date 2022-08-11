@@ -18,10 +18,5 @@ if command -v nodenv > /dev/null
   status --is-interactive; and source (nodenv init -|psub)
 end
 
-set -gx PATH $HOME/.rbenv/bin $PATH
-if command -v rbenv > /dev/null
-  status --is-interactive; and source (rbenv init -|psub)
-end
-
 bind \cg peco_select_ghq_repository
 bind \cr peco_select_history

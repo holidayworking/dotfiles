@@ -5,7 +5,6 @@ include_cookbook 'apt'
 unless devcontainer?
   include_cookbook 'docker'
   include_cookbook 'nodenv'
-  include_cookbook 'rbenv'
 end
 
 include_cookbook 'aqua'
