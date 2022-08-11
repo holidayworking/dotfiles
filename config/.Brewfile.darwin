@@ -15,7 +15,6 @@ cask 'visual-studio-code'
 mas '1Password 7', id: 1333542190
 mas 'AwesomeScreenshot', id: 1531282066
 mas 'Day One', id: 1055511498
-mas 'GarageBand', id: 682658836
 mas 'GoodNotes', id: 1444383602
 mas 'Keynote', id: 409183694
 mas 'Microsoft Remote Desktop', id: 1295203466
