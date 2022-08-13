@@ -1,3 +1,0 @@
-[submodule "plugins/itamae-plugin-recipe-nodenv"]
-	path = plugins/itamae-plugin-recipe-nodenv
-	url = https://github.com/masawada/itamae-plugin-recipe-nodenv.git

@@ -13,10 +13,5 @@ if command -v direnv > /dev/null
   direnv hook fish | source
 end
 
-set -gx PATH $HOME/.nodenv/bin $PATH
-if command -v nodenv > /dev/null
-  status --is-interactive; and source (nodenv init -|psub)
-end
-
 bind \cg peco_select_ghq_repository
 bind \cr peco_select_history

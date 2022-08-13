@@ -1,13 +1,8 @@
 include_role 'base'
 
 include_cookbook 'apt'
-
-unless devcontainer?
-  include_cookbook 'docker'
-  include_cookbook 'nodenv'
-end
-
 include_cookbook 'aqua'
+include_cookbook 'docker' unless devcontainer?
 include_cookbook 'fish'
 include_cookbook 'git'
 include_cookbook 'git-now'
