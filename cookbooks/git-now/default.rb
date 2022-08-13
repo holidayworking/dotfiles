@@ -2,6 +2,8 @@ case node[:os]
 when 'darwin'
   package 'git-now'
 when 'linux'
+  package 'make'
+
   git '/usr/local/src/git-now' do
     repository 'https://github.com/iwata/git-now.git'
     recursive true
