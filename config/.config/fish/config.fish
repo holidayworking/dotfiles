@@ -2,6 +2,10 @@ if command -sq /usr/libexec/path_helper
   eval (env PATH='' /usr/libexec/path_helper -c)
 end
 
+if test -d /opt/homebrew
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+end
+
 set -g theme_display_date no
 
 set -gx SHELL (which fish)

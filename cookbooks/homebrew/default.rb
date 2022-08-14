@@ -1,12 +1,14 @@
+brew_dir = node['kernel']['machine'] == 'arm64' ? '/opt/homebrew' : '/usr/local'
+
 execute 'install homebrew' do
-  command '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" < /dev/null'
-  not_if 'which brew'
+  command 'NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"'
+  not_if "which #{brew_dir}/bin/path"
 end
 
 dotfile '.Brewfile' do
   source '.Brewfile.darwin'
 end
 
-execute 'brew bundle install --global' do
-  not_if 'brew bundle check --global'
+execute "eval $(#{brew_dir}/bin/brew shellenv) && brew bundle install --global" do
+  not_if "eval $(#{brew_dir}/bin/brew shellenv) && brew bundle check --global"
 end
