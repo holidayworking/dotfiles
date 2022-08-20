@@ -7,7 +7,6 @@ registries:
 
 packages:
   - name: direnv/direnv@v2.32.1
-  - name: golang/go@go1.19
   - name: peco/peco@v0.5.10
   - name: stedolan/jq@jq-1.6
   - name: x-motemen/ghq@v1.3.0
