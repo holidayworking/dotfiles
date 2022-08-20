@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 include_role 'base'
 
 include_cookbook 'homebrew'
@@ -11,4 +13,4 @@ include_cookbook 'tmux'
 dotfile '.config/karabiner'
 dotfile '.macos'
 
-execute "#{ENV['HOME']}/.macos"
+execute "#{ENV.fetch('HOME', nil)}/.macos"

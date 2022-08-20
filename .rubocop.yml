@@ -1,0 +1,16 @@
+require: rubocop-itamae
+
+AllCops:
+  NewCops: enable
+
+Style/Documentation:
+  Enabled: false
+
+Style/EnvHome:
+  Enabled: false
+
+Style/ExpandPathArguments:
+  Enabled: false
+
+Metrics:
+  Enabled: false

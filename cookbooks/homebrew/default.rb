@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 brew_dir = node['kernel']['machine'] == 'arm64' ? '/opt/homebrew' : '/usr/local'
 
 execute 'install homebrew' do

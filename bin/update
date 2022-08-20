@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 require 'net/http'
 require 'shellwords'
@@ -20,9 +21,11 @@ class GitHubRepository
     unless system(['curl', '-o', temp_path, '-fL', "https://github.com/#{@full_name}/releases/download/v#{latest_version}/#{binary_name}"].shelljoin)
       raise "Failed to fetch binary: #{binary_name}"
     end
+
     result = IO.popen(['shasum', '-a', '256', temp_path], &:read)
     sha256 = result.sub!(/ +#{temp_path}\n\z/m, '')
     raise "Failed to fetch sha256 from: #{result}" if sha256.nil?
+
     sha256
   ensure
     FileUtils.rm_f(temp_path)
@@ -35,12 +38,12 @@ class GitHubRepository
       http.get("/#{@full_name}/releases/latest")
     end
     release_page = response['location']
-    version = release_page.sub!(%r[\Ahttps://github.com/#{@full_name}/releases/tag/v], '')
+    version = release_page.sub!(%r{\Ahttps://github.com/#{@full_name}/releases/tag/v}, '')
 
     if version.nil?
       require 'pp'
       pp response.to_hash
-      raise "GitHub responded unexpectedly!"
+      raise 'GitHub responded unexpectedly!'
     end
 
     version
@@ -49,14 +52,14 @@ end
 
 repo = GitHubRepository.new('itamae-kitchen/mitamae')
 version       = repo.latest_version
-linux_shasum  = repo.latest_sha256_for("mitamae-x86_64-linux.tar.gz")
-darwin_aarch64_shasum = repo.latest_sha256_for("mitamae-aarch64-darwin.tar.gz")
-darwin_x86_64_shasum = repo.latest_sha256_for("mitamae-x86_64-darwin.tar.gz")
+linux_shasum  = repo.latest_sha256_for('mitamae-x86_64-linux.tar.gz')
+darwin_aarch64_shasum = repo.latest_sha256_for('mitamae-aarch64-darwin.tar.gz')
+darwin_x86_64_shasum = repo.latest_sha256_for('mitamae-x86_64-darwin.tar.gz')
 
 setup_file = "#{__dir__}/setup"
 source = File.read(setup_file)
-source.sub!(/^(mitamae_version=).+$/,       %Q[\\1"#{version}"])
-source.sub!(/^(mitamae_linux_sha256=).+$/,  %Q[\\1"#{linux_shasum}"])
-source.sub!(/^(mitamae_darwin_aarch64_sha256=).+$/, %Q[\\1"#{darwin_aarch64_shasum}"])
-source.sub!(/^(mitamae_darwin_x86_64_sha256=).+$/, %Q[\\1"#{darwin_x86_64_shasum}"])
+source.sub!(/^(mitamae_version=).+$/,       %(\\1"#{version}"))
+source.sub!(/^(mitamae_linux_sha256=).+$/,  %(\\1"#{linux_shasum}"))
+source.sub!(/^(mitamae_darwin_aarch64_sha256=).+$/, %(\\1"#{darwin_aarch64_shasum}"))
+source.sub!(/^(mitamae_darwin_x86_64_sha256=).+$/, %(\\1"#{darwin_x86_64_shasum}"))
 File.write(setup_file, source)

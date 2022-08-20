@@ -1,4 +1,6 @@
-aqua_bin_path = "#{ENV['HOME']}/.local/share/aquaproj-aqua/bin/aqua"
+# frozen_string_literal: true
+
+aqua_bin_path = "#{ENV.fetch('HOME', nil)}/.local/share/aquaproj-aqua/bin/aqua"
 
 execute 'install aqua' do
   user node[:user]
@@ -10,6 +12,6 @@ dotfile '.config/aquaproj-aqua'
 
 execute 'install tools' do
   user node[:user]
-  cwd "#{ENV['HOME']}/.config/aquaproj-aqua"
+  cwd "#{ENV.fetch('HOME', nil)}/.config/aquaproj-aqua"
   command "#{aqua_bin_path} install"
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 case node[:os]
 when 'darwin'
   package 'git-now'
@@ -10,7 +12,7 @@ when 'linux'
     notifies :run, 'execute[install git-now]'
   end
 
-  execute "install git-now" do
+  execute 'install git-now' do
     cwd '/usr/local/src/git-now'
     command 'make install'
     action :nothing

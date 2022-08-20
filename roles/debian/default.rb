@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 include_role 'base'
 
 include_cookbook 'apt'

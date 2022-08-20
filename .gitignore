@@ -1,3 +1,4 @@
+.bundle
 bin/mitamae*
 config/.config/fish/completions
 config/.config/fish/conf.d
@@ -5,3 +6,4 @@ config/.config/fish/fish_variables
 config/.config/fish/functions
 config/.config/karabiner/assets
 config/.config/karabiner/automatic_backups
+vendor

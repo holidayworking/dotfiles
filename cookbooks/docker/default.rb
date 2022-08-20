@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 execute 'curl -fsSL https://get.docker.com/ | sh' do
   not_if 'which docker'
 end
@@ -7,7 +9,7 @@ end
   docker.socket
 ].each do |svc|
   service svc do
-    action [:disable, :stop]
+    action %i[disable stop]
   end
 end
 
@@ -19,7 +21,7 @@ execute 'install Docker Rootless mode' do
     dockerd-rootless-setuptool.sh install
   CMD
   user node[:user]
-  not_if "test -d #{ENV['HOME']}/.docker"
+  not_if "test -d #{ENV.fetch('HOME', nil)}/.docker"
 end
 
 execute 'docker context use rootless' do
