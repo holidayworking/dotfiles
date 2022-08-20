@@ -13,14 +13,13 @@ cask 'notion'
 cask 'visual-studio-code'
 
 mas '1Password 7', id: 1333542190
-mas 'AwesomeScreenshot', id: 1531282066
+mas 'Authenticator', id: 1189922806
 mas 'Day One', id: 1055511498
 mas 'GoodNotes', id: 1444383602
 mas 'Keynote', id: 409183694
 mas 'Microsoft Remote Desktop', id: 1295203466
 mas 'Notion Web Clipper', id: 1559269364
 mas 'Numbers', id: 409203825
-mas 'Authenticator', id: 1189922806
 mas 'Pages', id: 409201541
 mas 'Paste', id: 967805235
 mas 'Slack', id: 803453959
