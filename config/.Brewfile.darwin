@@ -3,6 +3,7 @@ tap 'homebrew/cask-fonts'
 brew 'mas'
 
 cask 'appcleaner'
+cask 'betterdisplay'
 cask 'font-fira-code'
 cask 'google-chrome'
 cask 'iterm2'
