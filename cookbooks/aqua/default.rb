@@ -4,7 +4,7 @@ aqua_bin_path = "#{ENV.fetch('HOME', nil)}/.local/share/aquaproj-aqua/bin/aqua"
 
 execute 'install aqua' do
   user node[:user]
-  command 'curl -fsSL https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.1.1/aqua-installer | bash'
+  command 'curl -fsSL https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.1.2/aqua-installer | bash'
   not_if "test -f #{aqua_bin_path}"
 end
 
