@@ -1,6 +1,18 @@
 # frozen_string_literal: true
 
-package 'unzip' if node[:os] == 'linux'
+case node[:os]
+when 'darwin'
+  package 'readline'
+when 'linux'
+  %w[
+    build-essential
+    libssl-dev
+    unzip
+    zlib1g-dev
+  ].each do |pkg|
+    package pkg
+  end
+end
 
 asdf_root = "#{ENV.fetch('HOME', nil)}/.asdf"
 
@@ -23,6 +35,7 @@ SHELL
 %w[
   awscli
   nodejs
+  ruby
 ].each do |plugin|
   execute "install #{plugin} plugin" do
     user node[:user]
