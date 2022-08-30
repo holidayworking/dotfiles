@@ -1,13 +1,29 @@
 # frozen_string_literal: true
 
-case node[:os]
+case node[:platform]
 when 'darwin'
-  package 'readline'
-when 'linux'
   %w[
+    readline
+    libyaml
+  ].each do |pkg|
+    package pkg
+  end
+when 'debian', 'ubuntu'
+  %w[
+    autoconf
+    bison
     build-essential
+    git
+    libdb-dev
+    libffi-dev
+    libgdbm-dev
+    libgdbm6
+    libncurses5-dev
+    libreadline-dev
     libssl-dev
+    libyaml-dev
     unzip
+    uuid-dev
     zlib1g-dev
   ].each do |pkg|
     package pkg
