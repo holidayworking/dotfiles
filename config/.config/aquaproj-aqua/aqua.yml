@@ -7,6 +7,7 @@ registries:
 
 packages:
   - name: direnv/direnv@v2.32.1
+  - name: hadolint/hadolint@v2.10.0
   - name: nektos/act@v0.2.30
   - name: peco/peco@v0.5.10
   - name: stedolan/jq@jq-1.6
