@@ -2,5 +2,5 @@
 
 source 'https://rubygems.org'
 
-gem 'rubocop', '> 0'
-gem 'rubocop-itamae', '> 0'
+gem 'rubocop'
+gem 'rubocop-itamae'

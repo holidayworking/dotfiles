@@ -12,15 +12,18 @@
     "karabiner",
     "libexec",
     "licecap",
+    "localtime",
     "motemen",
     "nektos",
     "peco",
     "psub",
+    "REPONAME",
     "rubocop",
     "stedolan",
     "tailscale",
     "toggl",
     "tweetbot",
-    "unarchiver"
+    "unarchiver",
+    "zoneinfo"
   ]
 }
