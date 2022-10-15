@@ -33,7 +33,7 @@ jobs:
           export CIRCLE_PROJECT_USERNAME=$(echo $GITHUB_REPOSITORY | cut -d "/" -f 1)
           export CIRCLE_PROJECT_REPONAME=$(echo $GITHUB_REPOSITORY | cut -d "/" -f 2)
 
-          git checkout -b $CIRCLE_BRANCH
+          git checkout $CIRCLE_BRANCH
 
           circleci-bundle-update-pr
         env:
