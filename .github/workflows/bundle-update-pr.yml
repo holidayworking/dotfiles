@@ -35,6 +35,8 @@ jobs:
 
           git checkout $CIRCLE_BRANCH
 
-          circleci-bundle-update-pr
+          circleci-bundle-update-pr "${GIT_USER_NAME}" "${GIT_USER_EMAIL}" main
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_USER_NAME: Hidekazu Tanaka
+          GIT_USER_EMAIL: hidekazu.tanaka@gmail.com
