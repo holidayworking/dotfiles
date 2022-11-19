@@ -4,8 +4,7 @@
     "config:base",
     ":dependencyDashboard",
     "github>aquaproj/aqua-renovate-config#1.2.6",
-    "github>aquaproj/aqua-renovate-config:installer-script#1.2.6(cookbooks/aqua/default.rb)",
-    "github>kachick/renovate-config-asdf#1.11.0"
+    "github>aquaproj/aqua-renovate-config:installer-script#1.2.6(cookbooks/aqua/default.rb)"
   ],
   "labels": ["dependencies", "renovate"],
   "packageRules": [
