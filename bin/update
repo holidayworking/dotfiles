@@ -41,7 +41,6 @@ class GitHubRepository
     version = release_page.sub!(%r{\Ahttps://github.com/#{@full_name}/releases/tag/v}, '')
 
     if version.nil?
-      require 'pp'
       pp response.to_hash
       raise 'GitHub responded unexpectedly!'
     end
