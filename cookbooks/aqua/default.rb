@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-aqua_bin_path = "#{ENV.fetch('HOME', nil)}/.local/share/aquaproj-aqua/bin/aqua"
+home_path = ENV.fetch('HOME', nil)
+aqua_bin_path = "#{home_path}/.local/share/aquaproj-aqua/bin/aqua"
 
 execute 'install aqua' do
   user node[:user]
@@ -12,6 +13,12 @@ dotfile '.config/aquaproj-aqua'
 
 execute 'install tools' do
   user node[:user]
-  cwd "#{ENV.fetch('HOME', nil)}/.config/aquaproj-aqua"
+  cwd "#{home_path}/.config/aquaproj-aqua"
   command "#{aqua_bin_path} install"
+end
+
+execute 'copy tools' do
+  user node[:user]
+  cwd "#{home_path}/.config/aquaproj-aqua"
+  command "#{aqua_bin_path} cp -o #{home_path}/bin jsonnetfmt"
 end
