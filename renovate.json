@@ -3,8 +3,8 @@
   "extends": [
     "config:base",
     ":dependencyDashboard",
-    "github>aquaproj/aqua-renovate-config#1.5.0",
-    "github>aquaproj/aqua-renovate-config:installer-script#1.5.0(cookbooks/aqua/default.rb)"
+    "github>aquaproj/aqua-renovate-config#1.5.1",
+    "github>aquaproj/aqua-renovate-config:installer-script#1.5.1(cookbooks/aqua/default.rb)"
   ],
   "labels": ["dependencies", "renovate"],
   "packageRules": [
