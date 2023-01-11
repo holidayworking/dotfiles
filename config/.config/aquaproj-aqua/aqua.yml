@@ -3,11 +3,11 @@
 # https://aquaproj.github.io/
 registries:
   - type: standard
-    ref: v3.119.0 # renovate: depName=aquaproj/aqua-registry
+    ref: v3.120.0 # renovate: depName=aquaproj/aqua-registry
 
 packages:
   - name: direnv/direnv@v2.32.2
-  - name: golang/go@go1.19.4
+  - name: golang/go@go1.19.5
   - name: golangci/golangci-lint@v1.50.1
   - name: google/go-jsonnet@v0.19.1
   - name: hadolint/hadolint@v2.12.0
