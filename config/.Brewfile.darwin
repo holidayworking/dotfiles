@@ -2,6 +2,7 @@ tap 'homebrew/cask-fonts'
 
 brew 'mas'
 
+cask '1password'
 cask 'appcleaner'
 cask 'betterdisplay'
 cask 'font-fira-code'
@@ -13,7 +14,7 @@ cask 'microsoft-office'
 cask 'notion'
 cask 'visual-studio-code'
 
-mas '1Password 7', id: 1333542190
+mas '1Password for Safari', id: 1569813296
 mas 'Authenticator', id: 1189922806
 mas 'Keynote', id: 409183694
 mas 'Microsoft Remote Desktop', id: 1295203466
