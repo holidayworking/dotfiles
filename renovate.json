@@ -14,5 +14,7 @@
       "automerge": true
     }
   ],
-  "platformAutomerge": true
+  "platformAutomerge": true,
+  "schedule": ["after 10pm every weekday", "before 5am every weekday"],
+  "timezone": "Asia/Tokyo"
 }
