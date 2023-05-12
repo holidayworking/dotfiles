@@ -52,6 +52,7 @@ SHELL
   awscli
   nodejs
   ruby
+  python
 ].each do |plugin|
   execute "install #{plugin} plugin" do
     user node[:user]
