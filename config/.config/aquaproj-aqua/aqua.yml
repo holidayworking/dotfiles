@@ -6,7 +6,7 @@ registries:
     ref: v4.9.0 # renovate: depName=aquaproj/aqua-registry
 
 packages:
-  - name: direnv/direnv@v2.32.2
+  - name: direnv/direnv@v2.32.3
   - name: google/go-jsonnet@v0.20.0
   - name: google/yamlfmt@v0.9.0
   - name: hadolint/hadolint@v2.12.0
