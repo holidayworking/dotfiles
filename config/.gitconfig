@@ -5,6 +5,6 @@
   name = Hidekazu Tanaka
   email = 11025+holidayworking@users.noreply.github.com
 [alias]
-  delete-merged-branch = "!f () { git checkout $1 && git pull origin $1 && git push origin $1 && git branch --merged | grep -vE 'main|master' | xargs -I % git branch -d % && git fetch --all --prune;};f"
+  delete-merged-branch = "!f () { git checkout $1 && git pull origin $1 && git push origin $1 && git branch --merged | grep -vE 'develop|main|master' | xargs -I % git branch -d % && git fetch --all --prune;};f"
 [ghq]
   root = ~/src
