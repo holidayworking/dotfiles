@@ -8,12 +8,10 @@ include_cookbook 'asdf'
 include_cookbook 'fish'
 include_cookbook 'git'
 include_cookbook 'git-now'
-include_cookbook 'go'
-include_cookbook 'lima'
 include_cookbook 'tig'
 include_cookbook 'tmux'
 
 dotfile '.config/karabiner'
 dotfile '.macos'
 
-execute "#{ENV.fetch('HOME', nil)}/.macos"
+# execute "#{ENV.fetch('HOME', nil)}/.macos"
