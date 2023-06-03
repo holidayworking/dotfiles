@@ -5,13 +5,16 @@
     "aquaproj",
     "automerge",
     "betterdisplay",
+    "cygwin",
     "direnv",
     "fira",
     "hadolint",
     "Hidekazu",
+    "hyperpower",
     "itamae",
     "iterm",
     "karabiner",
+    "keymaps",
     "libexec",
     "licecap",
     "localtime",
@@ -30,6 +33,7 @@
     "toggl",
     "tweetbot",
     "unarchiver",
+    "weblink",
     "zoneinfo"
   ]
 }
