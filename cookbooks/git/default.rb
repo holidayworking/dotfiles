@@ -2,5 +2,5 @@
 
 package 'git'
 
-dotfile '.gitconfig' unless remote_containers?
+dotfile '.gitconfig'
 dotfile '.gitignore_global'

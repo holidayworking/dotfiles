@@ -6,7 +6,7 @@ execute 'install homebrew' do
 end
 
 dotfile '.Brewfile' do
-  source '.Brewfile.darwin'
+  source '.Brewfile'
 end
 
 execute 'brew bundle install --global' do
