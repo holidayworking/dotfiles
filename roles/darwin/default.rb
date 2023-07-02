@@ -15,4 +15,4 @@ include_cookbook 'tmux'
 dotfile '.config/karabiner'
 dotfile '.macos'
 
-# execute "#{ENV.fetch('HOME', nil)}/.macos"
+execute "#{ENV.fetch('HOME', nil)}/.macos"
