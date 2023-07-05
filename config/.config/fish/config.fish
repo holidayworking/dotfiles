@@ -6,6 +6,7 @@ set -g theme_display_date no
 
 set -gx SHELL (which fish)
 
+set -gx ASDF_DIR $HOME/.asdf
 source ~/.asdf/asdf.fish
 
 set -gx PATH $HOME/.local/share/aquaproj-aqua/bin $PATH
