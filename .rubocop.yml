@@ -1,8 +1,6 @@
 require: rubocop-itamae
 
 AllCops:
-  Include:
-    - config/.Brewfile
   NewCops: enable
 
 Style/Documentation:
