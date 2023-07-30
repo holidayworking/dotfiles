@@ -1,7 +1,14 @@
 # frozen_string_literal: true
 
-execute 'curl -fsSL https://get.docker.com/ | sh' do
-  not_if 'which docker'
+case node[:platform]
+when 'arch'
+  %w[docker docker-compose].each do |pkg|
+    package pkg
+  end
+when 'ubuntu'
+  execute 'curl -fsSL https://get.docker.com/ | sh' do
+    not_if 'which docker'
+  end
 end
 
 service 'docker' do
