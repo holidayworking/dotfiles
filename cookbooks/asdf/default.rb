@@ -1,33 +1,38 @@
 # frozen_string_literal: true
 
-case node[:platform]
-when 'darwin'
-  %w[
-    readline
+PACKAGES = {
+  'darwin' => %w[
     libyaml
-  ].each do |pkg|
-    package pkg
-  end
-when 'ubuntu'
-  %w[
-    autoconf
-    bison
+    readline
+    rust
+  ],
+  'arch' => %w[
+    base-devel
+    libffi
+    libyaml
+    openssl
+    rust
+    unzip
+    zlib
+  ],
+  'ubuntu' => %w[
     build-essential
-    git
-    libdb-dev
     libffi-dev
     libgdbm-dev
     libgdbm6
+    libgmp-dev
     libncurses5-dev
     libreadline-dev
     libssl-dev
     libyaml-dev
+    rustc
     unzip
-    uuid-dev
     zlib1g-dev
-  ].each do |pkg|
-    package pkg
-  end
+  ]
+}.freeze
+
+PACKAGES[node[:platform]].each do |pkg|
+  package pkg
 end
 
 asdf_root = "#{ENV.fetch('HOME', nil)}/.asdf"
