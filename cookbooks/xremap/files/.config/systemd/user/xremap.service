@@ -1,0 +1,9 @@
+[Unit]
+Description=xremap
+
+[Service]
+KillMode=process
+ExecStart=/usr/bin/xremap %h/.config/xremap/config.yaml
+ExecStop=/usr/bin/killall xremap
+Type=simple
+Restart=always

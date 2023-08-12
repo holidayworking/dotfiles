@@ -6,4 +6,11 @@ node.reverse_merge!(
   user: ENV['SUDO_USER'] || ENV.fetch('USER', nil)
 )
 
-include_role node[:platform]
+platform =
+  if node[:platform] == 'arch' && run_command('cat /etc/arch-release').stdout.chomp == 'Manjaro Linux'
+    'manjaro'
+  else
+    node[:platform]
+  end
+
+include_role platform

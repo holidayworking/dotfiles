@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=xremap
+Exec=systemctl --user start xremap
+Terminal=false
+Type=Application

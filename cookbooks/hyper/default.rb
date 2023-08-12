@@ -1,5 +1,13 @@
 # frozen_string_literal: true
 
-package 'hyper'
+case node[:platform]
+when 'darwin'
+  package 'hyper'
+when 'arch'
+  aur_package 'hyper-bin'
+end
 
-dotfile '.hyper.js'
+template "#{ENV.fetch('HOME', nil)}/.hyper.js" do
+  owner node[:user]
+  group node[:platform] == 'darwin' ? 'staff' : node[:user]
+end

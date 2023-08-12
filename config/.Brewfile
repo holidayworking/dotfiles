@@ -4,17 +4,12 @@ tap 'homebrew/cask-fonts'
 
 brew 'mas'
 
-cask '1password'
 cask 'adguard'
 cask 'appcleaner'
-cask 'font-fira-code'
 cask 'karabiner-elements'
 cask 'licecap'
-cask 'microsoft-edge'
 cask 'microsoft-office'
 cask 'notion'
-cask 'orbstack'
-cask 'visual-studio-code'
 
 mas '1Password for Safari', id: 1_569_813_296
 mas 'Authenticator', id: 1_189_922_806

@@ -1,0 +1,34 @@
+modmap:
+  - name: Global
+    remap:
+      Capslock: Ctrl_L
+
+keymap:
+  - name: Global
+    application:
+      not:
+        - Code
+        - Hyper
+    remap:
+      C-a: home
+      C-e: end
+      Super-a: C-a
+      Super-c: C-c
+      Super-f: C-f
+      Super-r: C-r
+      Super-s: C-s
+      Super-v: C-v
+      Super-x: C-x
+      Super-z: C-z
+
+  - name: Hyper
+    application:
+      only:
+        - Hyper
+    remap:
+      Super-a: C-Shift-a
+      Super-c: C-Shift-c
+      Super-f: C-Shift-f
+      Super-v: C-Shift-v
+      Super-x: C-Shift-x
+      Super-z: C-Shift-z
