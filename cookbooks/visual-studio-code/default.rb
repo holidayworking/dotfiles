@@ -2,7 +2,7 @@
 
 case node[:platform]
 when 'darwin'
-  package 'git-now'
+  package 'visual-studio-code'
 when 'arch'
-  aur_package 'git-now-git'
+  aur_package 'visual-studio-code-bin'
 end

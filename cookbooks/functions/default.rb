@@ -12,3 +12,11 @@ define :dotfile, source: nil do
     not_if "test -f #{File.join(ENV.fetch('HOME', nil), params[:name])}"
   end
 end
+
+define :aur_package do
+  name = params[:name].shellescape
+  execute "yay -S --noconfirm #{name}" do
+    user node[:user]
+    not_if "pacman -Q #{name} || pacman -Qg #{name}"
+  end
+end

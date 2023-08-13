@@ -1,16 +1,20 @@
 # frozen_string_literal: true
 
-case node[:platform]
-when 'arch'
-  %w[docker docker-compose].each do |pkg|
-    package pkg
+PACKAGES = {
+  'darwin' => %w[orbstack],
+  'arch' => %w[docker docker-compose]
+}.freeze
+
+PACKAGES[node[:platform]].each do |pkg|
+  package pkg
+end
+
+unless node[:platform] == 'darwin'
+  service 'docker' do
+    action %i[enable start]
   end
-end
 
-service 'docker' do
-  action %i[enable start]
-end
-
-execute "usermod -aG docker #{node[:user]}" do
-  not_if "groups #{node[:user]} | grep docker -w"
+  execute "usermod -aG docker #{node[:user]}" do
+    not_if "groups #{node[:user]} | grep docker -w"
+  end
 end
