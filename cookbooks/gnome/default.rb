@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-%w[
-  dconf-editor
-  libgda6
-].each do |pkg|
-  package pkg
-end
+package 'dconf-editor'
+
+aur_package 'gnome-shell-extension-pano'

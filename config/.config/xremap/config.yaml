@@ -4,7 +4,7 @@ modmap:
       Capslock: Ctrl_L
 
 keymap:
-  - name: Global
+  - name: Default
     application:
       not:
         - Code
@@ -12,6 +12,7 @@ keymap:
     remap:
       C-a: home
       C-e: end
+      Shift-Super-v: Shift-Super-v
       Super-a: C-a
       Super-c: C-c
       Super-f: C-f
