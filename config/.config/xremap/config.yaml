@@ -27,6 +27,7 @@ keymap:
       only:
         - Hyper
     remap:
+      Shift-Super-v: Shift-Super-v
       Super-a: C-Shift-a
       Super-c: C-Shift-c
       Super-f: C-Shift-f
