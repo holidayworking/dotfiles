@@ -59,8 +59,6 @@ gsettings set org.gnome.desktop.wm.keybindings switch-panels []
 gsettings set org.gnome.desktop.wm.keybindings switch-panels-backward []
 gsettings set org.gnome.desktop.wm.keybindings cycle-panels []
 gsettings set org.gnome.desktop.wm.keybindings cycle-panels-backward []
-gsettings set org.gnome.mutter dynamic-workspaces false
-gsettings set org.gnome.desktop.wm.preferences num-workspaces 2
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-1 "['<Control>1']"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-2 "['<Control>2']"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-3 []
@@ -81,7 +79,6 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-last []
 
 gsettings set org.gnome.settings-daemon.plugins.media-keys help []
 
-gsettings set org.gnome.mutter overlay-key ""
 
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'ulauncher'
@@ -90,3 +87,11 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 
 
 gsettings set org.gnome.shell.extensions.dash-to-dock show-trash true
+
+
+gsettings set org.gnome.mutter auto-maximize false
+gsettings set org.gnome.mutter dynamic-workspaces false
+gsettings set org.gnome.mutter overlay-key ""
+
+
+gsettings set org.gnome.desktop.wm.preferences num-workspaces 2
