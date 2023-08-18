@@ -2,4 +2,9 @@
 
 package 'dconf-editor'
 
-aur_package 'gnome-shell-extension-pano'
+%w[
+  gnome-shell-extension-pano
+  gnome-shell-extension-search-light-git
+].each do |pkg|
+  aur_package pkg
+end
