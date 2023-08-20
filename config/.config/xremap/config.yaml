@@ -19,6 +19,7 @@ keymap:
       Super-r: C-r
       Super-s: C-s
       Super-v: C-v
+      Super-w: C-w
       Super-x: C-x
       Super-z: C-z
 
@@ -31,6 +32,8 @@ keymap:
       Super-a: C-Shift-a
       Super-c: C-Shift-c
       Super-f: C-Shift-f
+      Super-t: C-Shift-t
       Super-v: C-Shift-v
+      Super-w: C-Shift-w
       Super-x: C-Shift-x
       Super-z: C-Shift-z
