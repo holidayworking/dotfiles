@@ -2,6 +2,11 @@
 
 set -euxo pipefail
 
+gsettings set org.gnome.mutter dynamic-workspaces false
+
+gsettings set org.gnome.desktop.wm.preferences num-workspaces 2
+
+
 gsettings set org.gnome.desktop.peripherals.touchpad click-method fingers
 
 
@@ -80,11 +85,10 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-last []
 gsettings set org.gnome.settings-daemon.plugins.media-keys help []
 
 
-gsettings set org.gnome.shell.extensions.dash-to-dock show-trash true
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed true
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'LEFT'
+gsettings set org.gnome.shell.extensions.dash-to-dock extend-height true
+gsettings set org.gnome.shell.extensions.dash-to-dock show-apps-at-top false
 
 
 gsettings set org.gnome.mutter auto-maximize false
-gsettings set org.gnome.mutter dynamic-workspaces false
-
-
-gsettings set org.gnome.desktop.wm.preferences num-workspaces 2
