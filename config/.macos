@@ -68,7 +68,7 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 ###############################################################################
 
 # Clock format
-defaults write com.apple.menuextra.clock DateFormat -string "M\u6708d\u65e5(EEE)  H:mm:ss"
+defaults write com.apple.menuextra.clock ShowSeconds -bool true
 
 ###############################################################################
 # Safari                                                                      #
