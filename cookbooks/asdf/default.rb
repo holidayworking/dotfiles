@@ -14,6 +14,20 @@ PACKAGES = {
     rust
     unzip
     zlib
+  ],
+  'ubuntu' => %w[
+    build-essential
+    libffi-dev
+    libgdbm-dev
+    libgdbm6
+    libgmp-dev
+    libncurses5-dev
+    libreadline-dev
+    libssl-dev
+    libyaml-dev
+    rustc
+    unzip
+    zlib1g-dev
   ]
 }.freeze
 
