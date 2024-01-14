@@ -1,20 +1,22 @@
 # frozen_string_literal: true
 
-PACKAGES = {
-  'darwin' => %w[orbstack],
-  'arch' => %w[docker docker-compose]
-}.freeze
-
-PACKAGES[node[:platform]].each do |pkg|
-  package pkg
+case node[:platform]
+when 'darwin'
+  package 'orbstack'
+when 'arch'
+  %w[docker docker-compose].each do |pkg|
+    package pkg
+  end
+when 'ubuntu'
+  execute 'curl -fsSL https://get.docker.com/ | sh' do
+    not_if 'which docker'
+  end
 end
 
-unless node[:platform] == 'darwin'
-  service 'docker' do
-    action %i[enable start]
-  end
+service 'docker' do
+  action %i[enable start]
+end
 
-  execute "usermod -aG docker #{node[:user]}" do
-    not_if "groups #{node[:user]} | grep docker -w"
-  end
+execute "usermod -aG docker #{node[:user]}" do
+  not_if "groups #{node[:user]} | grep docker -w"
 end
