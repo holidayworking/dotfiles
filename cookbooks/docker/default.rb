@@ -1,16 +1,7 @@
 # frozen_string_literal: true
 
-case node[:platform]
-when 'darwin'
-  package 'orbstack'
-when 'arch'
-  %w[docker docker-compose].each do |pkg|
-    package pkg
-  end
-when 'ubuntu'
-  execute 'curl -fsSL https://get.docker.com/ | sh' do
-    not_if 'which docker'
-  end
+execute 'curl -fsSL https://get.docker.com/ | sh' do
+  not_if 'which docker'
 end
 
 service 'docker' do
