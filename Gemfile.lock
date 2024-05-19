@@ -10,9 +10,10 @@ GEM
       racc
     racc (1.7.3)
     rainbow (3.1.1)
-    regexp_parser (2.9.0)
-    rexml (3.2.6)
-    rubocop (1.63.4)
+    regexp_parser (2.9.2)
+    rexml (3.2.8)
+      strscan (>= 3.0.9)
+    rubocop (1.63.5)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
@@ -28,6 +29,7 @@ GEM
     rubocop-itamae (0.1.5)
       rubocop (>= 1.13.0)
     ruby-progressbar (1.13.0)
+    strscan (3.1.0)
     unicode-display_width (2.5.0)
 
 PLATFORMS
