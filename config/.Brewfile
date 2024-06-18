@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-tap 'homebrew/cask-fonts'
 brew 'mas'
 
 cask '1password'
@@ -27,4 +26,3 @@ mas 'Slack', id: 803_453_959
 mas 'Tailscale', id: 1_475_387_142
 mas 'The Unarchiver', id: 425_424_353
 mas 'Toggl Track', id: 1_291_898_086
-mas 'Tweetbot', id: 1_384_080_005
