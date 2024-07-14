@@ -15,4 +15,4 @@ packages:
   - name: peco/peco@v0.5.11
   - name: rhysd/actionlint@v1.7.1
   - name: stedolan/jq@jq-1.6
-  - name: x-motemen/ghq@v1.6.1
+  - name: x-motemen/ghq@v1.6.2
