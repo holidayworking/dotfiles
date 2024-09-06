@@ -3,7 +3,6 @@
 brew 'mas'
 
 cask '1password'
-cask 'adguard'
 cask 'appcleaner'
 cask 'font-fira-code'
 cask 'karabiner-elements'
