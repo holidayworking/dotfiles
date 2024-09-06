@@ -13,7 +13,6 @@ cask 'visual-studio-code'
 mas '1Password for Safari', id: 1_569_813_296
 mas 'Authenticator', id: 1_189_922_806
 mas 'Keynote', id: 409_183_694
-mas 'Microsoft Remote Desktop', id: 1_295_203_466
 mas 'Notion Web Clipper', id: 1_559_269_364
 mas 'Numbers', id: 409_203_825
 mas 'Pages', id: 409_201_541
