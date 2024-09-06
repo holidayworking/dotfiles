@@ -8,7 +8,6 @@ cask 'font-fira-code'
 cask 'karabiner-elements'
 cask 'licecap'
 cask 'microsoft-edge'
-cask 'microsoft-office'
 cask 'notion'
 cask 'visual-studio-code'
 
