@@ -9,8 +9,10 @@
   packageRules: [
     {
       groupName: 'aqua',
-      matchPackagePatterns: ['^aquaproj'],
       automerge: true,
+      matchPackageNames: [
+        '/^aquaproj/',
+      ],
     },
   ],
 }
