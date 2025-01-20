@@ -14,6 +14,6 @@ packages:
   - name: hadolint/hadolint@v2.12.0
   - name: nektos/act@v0.2.71
   - name: peco/peco@v0.5.11
-  - name: rhysd/actionlint@v1.7.6
+  - name: rhysd/actionlint@v1.7.7
   - name: stedolan/jq@jq-1.6
   - name: x-motemen/ghq@v1.7.1
