@@ -1,11 +1,11 @@
 #!/bin/sh
 set -e
 
-mitamae_version="1.14.0"
-mitamae_linux_aarch64_sha256="058828b242416816c69011ad1ffc7cbba57d64054e739804521f1dfd3d08656c"
-mitamae_linux_x86_64_sha256="c251f2587717c7b9c8ef6cec8af3ab607ed065f4bdf4b5060cd85693dbd6f75e"
-mitamae_darwin_aarch64_sha256="63e93d02d3899ddc4ce4f4b5d713e0d1a7a118a253f50c46fe681e43d373fba4"
-mitamae_darwin_x86_64_sha256="6a966123aa74c265847c55bc864b60264010ea0737e0c7063d0bad1bcfc3aa5c"
+mitamae_version="1.14.2"
+mitamae_linux_aarch64_sha256="6e9d95c13d5ce4d20411dce1ad38e52f37ab25de05c6881afe579da8ee26e4c2"
+mitamae_linux_x86_64_sha256="9087071eab88d4243639eb73b50c19277d00d614d46edacbd9febd6250515755"
+mitamae_darwin_aarch64_sha256="4fcd11d73c119b89b85d510861da5184552b8f23dc85dd49afc2ca0d6366e2e0"
+mitamae_darwin_x86_64_sha256="c443c2fb85f54c29f44cbec2ad1b9932efaf07b3fa48e8799cfe6e16507effa5"
 
 mitamae_cache="mitamae-${mitamae_version}"
 if ! [ -f "bin/${mitamae_cache}" ]; then
