@@ -3,11 +3,20 @@ if command -sq /usr/libexec/path_helper
 end
 
 set -g theme_display_date no
+set -g theme_display_ruby no
 
 set -gx SHELL (which fish)
 
-set -gx ASDF_DIR $HOME/.asdf
-source ~/.asdf/asdf.fish
+if test -z $ASDF_DATA_DIR
+  set _asdf_shims "$HOME/.asdf/shims"
+else
+  set _asdf_shims "$ASDF_DATA_DIR/shims"
+end
+
+if not contains $_asdf_shims $PATH
+  set -gx --prepend PATH $_asdf_shims
+end
+set --erase _asdf_shims
 
 set -gx PATH $HOME/.local/share/aquaproj-aqua/bin $PATH
 set -gx AQUA_GLOBAL_CONFIG $HOME/.config/aquaproj-aqua/aqua.yml

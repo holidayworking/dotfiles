@@ -6,15 +6,6 @@ PACKAGES = {
     readline
     rust
   ],
-  'arch' => %w[
-    base-devel
-    libffi
-    libyaml
-    openssl
-    rust
-    unzip
-    zlib
-  ],
   'ubuntu' => %w[
     build-essential
     libffi-dev
@@ -35,11 +26,24 @@ PACKAGES[node[:platform]].each do |pkg|
   package pkg
 end
 
-asdf_root = "#{ENV.fetch('HOME', nil)}/.asdf"
+home_path = ENV.fetch('HOME', nil)
 
-git asdf_root do
-  repository 'https://github.com/asdf-vm/asdf.git'
+arch = case node[:kernel][:machine]
+       when 'aarch64'
+         'arm64'
+       when 'x86_64'
+         'amd64'
+       else
+         node[:kernel][:machine]
+       end
+
+execute 'install asdf' do
   user node[:user]
+  command <<~"CMD"
+    curl -fsSL https://github.com/asdf-vm/asdf/releases/download/v0.16.3/asdf-v0.16.3-#{node[:os]}-#{arch}.tar.gz \
+      | tar -xz -C #{home_path}/bin
+  CMD
+  not_if "test -f #{home_path}/bin/asdf"
 end
 
 %w[
@@ -50,7 +54,7 @@ end
 end
 
 asdf_init = <<~SHELL
-  export PATH="#{asdf_root}/bin:${PATH}"
+  export PATH="#{home_path}/bin:${PATH}"
 SHELL
 
 %w[
