@@ -12,7 +12,6 @@ cask 'notion'
 cask 'visual-studio-code'
 
 mas '1Password for Safari', id: 1_569_813_296
-mas 'Authenticator', id: 1_189_922_806
 mas 'Keynote', id: 409_183_694
 mas 'Numbers', id: 409_203_825
 mas 'Pages', id: 409_201_541
