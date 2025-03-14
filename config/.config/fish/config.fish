@@ -2,9 +2,6 @@ if command -sq /usr/libexec/path_helper
   eval (env PATH='' /usr/libexec/path_helper -c)
 end
 
-set -g theme_display_date no
-set -g theme_display_ruby no
-
 set -gx SHELL (which fish)
 
 if test -z $ASDF_DATA_DIR
