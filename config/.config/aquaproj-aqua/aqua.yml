@@ -9,7 +9,7 @@ packages:
   - name: cli/cli@v2.72.0
   - name: direnv/direnv@v2.36.0
   - name: golang/go@go1.24.3
-  - name: google/go-jsonnet@v0.20.0
+  - name: google/go-jsonnet@v0.21.0
   - name: google/yamlfmt@v0.16.0
   - name: hadolint/hadolint@v2.12.0
   - name: nektos/act@v0.2.77
