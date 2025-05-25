@@ -37,13 +37,14 @@ arch = case node[:kernel][:machine]
          node[:kernel][:machine]
        end
 
+version = 'v0.17.0'
 execute 'install asdf' do
   user node[:user]
   command <<~"CMD"
-    curl -fsSL https://github.com/asdf-vm/asdf/releases/download/v0.16.3/asdf-v0.16.3-#{node[:os]}-#{arch}.tar.gz \
+    curl -fsSL https://github.com/asdf-vm/asdf/releases/download/#{version}/asdf-#{version}-#{node[:os]}-#{arch}.tar.gz \
       | tar -xz -C #{home_path}/bin
   CMD
-  not_if "test -f #{home_path}/bin/asdf"
+  not_if "#{home_path}/bin/asdf --version | grep '#{version}'"
 end
 
 %w[
