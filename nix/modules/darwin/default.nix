@@ -1,6 +1,7 @@
 {
   system,
   username,
+  ...
 }:
 {
   homebrew = import ./homebrew;
