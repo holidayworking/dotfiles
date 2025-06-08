@@ -15,24 +15,21 @@ in
 nix-darwin.lib.darwinSystem {
   modules = [
     configuration
-    (import ../../modules/darwin {
-      inherit
-        system
-        username
-        ;
-    })
+    ../../modules/darwin
     home-manager.darwinModules.home-manager
     {
       home-manager = {
         users."${username}" = pkgs.lib.mkMerge [
-          (import ../../modules/home-manager { inherit pkgs system username; })
+          ../../modules/home-manager
           {
             home.homeDirectory = pkgs.lib.mkForce "/Users/${username}/";
           }
         ];
         useGlobalPkgs = true;
         useUserPackages = true;
+        extraSpecialArgs = { inherit pkgs system username; };
       };
     }
   ];
+  specialArgs = { inherit system username; };
 }

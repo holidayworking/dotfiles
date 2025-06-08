@@ -2,6 +2,7 @@
   pkgs,
   system,
   username,
+  ...
 }:
 let
   dotfile = name: { source = ../../../dotfiles + "/${name}"; };
