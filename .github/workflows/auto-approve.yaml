@@ -1,0 +1,10 @@
+name: auto approve
+on: pull_request_target
+jobs:
+  auto-approve:
+    permissions:
+      pull-requests: write
+    if: github.actor == 'holidayworking'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: hmarr/auto-approve-action@f0939ea97e9205ef24d872e76833fa908a770363 # v4.0.0
