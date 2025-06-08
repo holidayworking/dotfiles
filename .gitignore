@@ -1,6 +1,4 @@
-# Ignore build outputs from performing a nix-build or `nix build` command
+.direnv
+node_modules
 result
 result-*
-
-# Ignore automatically generated direnv output
-.direnv
