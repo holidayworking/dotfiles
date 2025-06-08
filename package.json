@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "cspell": "cspell --dot ."
+  },
+  "devDependencies": {
+    "cspell": "9.0.2"
+  },
+  "packageManager": "pnpm@10.11.1",
+  "private": true
+}

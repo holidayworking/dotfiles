@@ -1,0 +1,15 @@
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore_global
+[user]
+  name = Hidekazu Tanaka
+  email = 11025+holidayworking@users.noreply.github.com
+[alias]
+  delete-merged-branch = "!f () { git checkout $1 && git pull origin $1 && git branch --merged | grep -vE 'develop|main|master' | xargs -I % git branch -d % && git fetch --all --prune;};f"
+[ghq]
+  root = ~/src
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
