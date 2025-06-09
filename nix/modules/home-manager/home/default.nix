@@ -35,6 +35,7 @@
     nixfmt-rfc-style
     peco
     proto
+    shfmt
     tig
     tmux
     vim
