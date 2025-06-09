@@ -20,8 +20,10 @@
       [
         ".gitconfig"
         ".gitignore_global"
+        ".hyper.js"
         ".tigrc"
         ".tmux.conf"
+        ".zshrc"
       ];
 
   packages = with pkgs; [
