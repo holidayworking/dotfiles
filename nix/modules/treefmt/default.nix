@@ -7,6 +7,7 @@
     nixfmt.enable = true;
     prettier.enable = true;
     shellcheck.enable = true;
+    shfmt.enable = true;
     yamlfmt.enable = true;
   };
   settings.global.excludes = [ "pnpm-lock.yaml" ];
