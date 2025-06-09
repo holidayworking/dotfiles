@@ -1,5 +1,3 @@
-message = Hello World!!
-
 setup: nix-setup aqua-setup fish-setup
 
 nix-setup: nix-install nix-darwin
@@ -22,3 +20,6 @@ aqua-setup:
 
 fish-setup:
 	@fish -c "curl --fail --silent --show-error --location https://git.io/fisher | source && fisher update"
+
+dotfiles-link:
+	@./scripts/dotfiles-link.sh
