@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euC
+
 readonly DOTFILES="
 .config/fish/completions/aws.fish
 .config/fish/config.fish
