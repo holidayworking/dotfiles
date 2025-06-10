@@ -23,7 +23,6 @@
         ".hyper.js"
         ".tigrc"
         ".tmux.conf"
-        ".zshrc"
       ];
 
   packages = with pkgs; [
