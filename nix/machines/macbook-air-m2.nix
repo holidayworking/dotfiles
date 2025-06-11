@@ -75,7 +75,7 @@ let
       defaults = {
         SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
         dock = {
-          minimize-to-application = false;
+          minimize-to-application = true;
           mru-spaces = false;
           show-recents = false;
           wvous-bl-corner = 4;
