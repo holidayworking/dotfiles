@@ -99,7 +99,7 @@ let
     home-manager = {
       users."${username}" = {
         imports = [
-          ../../modules/home-manager
+          ../modules/home-manager
           {
             home.homeDirectory = pkgs.lib.mkForce "/Users/${username}/";
             targets.darwin.defaults."com.apple.Safari" = {

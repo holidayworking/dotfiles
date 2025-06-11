@@ -10,7 +10,7 @@ nix-darwin:
 	@sudo nix run nix-darwin/nix-darwin-25.05#darwin-rebuild -- switch --flake .#jasper
 
 nix-rebuild:
-	@sudo darwin-rebuild switch --flake .#jasper
+	@sudo darwin-rebuild switch --flake .#macbook-air-m2
 
 nix-gc:
 	@nix-collect-garbage --delete-old
