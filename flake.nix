@@ -31,11 +31,8 @@
       checks = eachSystem (pkgs: {
         formatting = treefmtEval.${pkgs.system}.config.build.check self;
       });
-
       formatter = eachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
 
-      darwinConfigurations = {
-        jasper = import ./nix/hosts/jasper { inherit inputs; };
-      };
+      darwinConfigurations.macbook-air-m2 = import ./nix/machines/macbook-air-m2.nix { inherit inputs; };
     };
 }
