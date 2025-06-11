@@ -8,10 +8,15 @@
   security = import ./security;
   system = import ./system { inherit username; };
 
-  nix.settings.experimental-features = [
-    "flakes"
-    "nix-command"
-  ];
+  nix = {
+    optimise.automatic = true;
+    settings = {
+      experimental-features = [
+        "flakes"
+        "nix-command"
+      ];
+    };
+  };
 
   nixpkgs.hostPlatform = system;
 }
