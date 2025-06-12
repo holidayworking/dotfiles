@@ -1,10 +1,19 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>holidayworking/renovate-config"],
+  "extends": [
+    "local>holidayworking/renovate-config",
+    "github>aquaproj/aqua-renovate-config#2.8.1"
+  ],
   "automerge": false,
   "lockFileMaintenance": {
     "enabled": false
   },
+  "packageRules": [
+    {
+      "automerge": true,
+      "matchPackageNames": ["aquaproj/aqua-registry"]
+    }
+  ],
   "nix": {
     "enabled": true
   }
