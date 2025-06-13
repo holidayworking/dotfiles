@@ -11,4 +11,4 @@ registries:
     ref: v4.378.0 # renovate: depName=aquaproj/aqua-registry
 packages:
   - name: nektos/act@v0.2.78
-  - name: suzuki-shunsuke/pinact@v3.1.2
+  - name: suzuki-shunsuke/pinact@v3.2.0
