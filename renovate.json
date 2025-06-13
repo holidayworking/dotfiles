@@ -5,16 +5,10 @@
     "github>aquaproj/aqua-renovate-config#2.8.1"
   ],
   "automerge": false,
-  "lockFileMaintenance": {
-    "enabled": false
-  },
   "packageRules": [
     {
       "automerge": true,
       "matchPackageNames": ["aquaproj/aqua-registry"]
     }
-  ],
-  "nix": {
-    "enabled": true
-  }
+  ]
 }
