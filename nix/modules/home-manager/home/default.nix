@@ -25,21 +25,27 @@
         ".tmux.conf"
       ];
 
-  packages = with pkgs; [
-    awscli2
-    direnv
-    ffmpeg
-    fish
-    ghq
-    git
-    jq
-    nixfmt-rfc-style
-    peco
-    proto
-    shfmt
-    tig
-    tmux
-    vim
-    yt-dlp
-  ];
+  packages =
+    let
+      git-now = pkgs.callPackage ../../../packages/git-now.nix { };
+    in
+    with pkgs;
+    [
+      awscli2
+      direnv
+      ffmpeg
+      fish
+      ghq
+      git
+      git-now
+      jq
+      nixfmt-rfc-style
+      peco
+      proto
+      shfmt
+      tig
+      tmux
+      vim
+      yt-dlp
+    ];
 }
