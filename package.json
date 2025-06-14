@@ -3,7 +3,7 @@
     "cspell": "cspell --dot ."
   },
   "devDependencies": {
-    "cspell": "9.0.2"
+    "cspell": "9.1.1"
   },
   "packageManager": "pnpm@10.12.1",
   "private": true
