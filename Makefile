@@ -6,8 +6,8 @@ nix-install:
 	@curl --fail --silent --show-error --location https://install.determinate.systems/nix | sh -s -- install
 
 nix-darwin:
-	@. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
-	@sudo nix run nix-darwin/nix-darwin-25.05#darwin-rebuild -- switch --flake .#macbook-air-m2
+	. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh \
+		&& sudo nix run nix-darwin/nix-darwin-25.05#darwin-rebuild -- switch --flake .#macbook-air-m2
 
 nix-rebuild:
 	@sudo darwin-rebuild switch --flake .#macbook-air-m2
