@@ -1,4 +1,4 @@
-setup: nix-setup aqua-setup fish-setup
+setup: homebrew-setup nix-setup aqua-setup fish-setup
 
 nix-setup: nix-install nix-darwin
 
@@ -14,6 +14,9 @@ nix-rebuild:
 
 nix-gc:
 	@nix-collect-garbage --delete-old
+
+homebrew-setup:
+	@bash -c "$$(curl --fail --silent --show-error --location https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 aqua-setup:
 	@curl --fail --silent --show-error --location https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.1.2/aqua-installer | bash
