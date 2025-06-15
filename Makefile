@@ -1,4 +1,4 @@
-setup: homebrew-setup nix-setup aqua-setup fish-setup
+setup: homebrew-setup nix-setup aqua-setup
 
 nix-setup: nix-install nix-darwin
 
