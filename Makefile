@@ -1,4 +1,4 @@
-setup: nix-setup aqua-setup fish-setup
+setup: homebrew-setup nix-setup aqua-setup
 
 nix-setup: nix-install nix-darwin
 
@@ -6,14 +6,17 @@ nix-install:
 	@curl --fail --silent --show-error --location https://install.determinate.systems/nix | sh -s -- install
 
 nix-darwin:
-	@. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
-	@sudo nix run nix-darwin/nix-darwin-25.05#darwin-rebuild -- switch --flake .#macbook-air-m2
+	. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh \
+		&& sudo nix run nix-darwin/nix-darwin-25.05#darwin-rebuild -- switch --flake .#macbook-air-m2
 
 nix-rebuild:
 	@sudo darwin-rebuild switch --flake .#macbook-air-m2
 
 nix-gc:
 	@nix-collect-garbage --delete-old
+
+homebrew-setup:
+	@bash -c "$$(curl --fail --silent --show-error --location https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 aqua-setup:
 	@curl --fail --silent --show-error --location https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.1.2/aqua-installer | bash
