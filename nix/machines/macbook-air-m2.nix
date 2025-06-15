@@ -50,7 +50,10 @@ let
         touchIdAuth = true;
       };
     };
-    networking.hostName = "jasper";
+    networking = {
+      computerName = "aries";
+      hostName = "aries";
+    };
     nix = {
       gc = {
         automatic = true;
