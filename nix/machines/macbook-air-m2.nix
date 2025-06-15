@@ -88,6 +88,7 @@ let
           wvous-tr-corner = 3;
         };
         finder = {
+          FXRemoveOldTrashItems = true;
           NewWindowTarget = "Home";
           ShowExternalHardDrivesOnDesktop = false;
           ShowRemovableMediaOnDesktop = false;
