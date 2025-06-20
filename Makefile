@@ -24,5 +24,5 @@ aqua-setup:
 fish-setup:
 	@fish -c "curl --fail --silent --show-error --location https://git.io/fisher | source && fisher update"
 
-dotfiles-link:
-	@./scripts/dotfiles-link.sh
+dotfiles-setup:
+	@./scripts/dotfiles-setup.sh
