@@ -1,6 +1,11 @@
 {
   inputs = {
+    systems.url = "github:nix-systems/default";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,10 +22,11 @@
   outputs =
     inputs@{
       self,
-      home-manager,
-      nix-darwin,
-      nixpkgs,
       systems,
+      disko,
+      nixpkgs,
+      nix-darwin,
+      home-manager,
       treefmt-nix,
     }:
     let
@@ -31,8 +37,19 @@
       checks = eachSystem (pkgs: {
         formatting = treefmtEval.${pkgs.system}.config.build.check self;
       });
+
       formatter = eachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
 
-      darwinConfigurations.macbook-air-m2 = import ./nix/machines/macbook-air-m2.nix { inherit inputs; };
+      darwinConfigurations = {
+        macbook-air-m2 = import ./nix/machines/macbook-air-m2.nix {
+          inherit inputs;
+        };
+      };
+
+      nixosConfigurations = {
+        macbook-air-m2-utm = import ./nix/machines/macbook-air-m2-utm.nix {
+          inherit inputs;
+        };
+      };
     };
 }
