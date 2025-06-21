@@ -28,5 +28,8 @@ dotfiles/setup:
 vm/create:
 	@./scripts/vm-create.sh
 
+vm/bootstrap:
+	@./scripts/vm-bootstrap.sh
+
 renovate/dry-run:
 	@LOG_LEVEL=debug RENOVATE_CONFIG_FILE=renovate.json pnpx renovate --dry-run --require-config=ignored --schedule= --token=$$(op read "op://Personal/GitHub Personal Access Token/token") holidayworking/dotfiles

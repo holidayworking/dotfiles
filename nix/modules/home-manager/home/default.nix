@@ -39,6 +39,7 @@
       ghq
       git
       git-now
+      gnumake
       jq
       nixfmt-rfc-style
       peco
