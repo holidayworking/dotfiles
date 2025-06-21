@@ -34,6 +34,7 @@
     "pinact",
     "pkgs",
     "pname",
+    "pnpx",
     "recents",
     "setw",
     "shellcheck",
