@@ -3,7 +3,10 @@ let
   inherit (inputs) nix-darwin home-manager nixpkgs;
 
   system = "aarch64-darwin";
-  pkgs = import nixpkgs { inherit system; };
+  pkgs = import nixpkgs {
+    inherit system;
+    config.allowUnfree = true;
+  };
 
   username = "hidekazu";
 
