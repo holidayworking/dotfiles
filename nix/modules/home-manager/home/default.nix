@@ -31,6 +31,7 @@
     in
     with pkgs;
     [
+      _1password-cli
       awscli2
       direnv
       ffmpeg
