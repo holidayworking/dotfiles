@@ -20,11 +20,6 @@ nixpkgs.lib.nixosSystem {
     home-manager.nixosModules.home-manager
     ./hardwares/vm-utm.nix
     {
-      boot.loader = {
-        efi.canTouchEfiVariables = true;
-        systemd-boot.enable = true;
-      };
-
       home-manager = {
         users."${username}".imports = [
           ../modules/home-manager
@@ -38,6 +33,7 @@ nixpkgs.lib.nixosSystem {
       nix = {
         gc = {
           automatic = true;
+          dates = "weekly";
           options = "--delete-older-than 7d";
         };
         optimise.automatic = true;
@@ -50,6 +46,8 @@ nixpkgs.lib.nixosSystem {
       };
 
       nixpkgs.hostPlatform = system;
+
+      networking.hostName = "taurus";
 
       programs.nix-ld.enable = true;
 
@@ -73,6 +71,17 @@ nixpkgs.lib.nixosSystem {
           isNormalUser = true;
         };
         root.hashedPassword = "!";
+      };
+
+      virtualisation = {
+        docker = {
+          enable = true;
+          rootless = {
+            enable = true;
+            setSocketVariable = true;
+          };
+        };
+        rosetta.enable = true;
       };
     }
   ];

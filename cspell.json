@@ -1,7 +1,10 @@
 {
   "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
   "version": "0.2",
-  "ignorePaths": [".git", "pnpm-lock.yaml"],
+  "ignorePaths": [
+    ".git",
+    "pnpm-lock.yaml"
+  ],
   "words": [
     "appcleaner",
     "aquaproj",
@@ -60,6 +63,7 @@
     "utmctl",
     "vfat",
     "virtio",
+    "virtualisation",
     "weblink",
     "wvous",
     "xhci",

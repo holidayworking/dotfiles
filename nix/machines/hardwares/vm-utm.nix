@@ -1,5 +1,6 @@
 {
   boot = {
+    extraModulePackages = [ ];
     initrd = {
       availableKernelModules = [
         "usb_storage"
@@ -9,9 +10,11 @@
       ];
       kernelModules = [ ];
     };
-
     kernelModules = [ ];
-    extraModulePackages = [ ];
+    loader = {
+      efi.canTouchEfiVariables = true;
+      systemd-boot.enable = true;
+    };
   };
 
   disko.devices = {
