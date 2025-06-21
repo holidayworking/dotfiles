@@ -1,9 +1,7 @@
-setup: homebrew/setup nix/setup aqua/setup
+darwin/setup: homebrew/setup nix/install nix/darwin aqua/setup
 
 homebrew/setup:
 	@bash -c "$$(curl --fail --silent --show-error --location https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-nix/setup: nix/install nix/darwin
 
 nix/install:
 	@curl --fail --silent --show-error --location https://install.determinate.systems/nix | sh -s -- install
