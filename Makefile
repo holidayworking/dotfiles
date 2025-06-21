@@ -10,8 +10,8 @@ nix/darwin:
 	. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh \
 		&& sudo nix run nix-darwin/nix-darwin-25.05#darwin-rebuild -- switch --flake .#macbook-air-m2
 
-nix/rebuild:
-	@sudo darwin-rebuild switch --flake .#macbook-air-m2
+nix-rebuild:
+	@./scripts/nix-rebuild.sh
 
 nix/gc:
 	@nix-collect-garbage --delete-old
@@ -24,6 +24,12 @@ fish/setup:
 
 dotfiles/setup:
 	@./scripts/dotfiles-setup.sh
+
+vm/create:
+	@./scripts/vm-create.sh
+
+vm/bootstrap:
+	@./scripts/vm-bootstrap.sh
 
 renovate/dry-run:
 	@LOG_LEVEL=debug RENOVATE_CONFIG_FILE=renovate.json pnpx renovate --dry-run --require-config=ignored --schedule= --token=$$(op read "op://Personal/GitHub Personal Access Token/token") holidayworking/dotfiles
