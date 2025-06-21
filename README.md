@@ -16,5 +16,5 @@ After `make setup` is completed, open a new terminal and run:
 
 ```shell
 cd ~/src/github.com/holidayworking/dotfiles
-make fish-setup
+make fish/setup
 ```
