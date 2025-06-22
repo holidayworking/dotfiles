@@ -1,17 +1,9 @@
 { inputs }:
 let
-  inherit (inputs)
-    nixpkgs
-    disko
-    home-manager
-    ;
+  inherit (inputs) nixpkgs disko home-manager;
 
   system = "aarch64-linux";
-  pkgs = import nixpkgs {
-    inherit system;
-    config.allowUnfree = true;
-  };
-
+  hostname = "taurus";
   username = "hidekazu";
 in
 nixpkgs.lib.nixosSystem {
@@ -19,35 +11,17 @@ nixpkgs.lib.nixosSystem {
     disko.nixosModules.disko
     home-manager.nixosModules.home-manager
     ./hardwares/vm-utm.nix
+    ../roles/base
     {
       home-manager = {
-        users."${username}".imports = [
-          ../modules/home-manager
-        ];
-        backupFileExtension = "backup";
-        useGlobalPkgs = true;
-        useUserPackages = true;
-        extraSpecialArgs = { inherit pkgs system username; };
-      };
-
-      nix = {
-        gc = {
-          automatic = true;
-          dates = "weekly";
-          options = "--delete-older-than 7d";
-        };
-        optimise.automatic = true;
-        settings = {
-          experimental-features = [
-            "flakes"
-            "nix-command"
-          ];
+        users."${username}" = {
+          home = {
+            stateVersion = "25.05";
+          };
         };
       };
 
-      nixpkgs.hostPlatform = system;
-
-      networking.hostName = "taurus";
+      networking.hostName = hostname;
 
       programs.nix-ld.enable = true;
 
@@ -64,12 +38,13 @@ nixpkgs.lib.nixosSystem {
 
       users.users = {
         hidekazu = {
+          extraGroups = [ "wheel" ];
+          isNormalUser = true;
           openssh.authorizedKeys.keys = [
             "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL8Zoej4KoXnIYd9g2ocJXHyYAtNUlaSWtq84aIuAFhq"
           ];
-          extraGroups = [ "wheel" ];
-          isNormalUser = true;
         };
+
         root.hashedPassword = "!";
       };
 
@@ -81,8 +56,14 @@ nixpkgs.lib.nixosSystem {
             setSocketVariable = true;
           };
         };
-        rosetta.enable = true;
+
+        rosetta = {
+          enable = true;
+        };
       };
     }
   ];
+  specialArgs = {
+    inherit nixpkgs system username;
+  };
 }
