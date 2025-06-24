@@ -18,5 +18,5 @@ jobs:
           node-version-file: .node-version
       - run: pnpm install
       - run: pnpm cspell
-      - uses: DeterminateSystems/determinate-nix-action@d10ab0752b8a41f8c786f1c4337f87e3d255aa47 # v3.6.6
+      - uses: DeterminateSystems/determinate-nix-action@46b836eeb9fc66fcdf4a568e4e4ba735b1abc974 # v3.6.7
       - run: nix flake check --print-build-logs
