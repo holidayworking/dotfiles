@@ -4,7 +4,6 @@
     "local>holidayworking/renovate-config",
     "github>aquaproj/aqua-renovate-config#2.8.2"
   ],
-  "automerge": false,
   "nix": {
     "enabled": true
   },
