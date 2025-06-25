@@ -1,6 +1,8 @@
 {
   boot = {
     extraModulePackages = [ ];
+    kernelModules = [ ];
+
     initrd = {
       availableKernelModules = [
         "usb_storage"
@@ -10,7 +12,7 @@
       ];
       kernelModules = [ ];
     };
-    kernelModules = [ ];
+
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot.enable = true;
