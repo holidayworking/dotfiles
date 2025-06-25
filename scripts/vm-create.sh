@@ -48,6 +48,7 @@ echo "Applying VM configuration changes..."
 /usr/libexec/PlistBuddy \
   -c "set :Virtualization:Pointer Mouse" \
   -c "set :Virtualization:Keyboard Generic" \
+  -c "set :Virtualization:ClipboardSharing true" \
   -c "add :Virtualization:Rosetta bool true" \
   -c "add :Information:Icon string nixos" \
   -c "add :Display:0 dict" \
