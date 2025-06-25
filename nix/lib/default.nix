@@ -2,9 +2,10 @@
 let
   inherit (inputs)
     nixpkgs
-    nix-darwin
-    home-manager
     disko
+    home-manager
+    nix-darwin
+    xremap-flake
     ;
 in
 {
@@ -46,7 +47,10 @@ in
     }:
     nixpkgs.lib.nixosSystem {
       modules =
-        [ disko.nixosModules.disko ]
+        [
+          disko.nixosModules.disko
+          xremap-flake.nixosModules.default
+        ]
         ++ modules
         ++ [
           {

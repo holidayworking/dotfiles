@@ -49,6 +49,7 @@ echo "Applying VM configuration changes..."
   -c "set :Virtualization:Pointer Mouse" \
   -c "set :Virtualization:Keyboard Generic" \
   -c "add :Virtualization:Rosetta bool true" \
+  -c "add :Virtualization:ClipboardSharing bool true" \
   -c "add :Information:Icon string nixos" \
   -c "add :Display:0 dict" \
   -c "add :Display:0:PixelsPerInch integer 80" \

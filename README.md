@@ -62,13 +62,7 @@ make vm/create
 
    Replace `<VM_IP_ADDRESS>` with the actual IP address found in Step 2.
 
-2. The NixOS installation will complete and the VM will automatically restart in headless mode.
-
-3. After restart, run the bootstrap command again:
-
-   ```shell
-   make vm/bootstrap VM_IP=<VM_IP_ADDRESS>
-   ```
+2. The NixOS installation will complete and the VM will automatically restart.
 
 #### Step 4: Configure SSH Access
 

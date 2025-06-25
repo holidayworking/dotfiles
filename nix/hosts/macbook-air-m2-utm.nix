@@ -10,10 +10,23 @@ lib.mkNixosSystem {
   modules = [
     ./hardwares/vm-utm.nix
     ../profiles/nixos
+    ../profiles/nixos/desktop.nix
     {
-      users.users.hidekazu.openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL8Zoej4KoXnIYd9g2ocJXHyYAtNUlaSWtq84aIuAFhq"
-      ];
+      services = {
+        spice-vdagentd.enable = true;
+
+        xserver.xkb = {
+          layout = "us";
+          variant = "mac";
+        };
+      };
+
+      users.users."hidekazu" = {
+        initialPassword = "hidekazu";
+        openssh.authorizedKeys.keys = [
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL8Zoej4KoXnIYd9g2ocJXHyYAtNUlaSWtq84aIuAFhq"
+        ];
+      };
     }
   ];
 }
