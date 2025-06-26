@@ -13,7 +13,7 @@ jobs:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.PRIVATE_KEY }}
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      - uses: DeterminateSystems/determinate-nix-action@46b836eeb9fc66fcdf4a568e4e4ba735b1abc974 # v3.6.7
+      - uses: DeterminateSystems/determinate-nix-action@be37d3c211163697faaad696b47c35ecf27fc3d6 # v3.6.8
       - uses: DeterminateSystems/update-flake-lock@428c2b58a4b7414dabd372acb6a03dba1084d3ab # v25
         with:
           token: ${{ steps.app-token.outputs.token }}
