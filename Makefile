@@ -17,7 +17,7 @@ nix/gc:
 	@nix-collect-garbage --delete-old
 
 aqua/setup:
-	@curl --fail --silent --show-error --location https://raw.githubusercontent.com/aquaproj/aqua-installer/v4.0.1/aqua-installer | bash
+	@curl --fail --silent --show-error --location https://raw.githubusercontent.com/aquaproj/aqua-installer/v4.0.2/aqua-installer | bash
 
 fish/setup:
 	@fish -c "curl --fail --silent --show-error --location https://git.io/fisher | source && fisher update"
