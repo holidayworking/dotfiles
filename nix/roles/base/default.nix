@@ -49,6 +49,7 @@ in
             direnv
             ffmpeg
             fish
+            gemini-cli
             ghq
             git
             git-now
