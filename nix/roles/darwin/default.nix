@@ -36,6 +36,7 @@
       "chatgpt"
       "docker-desktop"
       "font-fira-code"
+      "ghostty"
       "hyper"
       "karabiner-elements"
       "maccy"

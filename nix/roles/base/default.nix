@@ -95,6 +95,7 @@ in
           "fish/completions/aws.fish"
           "fish/config.fish"
           "fish/fish_plugins"
+          "ghostty/config"
           "karabiner/karabiner.json"
         ];
       };
