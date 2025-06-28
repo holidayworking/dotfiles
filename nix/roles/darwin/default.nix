@@ -58,6 +58,7 @@
       "The Unarchiver" = 425424353;
       "Toggl Track" = 1291898086;
       "Windows App" = 1295203466;
+      "Xiaomi Interconnectivity" = 6673908449;
     };
 
     onActivation = {
