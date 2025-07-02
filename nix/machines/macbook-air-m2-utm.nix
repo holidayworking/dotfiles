@@ -3,7 +3,7 @@ let
   inherit (inputs) nixpkgs disko home-manager;
 
   system = "aarch64-linux";
-  hostname = "taurus";
+  hostname = "cancer";
   username = "hidekazu";
 in
 nixpkgs.lib.nixosSystem {
