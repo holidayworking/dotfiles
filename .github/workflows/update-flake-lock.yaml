@@ -14,7 +14,7 @@ jobs:
           private-key: ${{ secrets.PRIVATE_KEY }}
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - uses: DeterminateSystems/determinate-nix-action@be37d3c211163697faaad696b47c35ecf27fc3d6 # v3.6.8
-      - uses: DeterminateSystems/update-flake-lock@428c2b58a4b7414dabd372acb6a03dba1084d3ab # v25
+      - uses: DeterminateSystems/update-flake-lock@9070c8924674eb79cc49246b8b6f2e14f4378eb0 # v26
         with:
           token: ${{ steps.app-token.outputs.token }}
           commit-msg: "chore(deps): update flake.lock"
