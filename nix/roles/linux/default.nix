@@ -33,29 +33,30 @@
 
   time.timeZone = "Asia/Tokyo";
 
-  users.users = {
-    hidekazu = {
-      extraGroups = [ "wheel" ];
-      isNormalUser = true;
-      openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL8Zoej4KoXnIYd9g2ocJXHyYAtNUlaSWtq84aIuAFhq"
-      ];
-    };
-
-    root.hashedPassword = "!";
-  };
-
-  virtualisation = {
-    docker = {
-      enable = true;
-      rootless = {
-        enable = true;
-        setSocketVariable = true;
+  users = {
+    groups = {
+      "${username}" = {
+        gid = 1000;
       };
     };
 
-    rosetta = {
-      enable = true;
+    users = {
+      root.hashedPassword = "!";
+
+      "${username}" = {
+        extraGroups = [ "wheel" ];
+        group = "${username}";
+        isNormalUser = true;
+        openssh.authorizedKeys.keys = [
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL8Zoej4KoXnIYd9g2ocJXHyYAtNUlaSWtq84aIuAFhq"
+        ];
+        uid = 1000;
+      };
     };
+  };
+
+  virtualisation = {
+    docker.enable = true;
+    rosetta.enable = true;
   };
 }
