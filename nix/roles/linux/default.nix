@@ -38,7 +38,10 @@
       root.hashedPassword = "!";
 
       "${username}" = {
-        extraGroups = [ "wheel" ];
+        extraGroups = [
+          "docker"
+          "wheel"
+        ];
         group = "${username}";
         isNormalUser = true;
         openssh.authorizedKeys.keys = [
