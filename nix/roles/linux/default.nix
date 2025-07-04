@@ -50,16 +50,7 @@
   };
 
   virtualisation = {
-    docker = {
-      enable = true;
-      rootless = {
-        enable = true;
-        setSocketVariable = true;
-      };
-    };
-
-    rosetta = {
-      enable = true;
-    };
+    docker.enable = true;
+    rosetta.enable = true;
   };
 }
