@@ -18,9 +18,15 @@
 
   security.sudo.wheelNeedsPassword = false;
 
-  services.openssh = {
-    enable = true;
-    settings.PasswordAuthentication = true;
+  services = {
+    tailscale = {
+      enable = true;
+    };
+
+    openssh = {
+      enable = true;
+      settings.PasswordAuthentication = true;
+    };
   };
 
   system.stateVersion = "25.05";
