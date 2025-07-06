@@ -5,9 +5,31 @@
       "complex_modifications": {
         "rules": [
           {
-            "description": "escキーを押したときに、英数キーも送信する（vim用）",
+            "description": "caps_lock キーを left_control キーに変更",
             "manipulators": [
               {
+                "conditions": [
+                  {
+                    "bundle_identifiers": ["^com\\.utmapp\\.UTM$"],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": { "key_code": "caps_lock" },
+                "to": [{ "key_code": "left_control" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "esc キーを押したときに、英数キーも送信する",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": ["^com\\.utmapp\\.UTM$"],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
                 "from": { "key_code": "escape" },
                 "to": [
                   { "key_code": "escape" },
@@ -21,12 +43,7 @@
       },
       "name": "Default profile",
       "selected": true,
-      "simple_modifications": [
-        {
-          "from": { "key_code": "caps_lock" },
-          "to": [{ "key_code": "left_control" }]
-        }
-      ],
+      "simple_modifications": [],
       "virtual_hid_keyboard": {
         "country_code": 0,
         "keyboard_type_v2": "ansi"
