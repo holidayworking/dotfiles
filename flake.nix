@@ -32,6 +32,7 @@
     let
       eachSystem = f: nixpkgs.lib.genAttrs (import systems) (system: f nixpkgs.legacyPackages.${system});
       treefmtEval = eachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./nix/treefmt.nix);
+      lib = import ./nix/lib { inherit inputs; };
     in
     {
       checks = eachSystem (pkgs: {
