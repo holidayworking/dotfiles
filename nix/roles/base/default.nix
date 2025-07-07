@@ -9,12 +9,11 @@ let
     inherit system;
     config.allowUnfree = true;
   };
-
-  dotfile = name: { source = ../../../dotfiles + "/${name}"; };
 in
 {
   imports = [
     ../../profiles/common/packages.nix
+    ../../profiles/common/dotfiles.nix
   ];
 
   home-manager = {
@@ -24,23 +23,6 @@ in
     users."${username}" = {
       home = {
         username = username;
-
-        file =
-          builtins.foldl'
-            (
-              acc: name:
-              acc
-              // {
-                ${name} = dotfile name;
-              }
-            )
-            { }
-            [
-              ".gitconfig"
-              ".gitignore_global"
-              ".tigrc"
-              ".tmux.conf"
-            ];
       };
 
       programs = {
@@ -65,16 +47,6 @@ in
             fi
           '';
         };
-      };
-
-      xdg = {
-        configFile = builtins.foldl' (acc: name: acc // { ${name} = dotfile (".config/" + name); }) { } [
-          "fish/completions/aws.fish"
-          "fish/config.fish"
-          "fish/fish_plugins"
-          "ghostty/config"
-          "karabiner/karabiner.json"
-        ];
       };
     };
   };
