@@ -13,6 +13,10 @@ let
   dotfile = name: { source = ../../../dotfiles + "/${name}"; };
 in
 {
+  imports = [
+    ../../profiles/common/packages.nix
+  ];
+
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
@@ -37,33 +41,6 @@ in
               ".tigrc"
               ".tmux.conf"
             ];
-
-        packages =
-          let
-            git-now = pkgs.callPackage ../../packages/git-now.nix { };
-          in
-          with pkgs;
-          [
-            _1password-cli
-            awscli2
-            direnv
-            ffmpeg
-            fish
-            gemini-cli
-            ghq
-            git
-            git-now
-            gnumake
-            jq
-            nixfmt-rfc-style
-            peco
-            proto
-            shfmt
-            tig
-            tmux
-            vim
-            yt-dlp
-          ];
       };
 
       programs = {
