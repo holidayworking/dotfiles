@@ -42,15 +42,11 @@
       formatter = eachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
 
       darwinConfigurations = {
-        macbook-air-m2 = import ./nix/hosts/macbook-air-m2.nix {
-          inherit inputs;
-        };
+        macbook-air-m2 = import ./nix/hosts/macbook-air-m2.nix { inherit inputs; };
       };
 
       nixosConfigurations = {
-        macbook-air-m2-utm = import ./nix/hosts/macbook-air-m2-utm.nix {
-          inherit inputs;
-        };
+        macbook-air-m2-utm = import ./nix/hosts/macbook-air-m2-utm.nix { inherit inputs; };
       };
     };
 }
