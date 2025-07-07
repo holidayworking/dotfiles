@@ -9,7 +9,7 @@
 {
   imports = [
     home-manager.nixosModules.home-manager
-    ../base
+    ../common
   ];
 
   networking.hostName = hostname;

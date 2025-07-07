@@ -9,7 +9,7 @@
 {
   imports = [
     home-manager.darwinModules.home-manager
-    ../base
+    ../common
   ];
 
   home-manager = {

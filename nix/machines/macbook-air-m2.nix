@@ -8,7 +8,7 @@ let
 in
 nix-darwin.lib.darwinSystem {
   modules = [
-    ../roles/darwin
+    ../profiles/darwin
     {
       home-manager.users."${username}".home.stateVersion = "25.05";
       system.stateVersion = 5;

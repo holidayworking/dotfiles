@@ -10,7 +10,7 @@ nixpkgs.lib.nixosSystem {
   modules = [
     disko.nixosModules.disko
     ./hardwares/vm-utm.nix
-    ../roles/linux
+    ../profiles/nixos
     {
       home-manager.users."${username}".home.stateVersion = "25.05";
     }
