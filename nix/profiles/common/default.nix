@@ -12,8 +12,8 @@ let
 in
 {
   imports = [
-    ../../profiles/common/packages.nix
-    ../../profiles/common/dotfiles.nix
+    ./packages.nix
+    ./dotfiles.nix
   ];
 
   home-manager = {
