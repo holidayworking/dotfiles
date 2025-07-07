@@ -1,29 +1,14 @@
 { inputs }:
 let
-  inherit (inputs) nixpkgs disko home-manager;
-
+  lib = import ../lib { inherit inputs; };
+in
+lib.mkNixosSystem {
   system = "aarch64-linux";
   hostname = "cancer";
   username = "hidekazu";
-in
-nixpkgs.lib.nixosSystem {
+  stateVersion = "25.05";
   modules = [
-    disko.nixosModules.disko
     ./hardwares/vm-utm.nix
     ../profiles/nixos
-    {
-      home-manager.users."${username}".home.stateVersion = "25.05";
-    }
-
   ];
-
-  specialArgs = {
-    inherit
-      nixpkgs
-      home-manager
-      system
-      hostname
-      username
-      ;
-  };
 }
