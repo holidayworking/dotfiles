@@ -51,6 +51,7 @@ in
         ++ [
           {
             home-manager.users."${username}".home.stateVersion = stateVersion;
+            system.stateVersion = stateVersion;
           }
         ];
 
