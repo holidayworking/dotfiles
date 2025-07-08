@@ -16,18 +16,14 @@ in
       stateVersion,
       darwinStateVersion,
       modules,
-      extraModules ? [ ],
     }:
     nix-darwin.lib.darwinSystem {
-      modules =
-        modules
-        ++ extraModules
-        ++ [
-          {
-            home-manager.users."${username}".home.stateVersion = stateVersion;
-            system.stateVersion = darwinStateVersion;
-          }
-        ];
+      modules = modules ++ [
+        {
+          home-manager.users."${username}".home.stateVersion = stateVersion;
+          system.stateVersion = darwinStateVersion;
+        }
+      ];
 
       specialArgs = {
         inherit
@@ -47,13 +43,11 @@ in
       username,
       stateVersion,
       modules,
-      extraModules ? [ ],
     }:
     nixpkgs.lib.nixosSystem {
       modules =
         [ disko.nixosModules.disko ]
         ++ modules
-        ++ extraModules
         ++ [
           {
             home-manager.users."${username}".home.stateVersion = stateVersion;
