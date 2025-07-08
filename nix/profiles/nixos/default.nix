@@ -29,8 +29,6 @@
     };
   };
 
-  system.stateVersion = "25.05";
-
   time.timeZone = "Asia/Tokyo";
 
   users = {
