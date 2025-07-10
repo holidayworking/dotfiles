@@ -15,7 +15,7 @@
       "microsoft-edge"
       "notion"
       "ogdesign-eagle"
-      "utm"
+      "utm@beta"
       "visual-studio-code"
     ];
     masApps = {
