@@ -8,6 +8,7 @@
       "appcleaner"
       "chatgpt"
       "docker-desktop"
+      "firefox"
       "font-fira-code"
       "ghostty"
       "karabiner-elements"
