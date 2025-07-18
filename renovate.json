@@ -7,9 +7,7 @@
   ],
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": [
-      "before 4am"
-    ]
+    "schedule": ["before 4am"]
   },
   "nix": {
     "enabled": true
@@ -17,9 +15,7 @@
   "packageRules": [
     {
       "automerge": true,
-      "matchPackageNames": [
-        "aquaproj/aqua-registry"
-      ]
+      "matchPackageNames": ["aquaproj/aqua-registry"]
     }
   ]
 }
