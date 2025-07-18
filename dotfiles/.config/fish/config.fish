@@ -8,6 +8,14 @@ end
 
 fish_add_path $HOME/bin $PROTO_HOME/shims $PROTO_HOME/bin $HOME/.local/share/aquaproj-aqua/bin
 
+if test -d (brew --prefix)"/share/fish/completions"
+    set -p fish_complete_path (brew --prefix)/share/fish/completions
+end
+
+if test -d (brew --prefix)"/share/fish/vendor_completions.d"
+    set -p fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
+end
+
 if type -q direnv
     direnv hook fish | source
 end
