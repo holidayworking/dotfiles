@@ -52,4 +52,6 @@
   };
 
   networking.interfaces.enp0s1.useDHCP = true;
+
+  virtualisation.rosetta.enable = true;
 }

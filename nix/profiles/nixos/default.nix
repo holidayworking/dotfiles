@@ -18,16 +18,7 @@
 
   security.sudo.wheelNeedsPassword = false;
 
-  services = {
-    tailscale = {
-      enable = true;
-    };
-
-    openssh = {
-      enable = true;
-      settings.PasswordAuthentication = true;
-    };
-  };
+  services.tailscale.enable = true;
 
   time.timeZone = "Asia/Tokyo";
 
@@ -53,8 +44,5 @@
     };
   };
 
-  virtualisation = {
-    docker.enable = true;
-    rosetta.enable = true;
-  };
+  virtualisation.docker.enable = true;
 }
