@@ -5,6 +5,7 @@
     brews = [ "mas" ];
     casks = [
       "1password"
+      "Kegworks-App/kegworks/kegworks"
       "appcleaner"
       "chatgpt"
       "docker-desktop"
