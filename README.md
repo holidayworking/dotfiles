@@ -69,15 +69,14 @@ make vm/create
 Add the following configuration to your `~/.ssh/config` file on macOS:
 
 ```config
-Host <VM_HOSTNAME>
-  HostName <VM_IP_ADDRESS>
-  UserKnownHostsFile=/dev/null
+Host gemini
   StrictHostKeyChecking no
+  UserKnownHostsFile=/dev/null
+  HostName <VM_IP_ADDRESS>
 ```
 
 Replace:
 
-- `<VM_HOSTNAME>` with your preferred hostname (e.g., `nixos-vm`, `dev-vm`, etc.)
 - `<VM_IP_ADDRESS>` with the actual IP address from Step 2
 
 #### Step 5: Final VM Setup
@@ -85,7 +84,7 @@ Replace:
 SSH into the VM and complete the fish shell setup:
 
 ```shell
-ssh <VM_HOSTNAME>
+ssh gemini
 mkdir -p ~/src/github.com/holidayworking
 cd ~/src/github.com/holidayworking
 git clone git@github.com:holidayworking/dotfiles.git

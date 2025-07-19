@@ -25,6 +25,9 @@ fish/setup:
 dotfiles/setup:
 	@./scripts/dotfiles-setup.sh
 
+lima/create:
+	@limactl start --name=default --tty=false ./configs/lima/nixos.yaml
+
 vm/create:
 	@./scripts/vm-create.sh
 

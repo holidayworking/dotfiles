@@ -2,7 +2,11 @@
 {
   homebrew = {
     enable = true;
-    brews = [ "mas" ];
+    brews = [
+      "lima"
+      "mas"
+      "qemu"
+    ];
     casks = [
       "1password"
       "Kegworks-App/kegworks/kegworks"
