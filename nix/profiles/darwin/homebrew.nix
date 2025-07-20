@@ -12,7 +12,6 @@
       "Kegworks-App/kegworks/kegworks"
       "appcleaner"
       "chatgpt"
-      "docker-desktop"
       "firefox"
       "font-fira-code"
       "ghostty"
