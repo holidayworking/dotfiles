@@ -12,7 +12,6 @@
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [ "console=tty0" ];
 
     loader.grub = {
