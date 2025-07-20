@@ -1,0 +1,11 @@
+images:
+  - location: https://static.holidayworking.org/vm-images/lima/nixos-aarch64.qcow2
+    arch: aarch64
+    digest: sha512:d3b2c9757f871587082b385ad99bf1fc0420ce9cf3b4b1a4d72d23ed77aa0936d766c2f102ca7b300733ec0177cf3debd08d9bbbd2112e19ce2abcfd9c6d47fe
+containerd:
+  user: false
+user:
+  uid: 1000
+rosetta:
+  enabled: true
+  binfmt: true

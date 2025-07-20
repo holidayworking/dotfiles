@@ -4,6 +4,7 @@ let
     nixpkgs
     disko
     home-manager
+    lima-init
     nix-darwin
     xremap-flake
     ;
@@ -49,7 +50,6 @@ in
       modules =
         [
           disko.nixosModules.disko
-          xremap-flake.nixosModules.default
         ]
         ++ modules
         ++ [
@@ -63,6 +63,8 @@ in
         inherit
           nixpkgs
           home-manager
+          lima-init
+          xremap-flake
           system
           hostname
           username

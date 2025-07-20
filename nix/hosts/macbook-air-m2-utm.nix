@@ -4,7 +4,7 @@ let
 in
 lib.mkNixosSystem {
   system = "aarch64-linux";
-  hostname = "cancer";
+  hostname = "gemini";
   username = "hidekazu";
   stateVersion = "25.05";
   modules = [
@@ -12,6 +12,7 @@ lib.mkNixosSystem {
     ../profiles/nixos-desktop
     {
       services = {
+        openssh.enable = true;
         spice-vdagentd.enable = true;
 
         xserver.xkb = {

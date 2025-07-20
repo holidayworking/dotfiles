@@ -27,6 +27,44 @@ cd ~/src/github.com/holidayworking/dotfiles
 make fish/setup
 ```
 
+### Lima Setup
+
+#### Step 1: Create and Start VM
+
+```shell
+make lima/create
+```
+
+#### Step 2: Configure SSH Access
+
+Add the following configuration to your `~/.ssh/config` file on macOS:
+
+```config
+Host taurus
+  IdentityFile "~/.lima/_config/user"
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  Hostname 127.0.0.1
+  Port 60022
+```
+
+#### Step 3: Bootstrap from macOS
+
+**Note**: The following commands should be run on your **macOS host**, not inside the VM.
+
+```shell
+make lima/bootstrap
+```
+
+#### Step 4: Final VM Setup
+
+SSH into the VM and complete the fish shell setup:
+
+```shell
+cd ~/src/github.com/holidayworking/dotfiles
+make fish/setup
+```
+
 ### NixOS VM Setup
 
 #### Step 1: Create and Start VM
@@ -69,15 +107,14 @@ make vm/create
 Add the following configuration to your `~/.ssh/config` file on macOS:
 
 ```config
-Host <VM_HOSTNAME>
-  HostName <VM_IP_ADDRESS>
-  UserKnownHostsFile=/dev/null
+Host gemini
   StrictHostKeyChecking no
+  UserKnownHostsFile=/dev/null
+  HostName <VM_IP_ADDRESS>
 ```
 
 Replace:
 
-- `<VM_HOSTNAME>` with your preferred hostname (e.g., `nixos-vm`, `dev-vm`, etc.)
 - `<VM_IP_ADDRESS>` with the actual IP address from Step 2
 
 #### Step 5: Final VM Setup
@@ -85,7 +122,7 @@ Replace:
 SSH into the VM and complete the fish shell setup:
 
 ```shell
-ssh <VM_HOSTNAME>
+ssh gemini
 mkdir -p ~/src/github.com/holidayworking
 cd ~/src/github.com/holidayworking
 git clone git@github.com:holidayworking/dotfiles.git

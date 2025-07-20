@@ -1,6 +1,7 @@
 {
   lib,
   nixpkgs,
+  xremap-flake,
   system,
   username,
   ...
@@ -14,6 +15,7 @@ let
 in
 {
   imports = [
+    xremap-flake.nixosModules.default
     ../nixos
     ./font.nix
     ./gnome.nix
