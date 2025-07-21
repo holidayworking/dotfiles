@@ -18,7 +18,6 @@
       "maccy"
       "microsoft-edge"
       "notion"
-      "ogdesign-eagle"
       "steam"
       "utm@beta"
       "visual-studio-code"
