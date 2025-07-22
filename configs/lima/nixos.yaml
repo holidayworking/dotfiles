@@ -1,7 +1,7 @@
 images:
-  - location: https://static.holidayworking.org/vm-images/lima/nixos-aarch64.qcow2
+  - location: https://github.com/nixos-lima/nixos-lima/releases/download/v0.0.1/nixos-lima-v0.0.1-aarch64.qcow2
     arch: aarch64
-    digest: sha512:d3b2c9757f871587082b385ad99bf1fc0420ce9cf3b4b1a4d72d23ed77aa0936d766c2f102ca7b300733ec0177cf3debd08d9bbbd2112e19ce2abcfd9c6d47fe
+    digest: sha512:be91ec3270690cf682d5ceccce7201580804038b9407c729d750f9d53400e215debf7504d829399fee991efbc10469ea1a1aeb8bcf95919185bd15546790a0e2
 memory: 12GiB
 containerd:
   user: false
