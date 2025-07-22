@@ -15,7 +15,7 @@
     };
 
     lima-init = {
-      url = "github:holidayworking/nixos-lima/add-support-vz-vms";
+      url = "github:nixos-lima/nixos-lima/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
