@@ -47,17 +47,16 @@ in
       modules,
     }:
     nixpkgs.lib.nixosSystem {
-      modules =
-        [
-          disko.nixosModules.disko
-        ]
-        ++ modules
-        ++ [
-          {
-            home-manager.users."${username}".home.stateVersion = stateVersion;
-            system.stateVersion = stateVersion;
-          }
-        ];
+      modules = [
+        disko.nixosModules.disko
+      ]
+      ++ modules
+      ++ [
+        {
+          home-manager.users."${username}".home.stateVersion = stateVersion;
+          system.stateVersion = stateVersion;
+        }
+      ];
 
       specialArgs = {
         inherit
