@@ -20,18 +20,31 @@ in
 
     systemPackages = with pkgs; [
       dconf-editor
+      gnome-tweaks
       gnomeExtensions.dash-to-dock
       gnomeExtensions.kimpanel
+      gnomeExtensions.user-themes
       gnomeExtensions.xremap
       nautilus
+      pop-gtk-theme
+      pop-icon-theme
+      pop-wallpapers
     ];
   };
 
   home-manager = {
     users."${username}" = {
       dconf.settings = {
+        "org/gnome/desktop/background" = {
+          picture-uri = "file:///${pkgs.pop-wallpapers}/share/backgrounds/pop/kate-hazen-pop-retro1.png";
+          picture-uri-dark = "file:///${pkgs.pop-wallpapers}/share/backgrounds/pop/kate-hazen-pop-retro1.png";
+        };
+
         "org/gnome/desktop/interface" = {
           color-scheme = "prefer-dark";
+          cursor-theme = "Pop";
+          gtk-theme = "Pop-dark";
+          icon-theme = "Pop";
           scaling-factor = scalingFactor;
         };
 
@@ -114,11 +127,13 @@ in
           enabled-extensions = with pkgs.gnomeExtensions; [
             dash-to-dock.extensionUuid
             kimpanel.extensionUuid
+            user-themes.extensionUuid
             xremap.extensionUuid
           ];
         };
 
         "org/gnome/shell/extensions/dash-to-dock" = {
+          disable-overview-on-startup = true;
           dock-fixed = true;
           dock-position = "LEFT";
           extend-height = true;
@@ -126,6 +141,10 @@ in
           show-favorites = false;
           show-mounts = false;
           show-trash = false;
+        };
+
+        "org/gnome/shell/extensions/user-theme" = {
+          name = "Pop-dark";
         };
 
         "org/gnome/shell/keybindings" = {
