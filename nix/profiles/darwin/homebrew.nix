@@ -5,7 +5,6 @@
     brews = [
       "lima"
       "mas"
-      "qemu"
     ];
     casks = [
       "1password"
