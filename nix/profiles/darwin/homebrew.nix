@@ -27,7 +27,6 @@
       "Keynote" = 409183694;
       "Numbers" = 409203825;
       "Pages" = 409201541;
-      "Photomator" = 1444636541;
       "Slack" = 803453959;
       "Tailscale" = 1475387142;
       "The Unarchiver" = 425424353;
