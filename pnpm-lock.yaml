@@ -399,8 +399,8 @@ packages:
     resolution: {integrity: sha512-GCPAHLvrIH13+c0SuacwvRYj2SxJXQ4kaVTT5xgL3kPrz56XxkF21IGhjSE1+W0aw7gpBWRGXLCPnPby6lSpmQ==}
     engines: {node: '>=12'}
 
-  yaml@2.8.0:
-    resolution: {integrity: sha512-4lLa/EcQCB0cJkyts+FpIRx5G/llPxfP6VQU5KByHEhLxY3IJCH0f0Hy1MHI8sClTvsIb8qwRJ6R/ZdlDJ/leQ==}
+  yaml@2.8.1:
+    resolution: {integrity: sha512-lcYcMxX2PO9XMGvAJkJ3OsNMw+/7FKes7/hgerGUYWIoWu5j/+YQqcZr5JnPZWzOsEBgMbSbiSTn/dv/69Mkpw==}
     engines: {node: '>= 14.6'}
     hasBin: true
 
@@ -649,7 +649,7 @@ snapshots:
       '@cspell/cspell-types': 9.2.0
       comment-json: 4.2.5
       smol-toml: 1.4.1
-      yaml: 2.8.0
+      yaml: 2.8.1
 
   cspell-dictionary@9.2.0:
     dependencies:
@@ -795,4 +795,4 @@ snapshots:
 
   xdg-basedir@5.1.0: {}
 
-  yaml@2.8.0: {}
+  yaml@2.8.1: {}
