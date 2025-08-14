@@ -23,11 +23,13 @@ in
       gnome-tweaks
       gnomeExtensions.dash-to-dock
       gnomeExtensions.kimpanel
+      gnomeExtensions.pop-shell
       gnomeExtensions.user-themes
       gnomeExtensions.xremap
       nautilus
       pop-gtk-theme
       pop-icon-theme
+      pop-launcher
       pop-wallpapers
     ];
   };
@@ -127,6 +129,7 @@ in
           enabled-extensions = with pkgs.gnomeExtensions; [
             dash-to-dock.extensionUuid
             kimpanel.extensionUuid
+            pop-shell.extensionUuid
             user-themes.extensionUuid
             xremap.extensionUuid
           ];
@@ -141,6 +144,45 @@ in
           show-favorites = false;
           show-mounts = false;
           show-trash = false;
+        };
+
+        "org/gnome/shell/extensions/pop-shell" = {
+          "activate-launcher" = [ "<Super>space" ];
+          "focus-down" = [ ];
+          "focus-left" = [ ];
+          "focus-right" = [ ];
+          "focus-up" = [ ];
+          "management-orientation" = [ ];
+          "pop-monitor-down" = [ ];
+          "pop-monitor-left" = [ ];
+          "pop-monitor-right" = [ ];
+          "pop-monitor-up" = [ ];
+          "pop-workspace-down" = [ ];
+          "pop-workspace-up" = [ ];
+          "tile-accept" = [ ];
+          "tile-enter" = [ ];
+          "tile-move-down" = [ ];
+          "tile-move-down-global" = [ ];
+          "tile-move-left" = [ ];
+          "tile-move-left-global" = [ ];
+          "tile-move-right" = [ ];
+          "tile-move-right-global" = [ ];
+          "tile-move-up" = [ ];
+          "tile-move-up-global" = [ ];
+          "tile-orientation" = [ ];
+          "tile-reject" = [ ];
+          "tile-resize-down" = [ ];
+          "tile-resize-left" = [ ];
+          "tile-resize-right" = [ ];
+          "tile-resize-up" = [ ];
+          "tile-swap-down" = [ ];
+          "tile-swap-left" = [ ];
+          "tile-swap-right" = [ ];
+          "tile-swap-up" = [ ];
+          "toggle-floating" = [ ];
+          "toggle-stacking" = [ ];
+          "toggle-stacking-global" = [ ];
+          "toggle-tiling" = [ ];
         };
 
         "org/gnome/shell/extensions/user-theme" = {
@@ -176,6 +218,10 @@ in
           toggle-quick-settings = [ ];
           shift-overview-down = [ ];
           shift-overview-up = [ ];
+        };
+
+        "org/gnome/mutter" = {
+          "overlay-key" = "";
         };
       };
     };
