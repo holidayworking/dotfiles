@@ -24,6 +24,7 @@ in
     git
     git-now
     gnumake
+    google-cloud-sdk
     jq
     nixfmt-rfc-style
     peco
