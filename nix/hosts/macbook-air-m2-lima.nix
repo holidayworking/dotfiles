@@ -11,7 +11,12 @@ lib.mkNixosSystem {
     ./hardwares/vm-lima.nix
     ../profiles/nixos
     {
+      environment.sessionVariables = {
+        PATH = [ "$HOME/.local/share/aquaproj-aqua/bin" ];
+      };
+
       services.openssh.enable = true;
+
       users.users."hidekazu".home = "/home/hidekazu.linux";
     }
   ];
