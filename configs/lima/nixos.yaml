@@ -3,6 +3,7 @@ images:
     arch: aarch64
     digest: sha512:be91ec3270690cf682d5ceccce7201580804038b9407c729d750f9d53400e215debf7504d829399fee991efbc10469ea1a1aeb8bcf95919185bd15546790a0e2
 memory: 12GiB
+disk: 200GiB
 containerd:
   user: false
 user:
