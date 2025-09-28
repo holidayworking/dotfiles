@@ -6,9 +6,6 @@
   username,
   ...
 }:
-let
-  scalingFactor = lib.gvariant.mkUint32 2;
-in
 {
   imports = [
     xremap-flake.nixosModules.default
