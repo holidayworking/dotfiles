@@ -20,25 +20,17 @@ in
     ./xremap.nix
   ];
 
-  home-manager = {
-    users."${username}" = {
-      home = {
-        packages =
-          with pkgs;
-          [
-            _1password-gui
-            ghostty
-            vscode
-          ]
-          ++ lib.optionals (system == "aarch64-linux") [
-            firefox
-          ]
-          ++ lib.optionals (system == "x86_64-linux") [
-            microsoft-edge
-          ];
-      };
-    };
-  };
+  environment.systemPackages =
+    with pkgs;
+    [
+      ghostty
+    ]
+    ++ lib.optionals (system == "aarch64-linux") [
+      firefox
+    ]
+    ++ lib.optionals (system == "x86_64-linux") [
+      microsoft-edge
+    ];
 
   networking.networkmanager.enable = true;
 
