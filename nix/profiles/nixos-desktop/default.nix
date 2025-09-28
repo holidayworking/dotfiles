@@ -1,16 +1,12 @@
 {
   lib,
-  nixpkgs,
+  pkgs,
   xremap-flake,
   system,
   username,
   ...
 }:
 let
-  pkgs = import nixpkgs {
-    inherit system;
-    config.allowUnfree = true;
-  };
   scalingFactor = lib.gvariant.mkUint32 2;
 in
 {
@@ -45,6 +41,10 @@ in
   };
 
   networking.networkmanager.enable = true;
+
+  nixpkgs.config.allowUnfree = true;
+
+  programs._1password-gui.enable = true;
 
   users = {
     users = {
