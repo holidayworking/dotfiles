@@ -1,16 +1,11 @@
 {
-  nixpkgs,
+  pkgs,
   home-manager,
   system,
   hostname,
   username,
   ...
 }:
-let
-  pkgs = import nixpkgs {
-    inherit system;
-  };
-in
 {
   imports = [
     home-manager.nixosModules.home-manager
@@ -29,7 +24,12 @@ in
 
   networking.hostName = hostname;
 
-  programs.nix-ld.enable = true;
+  nixpkgs.config.allowUnfree = true;
+
+  programs = {
+    _1password.enable = true;
+    nix-ld.enable = true;
+  };
 
   security.sudo.wheelNeedsPassword = false;
 

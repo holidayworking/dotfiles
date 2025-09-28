@@ -1,15 +1,11 @@
 {
   lib,
-  nixpkgs,
+  pkgs,
   system,
   username,
   ...
 }:
 let
-  pkgs = import nixpkgs {
-    inherit system;
-    config.allowUnfree = true;
-  };
   scalingFactor = lib.gvariant.mkUint32 2;
 in
 {

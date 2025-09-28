@@ -1,5 +1,5 @@
 {
-  nixpkgs,
+  pkgs,
   home-manager,
   system,
   hostname,
@@ -16,7 +16,7 @@
   home-manager = {
     users."${username}" = {
       home = {
-        homeDirectory = nixpkgs.lib.mkForce "/Users/${username}/";
+        homeDirectory = pkgs.lib.mkForce "/Users/${username}/";
       };
 
       targets.darwin.defaults."com.apple.Safari" = {

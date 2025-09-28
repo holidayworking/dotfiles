@@ -1,15 +1,9 @@
 {
-  nixpkgs,
+  pkgs,
   system,
   username,
   ...
 }:
-let
-  pkgs = import nixpkgs {
-    inherit system;
-    config.allowUnfree = true;
-  };
-in
 {
   imports = [
     ./packages.nix
