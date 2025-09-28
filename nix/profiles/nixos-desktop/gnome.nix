@@ -21,6 +21,7 @@ in
     systemPackages = with pkgs; [
       dconf-editor
       gnome-tweaks
+      gnomeExtensions.appindicator
       gnomeExtensions.dash-to-dock
       gnomeExtensions.kimpanel
       gnomeExtensions.pop-shell
@@ -127,6 +128,7 @@ in
         "org/gnome/shell" = {
           disable-user-extensions = false;
           enabled-extensions = with pkgs.gnomeExtensions; [
+            appindicator.extensionUuid
             dash-to-dock.extensionUuid
             kimpanel.extensionUuid
             pop-shell.extensionUuid
