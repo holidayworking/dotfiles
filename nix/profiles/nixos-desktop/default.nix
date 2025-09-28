@@ -24,6 +24,7 @@ in
     with pkgs;
     [
       ghostty
+      vscode
     ]
     ++ lib.optionals (system == "aarch64-linux") [
       firefox
