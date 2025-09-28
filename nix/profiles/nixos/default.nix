@@ -6,11 +6,26 @@
   username,
   ...
 }:
+let
+  pkgs = import nixpkgs {
+    inherit system;
+  };
+in
 {
   imports = [
     home-manager.nixosModules.home-manager
     ../common
   ];
+
+  home-manager = {
+    users."${username}" = {
+      home = {
+        packages = with pkgs; [
+          gcc
+        ];
+      };
+    };
+  };
 
   networking.hostName = hostname;
 
