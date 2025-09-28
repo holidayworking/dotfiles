@@ -33,6 +33,21 @@ in
       microsoft-edge
     ];
 
+  home-manager = {
+    users."${username}" = {
+      xdg = {
+        enable = true;
+
+        autostart = {
+          enable = true;
+          entries = [
+            "${pkgs._1password-gui}/share/applications/1password.desktop"
+          ];
+        };
+      };
+    };
+  };
+
   networking.networkmanager.enable = true;
 
   nixpkgs.config.allowUnfree = true;
