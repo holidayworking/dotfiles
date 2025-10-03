@@ -256,8 +256,8 @@ packages:
     resolution: {integrity: sha512-2JkV3gUZUVrbNA+1sjBOYLsMZ5cEEl8GTFP2a4AVz5hvasAMCQ1D2l2le/cX+pV4N6ZU17zjUahLpIXRrnWL8A==}
     engines: {node: '>=20'}
 
-  comment-json@4.4.0:
-    resolution: {integrity: sha512-S/kHITMNFohZ/3lK6zd1Wyxnx+VfjJXzTHSZwUd9kPyNa8ndByPmeZO99MT3k8uFvcgipueyrb6rnefgRiqbAQ==}
+  comment-json@4.4.1:
+    resolution: {integrity: sha512-r1To31BQD5060QdkC+Iheai7gHwoSZobzunqkf2/kQ6xIAfJyrKNAFUwdKvkK7Qgu7pVTKQEa7ok7Ed3ycAJgg==}
     engines: {node: '>= 6'}
 
   core-util-is@1.0.3:
@@ -627,7 +627,7 @@ snapshots:
 
   commander@14.0.1: {}
 
-  comment-json@4.4.0:
+  comment-json@4.4.1:
     dependencies:
       array-timsort: 1.0.3
       core-util-is: 1.0.3
@@ -638,7 +638,7 @@ snapshots:
   cspell-config-lib@9.2.1:
     dependencies:
       '@cspell/cspell-types': 9.2.1
-      comment-json: 4.4.0
+      comment-json: 4.4.1
       smol-toml: 1.4.2
       yaml: 2.8.1
 
@@ -681,7 +681,7 @@ snapshots:
       '@cspell/strong-weak-map': 9.2.1
       '@cspell/url': 9.2.1
       clear-module: 4.1.2
-      comment-json: 4.4.0
+      comment-json: 4.4.1
       cspell-config-lib: 9.2.1
       cspell-dictionary: 9.2.1
       cspell-glob: 9.2.1
