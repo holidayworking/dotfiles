@@ -5,6 +5,6 @@
   "devDependencies": {
     "cspell": "9.2.1"
   },
-  "packageManager": "pnpm@10.18.1",
+  "packageManager": "pnpm@10.18.2",
   "private": true
 }
