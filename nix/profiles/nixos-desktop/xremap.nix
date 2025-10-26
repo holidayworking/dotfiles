@@ -33,6 +33,7 @@
               "Super-a" = "C-a";
               "Super-c" = "C-c";
               "Super-f" = "C-f";
+              "Super-r" = "C-r";
               "Super-s" = "C-s";
               "Super-v" = "C-v";
               "Super-x" = "C-x";
