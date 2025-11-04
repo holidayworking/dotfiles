@@ -831,16 +831,16 @@
     "xremap": {
       "flake": false,
       "locked": {
-        "lastModified": 1761275855,
-        "narHash": "sha256-5BHet5kKpmJFpjga7QZoLPydtzs5iPX5glxP4YvsYx0=",
+        "lastModified": 1762012494,
+        "narHash": "sha256-UHkwTz5KEDAqXKpN/YVzY0xP7b6nN8WkPilzpF8YU3A=",
         "owner": "k0kubun",
         "repo": "xremap",
-        "rev": "8b4eeb805c15d36dd8f8f837761a0d5f122a0a7d",
+        "rev": "99d8c2b93ec04dc189531ca499f155178823e733",
         "type": "github"
       },
       "original": {
         "owner": "k0kubun",
-        "ref": "v0.14.2",
+        "ref": "v0.14.3",
         "repo": "xremap",
         "type": "github"
       }
@@ -859,11 +859,11 @@
         "xremap": "xremap"
       },
       "locked": {
-        "lastModified": 1761615227,
-        "narHash": "sha256-MiREEG7cHmJ0Tahe32AqqK2jbl2xNgECzxsLmY3CKkY=",
+        "lastModified": 1762222968,
+        "narHash": "sha256-sdeaXvOItorlV0WQgF9CDiVquQllVspWx1fmxU2dgLY=",
         "owner": "xremap",
         "repo": "nix-flake",
-        "rev": "6208aab1472bde94b19969fb8c2d95e0f0a877c0",
+        "rev": "066fd14ac7dd824fa6bba5a6fc83adfa41640528",
         "type": "github"
       },
       "original": {
