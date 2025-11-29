@@ -4,7 +4,7 @@ homebrew/setup:
 	@bash -c "$$(curl --fail --silent --show-error --location https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 nix/install:
-	@curl --fail --silent --show-error --location https://install.determinate.systems/nix | sh -s -- install
+	@curl --fail --silent --show-error --location https://install.determinate.systems/nix | sh -s -- install --prefer-upstream-nix
 
 nix/darwin:
 	. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh \
