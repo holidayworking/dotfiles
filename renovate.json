@@ -4,18 +4,5 @@
     "local>holidayworking/renovate-config",
     "github>aquaproj/aqua-renovate-config#2.9.0",
     "github>aquaproj/aqua-renovate-config:installer-script#2.9.0(Makefile)"
-  ],
-  "lockFileMaintenance": {
-    "enabled": true,
-    "schedule": ["before 4am"]
-  },
-  "nix": {
-    "enabled": true
-  },
-  "packageRules": [
-    {
-      "automerge": true,
-      "matchPackageNames": ["aquaproj/aqua-registry"]
-    }
   ]
 }
