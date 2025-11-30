@@ -13,6 +13,7 @@
       "firefox"
       "font-fira-code"
       "ghostty"
+      "headlamp"
       "karabiner-elements"
       "maccy"
       "microsoft-edge"
