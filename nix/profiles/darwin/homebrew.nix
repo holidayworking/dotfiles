@@ -24,7 +24,6 @@
     ];
     masApps = {
       "1Password for Safari" = 1569813296;
-      "Eagle for Safari" = 1526651672;
       "Keynote" = 409183694;
       "Numbers" = 409203825;
       "Pages" = 409201541;
