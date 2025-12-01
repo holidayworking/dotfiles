@@ -23,6 +23,7 @@ in
     nixfmt-rfc-style
     peco
     proto
+    shellcheck
     shfmt
     tig
     tmux
