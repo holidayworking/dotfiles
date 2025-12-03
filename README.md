@@ -27,44 +27,6 @@ cd ~/src/github.com/holidayworking/dotfiles
 make fish/setup
 ```
 
-### Lima Setup
-
-#### Step 1: Create and Start VM
-
-```shell
-make lima/create
-```
-
-#### Step 2: Configure SSH Access
-
-Add the following configuration to your `~/.ssh/config` file on macOS:
-
-```config
-Host taurus
-  IdentityFile "~/.lima/_config/user"
-  StrictHostKeyChecking no
-  UserKnownHostsFile /dev/null
-  Hostname 127.0.0.1
-  Port 60022
-```
-
-#### Step 3: Bootstrap from macOS
-
-**Note**: The following commands should be run on your **macOS host**, not inside the VM.
-
-```shell
-make lima/bootstrap
-```
-
-#### Step 4: Final VM Setup
-
-SSH into the VM and complete the fish shell setup:
-
-```shell
-cd ~/src/github.com/holidayworking/dotfiles
-make fish/setup
-```
-
 ### NixOS VM Setup
 
 #### Step 1: Create and Start VM

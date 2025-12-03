@@ -25,19 +25,6 @@ fish/setup:
 dotfiles/setup:
 	@./scripts/dotfiles-setup.sh
 
-lima/create:
-	@limactl start --name=default --tty=false ./configs/lima/nixos.yaml
-
-lima/bootstrap:
-	@ssh taurus "\
-		ssh-keygen -F github.com || ssh-keyscan github.com >> ~/.ssh/known_hosts && \
-		mkdir -p ~/src/github.com/holidayworking && \
-		cd ~/src/github.com/holidayworking && \
-		git clone git@github.com:holidayworking/dotfiles.git && \
-		cd dotfiles && \
-		FLAKE_URI=.#macbook-air-m2-lima ./scripts/nix-rebuild.sh \
-	"
-
 vm/create:
 	@./scripts/vm-create.sh
 
