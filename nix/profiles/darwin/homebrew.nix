@@ -19,7 +19,6 @@
       "notion"
       "parallels"
       "steam"
-      "utm@beta"
       "visual-studio-code"
     ];
     masApps = {
