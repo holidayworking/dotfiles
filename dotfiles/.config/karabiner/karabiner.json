@@ -8,12 +8,6 @@
             "description": "esc キーを押したときに、英数キーも送信する",
             "manipulators": [
               {
-                "conditions": [
-                  {
-                    "bundle_identifiers": ["^com\\.utmapp\\.UTM$"],
-                    "type": "frontmost_application_unless"
-                  }
-                ],
                 "from": { "key_code": "escape" },
                 "to": [
                   { "key_code": "escape" },
