@@ -3,7 +3,8 @@
 set -euC
 
 readonly VM_NAME="${VM_NAME:-NixOS}"
-readonly VM_MEMORY="${VM_MEMORY:-8192}"
+readonly VM_CPU="${VM_CPU:-4}"
+readonly VM_MEMORY="${VM_MEMORY:-12772}"
 readonly VM_DISK_SIZE="${VM_DISK_SIZE:-262144}"
 
 readonly DOWNLOAD_DIR="$HOME/tmp"
@@ -20,49 +21,26 @@ else
   echo "ISO file already exists: $ISO_PATH"
 fi
 
-echo "Creating VM in UTM..."
-osascript <<EOF
-tell application "UTM"
-    set iso to POSIX file "$ISO_PATH"
-
-    make new virtual machine with properties { \
-      backend:apple, \
-      configuration:{ \
-        name:"$VM_NAME", \
-        memory: $VM_MEMORY, \
-        drives: { \
-          { \
-            guest size:$VM_DISK_SIZE \
-          }, \
-          { \
-            removable:true, \
-            source:iso \
-          } \
-        } \
-      } \
-    }
-end tell
-EOF
+echo "Creating VM..."
+prlctl create "$VM_NAME" --ostype linux --distribution linux --no-hdd
 
 echo "Applying VM configuration changes..."
-/usr/libexec/PlistBuddy \
-  -c "set :Virtualization:Pointer Mouse" \
-  -c "set :Virtualization:Keyboard Generic" \
-  -c "set :Virtualization:ClipboardSharing true" \
-  -c "add :Virtualization:Rosetta bool true" \
-  -c "add :Information:Icon string nixos" \
-  -c "add :Display:0 dict" \
-  -c "add :Display:0:PixelsPerInch integer 80" \
-  -c "add :Display:0:HeightPixels integer 1200" \
-  -c "add :Display:0:WidthPixels integer 1920" \
-  -c "add :Display:0:DynamicResolution bool true" \
-  "$HOME"/Library/Containers/com.utmapp.UTM/Data/Documents/"$VM_NAME".utm/config.plist
-
-echo "Restarting UTM to apply configuration changes..."
-osascript -e 'quit app "UTM"'
-sleep 2
-open -a UTM
-sleep 3
+prlctl set "$VM_NAME" \
+  --autostart user-login \
+  --autostart-delay 5 \
+  --on-window-close keep-running
+prlctl set "$VM_NAME" \
+  --cpus "$VM_CPU" \
+  --memsize "$VM_MEMORY" \
+  --rosetta-linux on
+prlctl set "$VM_NAME" \
+  --device-add hdd \
+  --size "$VM_DISK_SIZE" \
+  --type expand
+prlctl set "$VM_NAME" \
+  --device-set cdrom0 \
+  --image "$ISO_PATH" \
+  --connect
 
 echo "Starting VM..."
-utmctl start "$VM_NAME"
+prlctl start "$VM_NAME"

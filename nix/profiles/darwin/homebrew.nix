@@ -18,6 +18,7 @@
       "maccy"
       "microsoft-edge"
       "notion"
+      "parallels"
       "steam"
       "utm@beta"
       "visual-studio-code"
