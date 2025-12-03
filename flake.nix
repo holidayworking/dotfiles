@@ -14,11 +14,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    lima-init = {
-      url = "github:nixos-lima/nixos-lima/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -41,7 +36,6 @@
       nixpkgs,
       disko,
       home-manager,
-      lima-init,
       nix-darwin,
       treefmt-nix,
       xremap-flake,
@@ -63,7 +57,6 @@
       };
 
       nixosConfigurations = {
-        macbook-air-m2-lima = import ./nix/hosts/macbook-air-m2-lima.nix { inherit inputs; };
         macbook-air-m2-parallels = import ./nix/hosts/macbook-air-m2-parallels.nix { inherit inputs; };
         macbook-air-m2-utm = import ./nix/hosts/macbook-air-m2-utm.nix { inherit inputs; };
       };

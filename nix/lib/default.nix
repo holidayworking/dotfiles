@@ -4,7 +4,6 @@ let
     nixpkgs
     disko
     home-manager
-    lima-init
     nix-darwin
     xremap-flake
     ;
@@ -62,7 +61,6 @@ in
         inherit
           nixpkgs
           home-manager
-          lima-init
           xremap-flake
           system
           hostname
