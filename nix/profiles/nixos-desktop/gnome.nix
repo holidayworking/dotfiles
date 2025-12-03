@@ -5,9 +5,6 @@
   username,
   ...
 }:
-let
-  scalingFactor = lib.gvariant.mkUint32 2;
-in
 {
   environment = {
     gnome.excludePackages = with pkgs; [
@@ -44,7 +41,6 @@ in
           cursor-theme = "Pop";
           gtk-theme = "Pop-dark";
           icon-theme = "Pop";
-          scaling-factor = scalingFactor;
         };
 
         "org/gnome/desktop/peripherals/mouse" = {
@@ -224,16 +220,6 @@ in
       };
     };
   };
-
-  programs.dconf.profiles.gdm.databases = [
-    {
-      settings = {
-        "org/gnome/desktop/interface" = {
-          scaling-factor = scalingFactor;
-        };
-      };
-    }
-  ];
 
   services = {
     gnome = {

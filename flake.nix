@@ -64,6 +64,7 @@
 
       nixosConfigurations = {
         macbook-air-m2-lima = import ./nix/hosts/macbook-air-m2-lima.nix { inherit inputs; };
+        macbook-air-m2-parallels = import ./nix/hosts/macbook-air-m2-parallels.nix { inherit inputs; };
         macbook-air-m2-utm = import ./nix/hosts/macbook-air-m2-utm.nix { inherit inputs; };
       };
     };

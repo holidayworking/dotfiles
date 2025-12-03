@@ -6,8 +6,12 @@ readonly VM_NAME="${VM_NAME:-NixOS}"
 readonly VM_IP="${VM_IP}"
 
 echo "Bootstrapping NixOS on VM..."
-nix run github:nix-community/nixos-anywhere -- --flake .#macbook-air-m2-utm --target-host root@"$VM_IP"
+nix run github:nix-community/nixos-anywhere -- \
+  --flake .#macbook-air-m2-parallels \
+  --target-host root@"$VM_IP" \
+  --phases kexec,disko,install
 
 echo "Restarting VM..."
-utmctl stop "$VM_NAME"
-utmctl start "$VM_NAME"
+prlctl stop "$VM_NAME" --kill
+prlctl set "$VM_NAME" --device-set cdrom0 --disconnect
+prlctl start "$VM_NAME"
