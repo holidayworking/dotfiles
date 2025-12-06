@@ -11,6 +11,10 @@ lib.mkNixosSystem {
     ./hardwares/vm-parallels.nix
     ../profiles/nixos-desktop
     {
+      environment.sessionVariables = {
+        PATH = [ "$HOME/.local/share/aquaproj-aqua/bin" ];
+      };
+
       services = {
         openssh.enable = true;
 
