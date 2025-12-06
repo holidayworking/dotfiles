@@ -13,7 +13,6 @@ lib.mkNixosSystem {
     {
       services = {
         openssh.enable = true;
-        spice-vdagentd.enable = true;
 
         xserver.xkb = {
           layout = "us";
