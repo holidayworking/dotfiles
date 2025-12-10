@@ -10,6 +10,16 @@
     extraModulePackages = [ ];
     kernelModules = [ ];
 
+    binfmt.registrations.RosettaLinux = {
+      fixBinary = true;
+      interpreter = "/mnt/psf/RosettaLinux/rosetta";
+      magicOrExtension = ''\x7fELF\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x3e\x00'';
+      mask = ''\xff\xff\xff\xff\xff\xfe\xfe\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff'';
+      matchCredentials = true;
+      preserveArgvZero = false;
+      wrapInterpreterInShell = false;
+    };
+
     initrd = {
       availableKernelModules = [
         "ehci_pci"
@@ -61,6 +71,14 @@
   hardware.parallels.enable = true;
 
   networking.useDHCP = lib.mkDefault true;
+
+  nix.settings = {
+    extra-platforms = [ "x86_64-linux" ];
+    extra-sandbox-paths = [
+      "/run/binfmt"
+      "/mnt/psf/RosettaLinux"
+    ];
+  };
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "prl-tools" ];
 }
