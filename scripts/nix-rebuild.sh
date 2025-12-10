@@ -2,10 +2,10 @@
 
 set -euC
 
-readonly FLAKE_URI="${FLAKE_URI}"
+readonly HOSTNAME="${HOSTNAME}"
 
 if [[ "$(uname)" == "Darwin" ]]; then
-  sudo darwin-rebuild switch --flake "$FLAKE_URI"
+  nh darwin switch --ask --hostname "$HOSTNAME" .
 else
-  sudo nixos-rebuild switch --flake "$FLAKE_URI"
+  nh os switch --ask --hostname "$HOSTNAME" .
 fi

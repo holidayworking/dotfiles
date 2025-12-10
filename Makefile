@@ -13,8 +13,8 @@ nix/darwin:
 nix/rebuild:
 	@./scripts/nix-rebuild.sh
 
-nix/gc:
-	@nix-collect-garbage --delete-old
+nix/clean:
+	@nh clean all --ask
 
 aqua/setup:
 	@curl --fail --silent --show-error --location https://raw.githubusercontent.com/aquaproj/aqua-installer/v4.0.4/aqua-installer | bash

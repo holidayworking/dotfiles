@@ -20,6 +20,7 @@ in
     gnumake
     google-cloud-sdk
     jq
+    nh
     nixfmt-rfc-style
     peco
     proto
