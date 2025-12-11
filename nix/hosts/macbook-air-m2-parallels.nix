@@ -9,23 +9,15 @@ lib.mkNixosSystem {
   stateVersion = "25.05";
   modules = [
     ./hardwares/vm-parallels.nix
-    ../profiles/nixos-desktop
+    ../profiles/nixos
     {
       environment.sessionVariables = {
         PATH = [ "$HOME/.local/share/aquaproj-aqua/bin" ];
       };
 
-      services = {
-        openssh.enable = true;
-
-        xserver.xkb = {
-          layout = "us";
-          variant = "mac";
-        };
-      };
+      services.openssh.enable = true;
 
       users.users."hidekazu" = {
-        initialPassword = "hidekazu";
         openssh.authorizedKeys.keys = [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL8Zoej4KoXnIYd9g2ocJXHyYAtNUlaSWtq84aIuAFhq"
         ];
