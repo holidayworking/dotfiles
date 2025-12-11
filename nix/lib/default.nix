@@ -5,7 +5,6 @@ let
     disko
     home-manager
     nix-darwin
-    xremap-flake
     ;
 in
 {
@@ -61,7 +60,6 @@ in
         inherit
           nixpkgs
           home-manager
-          xremap-flake
           system
           hostname
           username
