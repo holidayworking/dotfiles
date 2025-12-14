@@ -22,6 +22,7 @@ in
           ".gitignore_global"
           ".tigrc"
           ".tmux.conf"
+          ".zshrc"
         ];
 
     xdg.configFile =
