@@ -9,6 +9,7 @@
   boot = {
     extraModulePackages = [ ];
     kernelModules = [ ];
+    kernelPackages = pkgs.linuxPackages_latest;
 
     binfmt.registrations.RosettaLinux = {
       fixBinary = true;
