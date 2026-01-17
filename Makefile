@@ -1,4 +1,4 @@
-darwin/setup: homebrew/setup nix/install nix/darwin aqua/setup
+darwin/setup: nix/install nix/darwin aqua/setup
 
 homebrew/setup:
 	@bash -c "$$(curl --fail --silent --show-error --location https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -8,7 +8,7 @@ nix/install:
 
 nix/darwin:
 	. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh \
-		&& sudo nix run nix-darwin/nix-darwin-25.05#darwin-rebuild -- switch --flake .#macbook-air-m2
+		&& sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .#aries
 
 nix/rebuild:
 	@./scripts/nix-rebuild.sh
