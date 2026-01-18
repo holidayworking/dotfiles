@@ -8,7 +8,10 @@
     };
 
     nixos.base = {
-      security.sudo.wheelNeedsPassword = false;
+      security.sudo-rs = {
+        enable = true;
+        wheelNeedsPassword = false;
+      };
     };
   };
 }
