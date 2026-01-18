@@ -1,0 +1,28 @@
+{ inputs, lib, ... }:
+{
+  imports = [
+    inputs.treefmt-nix.flakeModule
+  ];
+
+  perSystem =
+    { self', ... }:
+    {
+      treefmt = {
+        projectRootFile = "flake.nix";
+
+        programs = {
+          actionlint.enable = true;
+          fish_indent.enable = true;
+          nixfmt.enable = true;
+          prettier.enable = true;
+          shellcheck.enable = true;
+          shfmt.enable = true;
+          yamlfmt.enable = true;
+        };
+
+        settings.global.excludes = [
+          "pnpm-lock.yaml"
+        ];
+      };
+    };
+}
