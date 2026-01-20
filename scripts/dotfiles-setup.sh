@@ -6,6 +6,7 @@ readonly DOTFILES="
 .config/fish/completions/aws.fish
 .config/fish/config.fish
 .config/fish/fish_plugins
+.config/starship.toml
 .gitconfig
 .gitignore_global
 .tmux.conf

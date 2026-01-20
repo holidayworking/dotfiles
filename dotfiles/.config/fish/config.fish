@@ -28,3 +28,5 @@ bind \cr peco_select_history
 if test -f $HOME/.config/fish/override.fish
     source $HOME/.config/fish/override.fish
 end
+
+starship init fish | source
