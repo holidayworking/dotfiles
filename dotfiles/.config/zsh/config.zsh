@@ -1,3 +1,7 @@
+if [[ -f $HOME/.config/zsh/override.zsh ]]; then
+	source $HOME/.config/zsh/override.zsh
+fi
+
 export EDITOR=vim
 export PROTO_HOME="$HOME/.proto"
 export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH"
@@ -38,7 +42,3 @@ done
 
 bindkey '^g' peco_select_ghq_repository
 bindkey '^r' peco_select_history
-
-if [[ -f $HOME/.config/zsh/override.zsh ]]; then
-	source $HOME/.config/zsh/override.zsh
-fi
