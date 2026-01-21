@@ -17,7 +17,6 @@
 
           base
           shell
-
           hidekazu
         ]
         ++ [
@@ -26,8 +25,8 @@
               users.${username} = {
                 imports = with config.flake.modules.homeManager; [
                   base
-                  dev
                   shell
+                  dev
                 ];
               };
             };

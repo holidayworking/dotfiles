@@ -19,9 +19,6 @@ nix/clean:
 aqua/setup:
 	@curl --fail --silent --show-error --location https://raw.githubusercontent.com/aquaproj/aqua-installer/v4.0.4/aqua-installer | bash
 
-fish/setup:
-	@fish -c "curl --fail --silent --show-error --location https://git.io/fisher | source && fisher update"
-
 dotfiles/setup:
 	@./scripts/dotfiles-setup.sh
 

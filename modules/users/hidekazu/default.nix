@@ -9,22 +9,25 @@
       };
     };
 
-    modules.nixos.hidekazu = {
-      users = {
-        groups.hidekazu = {
-          gid = 1000;
-        };
+    modules.nixos.hidekazu =
+      { pkgs, ... }:
+      {
+        users = {
+          groups.hidekazu = {
+            gid = 1000;
+          };
 
-        users.hidekazu = {
-          extraGroups = [
-            "docker"
-            "wheel"
-          ];
-          group = "hidekazu";
-          isNormalUser = true;
-          uid = 1000;
+          users.hidekazu = {
+            extraGroups = [
+              "docker"
+              "wheel"
+            ];
+            group = "hidekazu";
+            isNormalUser = true;
+            shell = pkgs.zsh;
+            uid = 1000;
+          };
         };
       };
-    };
   };
 }
