@@ -6,8 +6,6 @@ My development environment
 
 ### macOS Setup
 
-#### Step 1: Clone and Initial Setup
-
 Clone this repository and run the initial setup:
 
 ```shell
@@ -16,15 +14,6 @@ cd ~/src/github.com/holidayworking
 git clone git@github.com:holidayworking/dotfiles.git
 cd dotfiles
 make darwin/setup
-```
-
-#### Step 2: Configure Fish Shell
-
-After `make darwin/setup` completes, open a new terminal and configure the fish shell:
-
-```shell
-cd ~/src/github.com/holidayworking/dotfiles
-make fish/setup
 ```
 
 ### NixOS VM Setup
@@ -81,13 +70,9 @@ Replace:
 
 #### Step 5: Final VM Setup
 
-SSH into the VM and complete the fish shell setup:
+SSH into the VM and clone the repository:
 
 ```shell
 ssh gemini
-mkdir -p ~/src/github.com/holidayworking
-cd ~/src/github.com/holidayworking
-git clone git@github.com:holidayworking/dotfiles.git
-cd dotfiles
-make fish/setup
+ghq get git@github.com:holidayworking/dotfiles.git
 ```

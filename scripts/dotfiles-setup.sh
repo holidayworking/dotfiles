@@ -3,14 +3,15 @@
 set -euC
 
 readonly DOTFILES="
-.config/fish/completions/aws.fish
-.config/fish/config.fish
-.config/fish/fish_plugins
 .config/starship.toml
+.config/zsh/config.zsh
+.config/zsh/functions/peco_select_ghq_repository.zsh
+.config/zsh/functions/peco_select_history.zsh
 .gitconfig
 .gitignore_global
 .tmux.conf
 .tigrc
+.zshrc
 "
 
 for dir in $(echo "$DOTFILES" | xargs -n1 dirname | sort -u); do

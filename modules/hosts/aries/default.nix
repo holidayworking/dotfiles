@@ -21,9 +21,9 @@
             home-manager.users.${username} = {
               imports = with config.flake.modules.homeManager; [
                 base
-                dev
-                desktop
                 shell
+                desktop
+                dev
               ];
             };
           }
