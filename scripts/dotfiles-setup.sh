@@ -3,6 +3,7 @@
 set -euC
 
 readonly DOTFILES="
+.config/sheldon/plugins.toml
 .config/starship.toml
 .config/zsh/config.zsh
 .config/zsh/functions/peco_select_ghq_repository.zsh
