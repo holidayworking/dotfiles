@@ -1,7 +1,13 @@
 {
-  flake.modules.homeManager.shell = {
-    programs.tmux.enable = true;
+  flake.modules.homeManager.shell =
+    { pkgs, ... }:
+    {
+      home = {
+        packages = with pkgs; [
+          tmux
+        ];
 
-    home.file.".tmux.conf".source = ../../dotfiles/.tmux.conf;
-  };
+        file.".tmux.conf".source = ../../dotfiles/.tmux.conf;
+      };
+    };
 }
