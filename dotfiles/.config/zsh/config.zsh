@@ -40,5 +40,6 @@ for f in $HOME/.config/zsh/functions/*.zsh; do
 	[ -f "$f" ] && source "$f"
 done
 
+bindkey -e
 bindkey '^g' peco_select_ghq_repository
 bindkey '^r' peco_select_history
