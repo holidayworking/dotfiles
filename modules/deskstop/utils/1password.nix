@@ -1,7 +1,11 @@
 {
   flake.modules.darwin.desktop = {
-    homebrew.masApps."1Password for Safari" = 1569813296;
+    homebrew = {
+      casks = [
+        "1password"
+      ];
 
-    programs._1password-gui.enable = true;
+      masApps."1Password for Safari" = 1569813296;
+    };
   };
 }
