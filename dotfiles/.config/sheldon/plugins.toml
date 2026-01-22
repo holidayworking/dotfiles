@@ -2,6 +2,9 @@ shell = "zsh"
 
 [plugins]
 
+[plugins.ls]
+github = "zpm-zsh/ls"
+
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
 
