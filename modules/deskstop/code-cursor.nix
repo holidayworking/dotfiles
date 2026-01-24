@@ -24,6 +24,7 @@
               streetsidesoftware.code-spell-checker
               timonwong.shellcheck
               tyriar.sort-lines
+              vscode-icons-team.vscode-icons
             ]
             ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
               {
@@ -65,6 +66,7 @@
             "files.trimTrailingWhitespace" = true;
             "workbench.activityBar.orientation" = "vertical";
             "workbench.colorTheme" = "GitHub Dark Default";
+            "workbench.iconTheme" = "vscode-icons";
             "terminal.integrated.fontFamily" = "FiraCode Nerd Font";
             "terminal.integrated.fontLigatures.enabled" = true;
             "terminal.integrated.fontSize" = 14;
