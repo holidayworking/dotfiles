@@ -68,6 +68,7 @@
             "terminal.integrated.fontFamily" = "FiraCode Nerd Font";
             "terminal.integrated.fontLigatures.enabled" = true;
             "terminal.integrated.fontSize" = 14;
+            "remote.SSH.remotePlatform"."gemini" = "linux";
             "[nix]"."editor.defaultFormatter" = "jnoortheen.nix-ide";
             "[shellscript]"."editor.defaultFormatter" = "mkhl.shfmt";
             "[sql]"."editor.defaultFormatter" = "ReneSaarsoo.sql-formatter-vsc";
