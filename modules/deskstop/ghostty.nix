@@ -2,10 +2,16 @@
   flake.modules.homeManager.desktop =
     { pkgs, ... }:
     {
-      home.packages = with pkgs; [
-        ghostty-bin
-      ];
+      programs.ghostty = {
+        enable = true;
+        package = pkgs.ghostty-bin;
 
-      xdg.configFile."ghostty/config".source = ../../dotfiles/.config/ghostty/config;
+        settings = {
+          font-family = "FiraCode Nerd Font";
+          font-size = "14";
+          theme = "GitHub Dark Default";
+          shell-integration-features = "no-path";
+        };
+      };
     };
 }
