@@ -18,14 +18,24 @@
         ]
         ++ [
           {
-            home-manager.users.${username} = {
-              imports = with config.flake.modules.homeManager; [
-                base
-                shell
-                desktop
-                dev
-              ];
-            };
+            home-manager.users.${username} =
+              { pkgs, lib, ... }:
+              {
+                imports = with config.flake.modules.homeManager; [
+                  base
+                  shell
+                  desktop
+                  dev
+                ];
+
+                home.activation.setupDockerContext = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+                  if ! ${pkgs.docker}/bin/docker context inspect gemini &> /dev/null; then
+                    $DRY_RUN_CMD ${pkgs.docker}/bin/docker context create gemini \
+                      --docker "host=ssh://gemini"
+                  fi
+                  $DRY_RUN_CMD ${pkgs.docker}/bin/docker context use gemini
+                '';
+              };
           }
         ];
 
