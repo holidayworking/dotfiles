@@ -4,7 +4,7 @@ fi
 
 export EDITOR=vim
 export PROTO_HOME="$HOME/.proto"
-export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH"
+export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
 
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
