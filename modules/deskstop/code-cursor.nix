@@ -28,6 +28,12 @@
             ]
             ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
               {
+                name = "chatgpt";
+                publisher = "openai";
+                version = "0.4.66";
+                sha256 = "oUgHh1sEu1qryza8bQpBcD1nva7ej32uhkmHf9UA5rI=";
+              }
+              {
                 name = "prettify-ts";
                 publisher = "mylesmurphy";
                 version = "0.3.9";
