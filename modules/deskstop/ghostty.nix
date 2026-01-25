@@ -10,7 +10,7 @@
           font-family = "FiraCode Nerd Font";
           font-size = "14";
           theme = "GitHub Dark Default";
-          shell-integration-features = "no-path";
+          shell-integration-features = "no-path,ssh-env,ssh-terminfo";
         };
       };
     };
