@@ -14,6 +14,7 @@
               christian-kohler.path-intellisense
               davidanson.vscode-markdownlint
               dbaeumer.vscode-eslint
+              eamodio.gitlens
               esbenp.prettier-vscode
               github.github-vscode-theme
               github.vscode-github-actions
@@ -76,6 +77,7 @@
             "terminal.integrated.fontFamily" = "FiraCode Nerd Font";
             "terminal.integrated.fontLigatures.enabled" = true;
             "terminal.integrated.fontSize" = 14;
+            "gitlens.rebaseEditor.openOnPausedRebase" = false;
             "remote.SSH.remotePlatform"."gemini" = "linux";
             "[nix]"."editor.defaultFormatter" = "jnoortheen.nix-ide";
             "[shellscript]"."editor.defaultFormatter" = "mkhl.shfmt";
