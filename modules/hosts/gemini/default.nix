@@ -26,7 +26,7 @@
                 imports = with config.flake.modules.homeManager; [
                   base
                   shell
-                  dev
+                  development
                 ];
               };
             };

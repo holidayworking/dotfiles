@@ -1,9 +1,9 @@
 {
-  flake.modules.homeManager.shell =
+  flake.modules.homeManager.development =
     { pkgs, ... }:
     {
       home.packages = with pkgs; [
-        ghq
+        shfmt
       ];
     };
 }

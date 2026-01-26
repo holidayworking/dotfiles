@@ -25,7 +25,7 @@
                   base
                   shell
                   desktop
-                  dev
+                  development
                 ];
 
                 home.activation.setupDockerContext = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
