@@ -7,52 +7,31 @@
         package = pkgs.code-cursor;
 
         profiles.default = {
-          extensions =
-            with pkgs.vscode-extensions;
-            [
-              apollographql.vscode-apollo
-              christian-kohler.path-intellisense
-              davidanson.vscode-markdownlint
-              dbaeumer.vscode-eslint
-              eamodio.gitlens
-              esbenp.prettier-vscode
-              github.github-vscode-theme
-              github.vscode-github-actions
-              hashicorp.terraform
-              jnoortheen.nix-ide
-              mkhl.shfmt
-              redhat.vscode-yaml
-              streetsidesoftware.code-spell-checker
-              timonwong.shellcheck
-              tyriar.sort-lines
-              vscode-icons-team.vscode-icons
-            ]
-            ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-              {
-                name = "chatgpt";
-                publisher = "openai";
-                version = "0.4.66";
-                sha256 = "oUgHh1sEu1qryza8bQpBcD1nva7ej32uhkmHf9UA5rI=";
-              }
-              {
-                name = "prettify-ts";
-                publisher = "mylesmurphy";
-                version = "0.3.9";
-                sha256 = "ee0IWbOQO7DEJohjPN/kIvgyilpJRqK3fIDQjN9rhrw=";
-              }
-              {
-                name = "sql-formatter-vsc";
-                publisher = "renesaarsoo";
-                version = "4.2.5";
-                sha256 = "/pG0tG3BwJYKFCDc44WhFWNjPC+1G6H+3xsC0MIWDN4=";
-              }
-              {
-                name = "vscode-status-bar-format-toggle";
-                publisher = "tombonnike";
-                version = "3.2.0";
-                sha256 = "MuDOhp6Ur5iwzHjyK7qEVSGOQovfWPwwYJ0Sl/RsIQE=";
-              }
-            ];
+          enableUpdateCheck = false;
+          enableExtensionUpdateCheck = false;
+
+          extensions = with pkgs.open-vsx; [
+            apollographql.vscode-apollo
+            christian-kohler.path-intellisense
+            davidanson.vscode-markdownlint
+            dbaeumer.vscode-eslint
+            eamodio.gitlens
+            esbenp.prettier-vscode
+            github.github-vscode-theme
+            github.vscode-github-actions
+            hashicorp.terraform
+            jnoortheen.nix-ide
+            mkhl.shfmt
+            mylesmurphy.prettify-ts
+            openai.chatgpt
+            redhat.vscode-yaml
+            renesaarsoo.sql-formatter-vsc
+            streetsidesoftware.code-spell-checker
+            timonwong.shellcheck
+            tombonnike.vscode-status-bar-format-toggle
+            tyriar.sort-lines
+            vscode-icons-team.vscode-icons
+          ];
 
           userSettings = {
             "editor.codeActionsOnSave"."source.fixAll.eslint" = "explicit";

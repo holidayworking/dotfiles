@@ -52,6 +52,7 @@
         overlays = [
           inputs.brew-nix.overlays.default
           inputs.code-cursor.overlays.default
+          inputs.nix-vscode-extensions.overlays.default
           inputs.self.overlays.default
         ];
       };
