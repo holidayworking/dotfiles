@@ -1,6 +1,6 @@
 {
   flake.modules.homeManager.desktop =
-    { pkgs, ... }:
+    { pkgs, inputs, ... }:
     {
       programs.vscode = {
         enable = true;
@@ -86,5 +86,7 @@
           };
         };
       };
+
+      home.file.".cursor/mcp.json".source = inputs.self.mkMcpConfig pkgs { };
     };
 }
