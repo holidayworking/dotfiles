@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.dev =
+  flake.modules.homeManager.development =
     { pkgs, ... }:
     {
       home = {
@@ -7,7 +7,7 @@
           tig
         ];
 
-        file.".tigrc".source = ../../../dotfiles/.tigrc;
+        file.".tigrc".source = ../../../../dotfiles/.tigrc;
       };
     };
 }

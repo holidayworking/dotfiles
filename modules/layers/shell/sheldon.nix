@@ -7,7 +7,7 @@
       ];
 
       xdg.configFile = {
-        "sheldon/plugins.toml".source = ../../dotfiles/.config/sheldon/plugins.toml;
+        "sheldon/plugins.toml".source = ../../../dotfiles/.config/sheldon/plugins.toml;
       };
     };
 }

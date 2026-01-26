@@ -7,7 +7,7 @@
           tmux
         ];
 
-        file.".tmux.conf".source = ../../dotfiles/.tmux.conf;
+        file.".tmux.conf".source = ../../../dotfiles/.tmux.conf;
       };
     };
 }
