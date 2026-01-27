@@ -7,7 +7,7 @@
   flake.modules.nixos."hosts/gemini" =
     { pkgs, lib, ... }:
     let
-      username = "hidekazu";
+      username = config.flake.meta.users.hidekazu.username;
     in
     {
       imports =

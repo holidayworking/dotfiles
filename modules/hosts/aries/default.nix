@@ -7,7 +7,7 @@
   flake.modules.darwin."hosts/aries" =
     { pkgs, lib, ... }:
     let
-      username = "hidekazu";
+      username = config.flake.meta.users.hidekazu.username;
     in
     {
       imports =
