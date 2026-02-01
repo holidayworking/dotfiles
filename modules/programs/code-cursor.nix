@@ -35,7 +35,6 @@ delib.module {
           jnoortheen.nix-ide
           mkhl.shfmt
           mylesmurphy.prettify-ts
-          openai.chatgpt
           redhat.vscode-yaml
           renesaarsoo.sql-formatter-vsc
           streetsidesoftware.code-spell-checker
