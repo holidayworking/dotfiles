@@ -1,13 +1,6 @@
 {
   inputs = {
-    systems.url = "github:nix-systems/default";
-
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/master";
@@ -19,7 +12,24 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+
+    denix = {
+      url = "github:yunfachi/denix"; # cspell:disable-line
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+      inputs.nix-darwin.follows = "nix-darwin";
+    };
+
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew"; # cspell:disable-line
 
     brew-nix = {
       url = "github:BatteredBunny/brew-nix";
@@ -31,27 +41,13 @@
       flake = false;
     };
 
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
-      inputs.nixpkgs-lib.follows = "nixpkgs";
-    };
-
-    import-tree.url = "github:vic/import-tree";
-
-    pkgs-by-name-for-flake-parts.url = "github:drupol/pkgs-by-name-for-flake-parts";
-
     code-cursor = {
-      url = "github:danneu/code-cursor-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    treefmt-nix = {
-      url = "github:numtide/treefmt-nix";
+      url = "github:danneu/code-cursor-nix"; # cspell:disable-line
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     mcp-servers-nix = {
-      url = "github:natsukium/mcp-servers-nix";
+      url = "github:natsukium/mcp-servers-nix"; # cspell:disable-line
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -59,7 +55,106 @@
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    cspell-nix = {
+      url = "github:kakkun61/cspell-nix"; # cspell:disable-line
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix"; # cspell:disable-line
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
+  outputs =
+    inputs@{ flake-parts, denix, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } (
+      top@{
+        config,
+        withSystem,
+        moduleWithSystem,
+        ...
+      }:
+      {
+        imports = [
+          inputs.cspell-nix.flakeModule
+          inputs.treefmt-nix.flakeModule
+        ];
+
+        flake =
+          let
+            mkConfigurations =
+              moduleSystem:
+              denix.lib.configurations {
+                inherit moduleSystem;
+
+                homeManagerUser = "hidekazu";
+
+                paths = [
+                  ./hosts
+                  ./modules
+                  ./overlays
+                ];
+
+                extensions = with denix.lib.extensions; [
+                  args
+                  (base.withConfig {
+                    args.enable = true;
+                    rices.enable = false;
+
+                    hosts.features = {
+                      features = [
+                        "shell"
+                        "desktop"
+                      ];
+                    };
+                  })
+                  (overlays.withConfig {
+                    defaultTargets = [
+                      "nixos"
+                      "darwin"
+                    ];
+                  })
+                ];
+
+                specialArgs = {
+                  inherit inputs;
+                };
+              };
+
+            lib = inputs.nixpkgs.lib;
+            filterBySystem =
+              suffix: configs:
+              lib.filterAttrs (_: cfg: lib.hasSuffix suffix (cfg.config.myconfig.host.system)) configs;
+          in
+          {
+            nixosConfigurations = filterBySystem "-linux" (mkConfigurations "nixos");
+            darwinConfigurations = filterBySystem "-darwin" (mkConfigurations "darwin");
+            homeConfigurations = mkConfigurations "home";
+          };
+
+        systems = [
+          "aarch64-darwin"
+          "aarch64-linux"
+        ];
+
+        perSystem = {
+          cspell.configFile = ./cspell.json;
+
+          treefmt = {
+            projectRootFile = "flake.nix";
+
+            programs = {
+              actionlint.enable = true;
+              nixfmt.enable = true;
+              prettier.enable = true;
+              shellcheck.enable = true;
+              shfmt.enable = true;
+              yamlfmt.enable = true;
+            };
+          };
+        };
+      }
+    );
 }
