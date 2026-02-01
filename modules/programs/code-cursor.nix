@@ -22,6 +22,7 @@ delib.module {
 
         # cspell:disable
         extensions = with pkgs.open-vsx; [
+          anthropic.claude-code
           apollographql.vscode-apollo
           christian-kohler.path-intellisense
           davidanson.vscode-markdownlint
