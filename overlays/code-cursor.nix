@@ -1,9 +1,4 @@
-{
-  delib,
-  inputs,
-  system,
-  ...
-}:
+{ delib, inputs, ... }:
 delib.overlayModule {
   name = "code-cursor";
   overlay = inputs.code-cursor.overlays.default;

@@ -46,6 +46,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    llm-agents = {
+      url = "github:numtide/llm-agents.nix"; # cspell:disable-line
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     mcp-servers-nix = {
       url = "github:natsukium/mcp-servers-nix"; # cspell:disable-line
       inputs.nixpkgs.follows = "nixpkgs";

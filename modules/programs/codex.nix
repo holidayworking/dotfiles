@@ -13,6 +13,7 @@ delib.module {
 
   home.ifEnabled.programs.codex = {
     enable = true;
+    package = pkgs.llm-agents.codex;
 
     settings.mcp_servers =
       (inputs.mcp-servers-nix.lib.evalModule pkgs (
