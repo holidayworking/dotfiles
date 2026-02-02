@@ -13,6 +13,7 @@
     "direnv",
     "disko",
     "ehci",
+    "fetchurl",
     "fira",
     "ghostty",
     "gnumake",
