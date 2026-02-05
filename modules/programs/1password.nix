@@ -1,9 +1,4 @@
-{
-  delib,
-  host,
-  pkgs,
-  ...
-}:
+{ delib, host, ... }:
 delib.module {
   name = "programs.1password";
 

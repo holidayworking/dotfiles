@@ -1,8 +1,4 @@
-{
-  delib,
-  pkgs,
-  ...
-}:
+{ delib, pkgs, ... }:
 delib.module {
   name = "home";
 
