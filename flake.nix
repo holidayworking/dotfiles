@@ -75,10 +75,7 @@
   outputs =
     inputs@{ flake-parts, denix, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } (
-      top@{
-        config,
-        withSystem,
-        moduleWithSystem,
+      {
         ...
       }:
       {
@@ -152,6 +149,7 @@
 
             programs = {
               actionlint.enable = true;
+              deadnix.enable = true;
               nixfmt.enable = true;
               prettier.enable = true;
               shellcheck.enable = true;

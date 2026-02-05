@@ -1,7 +1,7 @@
 { delib, inputs, ... }:
 delib.overlayModule {
   name = "local-packages";
-  overlay = final: prev: {
+  overlay = _final: prev: {
     local = prev.lib.listToAttrs (
       map (path: {
         name = baseNameOf (dirOf path);
