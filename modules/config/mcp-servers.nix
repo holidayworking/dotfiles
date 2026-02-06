@@ -9,6 +9,7 @@ delib.module {
 
   myconfig.always.args.shared.mcpServers = {
     programs = {
+      codex.enable = true;
       context7.enable = true;
       nixos.enable = true;
       terraform.enable = true;
