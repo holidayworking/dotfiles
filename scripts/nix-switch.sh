@@ -2,7 +2,8 @@
 
 set -euC
 
-readonly HOSTNAME="${HOSTNAME}"
+HOSTNAME="$(hostname)"
+readonly HOSTNAME
 
 if [[ "$(uname)" == "Darwin" ]]; then
   nh darwin switch --ask --hostname "$HOSTNAME" .
