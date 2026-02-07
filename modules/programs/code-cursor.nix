@@ -70,6 +70,10 @@ delib.module {
           "terminal.integrated.fontSize" = 14;
           "gitlens.rebaseEditor.openOnPausedRebase" = false;
           "remote.SSH.remotePlatform"."gemini" = "linux";
+          "shfmt.executableArgs" = [
+            "--indent"
+            "2"
+          ];
           "[nix]"."editor.defaultFormatter" = "jnoortheen.nix-ide"; # cspell:disable-line
           "[shellscript]"."editor.defaultFormatter" = "mkhl.shfmt"; # cspell:disable-line
           "[sql]"."editor.defaultFormatter" = "ReneSaarsoo.sql-formatter-vsc"; # cspell:disable-line
