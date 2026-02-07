@@ -9,7 +9,7 @@
 delib.module {
   name = "programs.code-cursor";
 
-  options = delib.singleEnableOption host.desktopFeatured;
+  options = delib.singleEnableOption host.isDesktop;
 
   home.ifEnabled = {
     programs.vscode = {

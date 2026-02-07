@@ -1,15 +1,8 @@
-{
-  delib,
-  host,
-  pkgs,
-  ...
-}:
+{ delib, pkgs, ... }:
 delib.module {
   name = "programs.ghq";
 
-  options = delib.singleEnableOption host.shellFeatured;
-
-  home.ifEnabled.home.packages = with pkgs; [
+  home.always.home.packages = with pkgs; [
     ghq
   ];
 }

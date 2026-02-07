@@ -7,7 +7,7 @@
 delib.module {
   name = "programs.google-chrome";
 
-  options = delib.singleEnableOption host.desktopFeatured;
+  options = delib.singleEnableOption host.isDesktop;
 
   home.ifEnabled.programs.chromium = {
     enable = true;

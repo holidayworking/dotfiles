@@ -1,15 +1,9 @@
-{
-  delib,
-  host,
-  pkgs,
-  ...
-}:
+{ delib, pkgs, ... }:
+
 delib.module {
   name = "programs.starship";
 
-  options = delib.singleEnableOption host.shellFeatured;
-
-  home.ifEnabled = {
+  home.always = {
     home.packages = with pkgs; [
       starship
     ];

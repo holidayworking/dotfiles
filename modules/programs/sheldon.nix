@@ -1,15 +1,8 @@
-{
-  delib,
-  host,
-  pkgs,
-  ...
-}:
+{ delib, pkgs, ... }:
 delib.module {
   name = "programs.sheldon";
 
-  options = delib.singleEnableOption host.shellFeatured;
-
-  home.ifEnabled = {
+  home.always = {
     home.packages = with pkgs; [
       sheldon
     ];

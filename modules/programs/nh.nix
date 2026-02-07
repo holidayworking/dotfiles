@@ -1,8 +1,6 @@
-{ delib, host, ... }:
+{ delib, ... }:
 delib.module {
   name = "programs.nh";
 
-  options = delib.singleEnableOption host.shellFeatured;
-
-  home.ifEnabled.programs.nh.enable = true;
+  home.always.programs.nh.enable = true;
 }

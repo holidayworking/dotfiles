@@ -7,7 +7,7 @@
 delib.module {
   name = "programs.ghostty";
 
-  options = delib.singleEnableOption host.desktopFeatured;
+  options = delib.singleEnableOption host.isDesktop;
 
   home.ifEnabled.programs.ghostty = {
     enable = true;

@@ -2,7 +2,7 @@
 delib.module {
   name = "programs.safari";
 
-  options = delib.singleEnableOption host.desktopFeatured;
+  options = delib.singleEnableOption host.isDesktop;
 
   home.ifEnabled.targets.darwin = {
     defaults."com.apple.Safari" = {

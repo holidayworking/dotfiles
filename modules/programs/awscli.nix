@@ -1,10 +1,8 @@
-{ delib, host, ... }:
+{ delib, ... }:
 delib.module {
   name = "programs.awscli";
 
-  options = delib.singleEnableOption host.shellFeatured;
-
-  home.ifEnabled.programs.awscli = {
+  home.always.programs.awscli = {
     enable = true;
 
     settings = {

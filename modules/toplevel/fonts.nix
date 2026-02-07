@@ -7,7 +7,7 @@
 delib.module {
   name = "fonts";
 
-  options = delib.singleEnableOption host.desktopFeatured;
+  options = delib.singleEnableOption host.isDesktop;
 
   darwin.ifEnabled = {
     fonts.packages = with pkgs; [

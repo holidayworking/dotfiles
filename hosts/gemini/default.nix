@@ -5,10 +5,6 @@ delib.host {
   system = "aarch64-linux";
   type = "server";
 
-  features = [
-    "shell"
-  ];
-
   home.home.stateVersion = "25.05";
 
   nixos =

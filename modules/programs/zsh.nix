@@ -1,12 +1,10 @@
-{ delib, host, ... }:
+{ delib, ... }:
 delib.module {
   name = "programs.zsh";
 
-  options = delib.singleEnableOption host.shellFeatured;
+  nixos.always.programs.zsh.enable = true;
 
-  nixos.ifEnabled.programs.zsh.enable = true;
-
-  home.ifEnabled = {
+  home.always = {
     home.file.".zshrc".source = ../../dotfiles/.zshrc;
 
     xdg.configFile = {

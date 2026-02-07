@@ -1,8 +1,6 @@
-{ delib, host, ... }:
+{ delib, ... }:
 delib.module {
   name = "programs.direnv";
 
-  options = delib.singleEnableOption host.shellFeatured;
-
-  home.ifEnabled.programs.direnv.enable = true;
+  home.always.programs.direnv.enable = true;
 }
