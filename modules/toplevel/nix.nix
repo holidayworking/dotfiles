@@ -13,5 +13,8 @@ delib.module {
   name = "nix";
 
   nixos.always = shared;
-  darwin.always = shared;
+
+  darwin.always.nix = shared.nix // {
+    gc.automatic = true;
+  };
 }
