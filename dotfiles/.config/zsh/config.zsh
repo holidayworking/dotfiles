@@ -1,5 +1,5 @@
 if [[ -f $HOME/.config/zsh/override.zsh ]]; then
-	source $HOME/.config/zsh/override.zsh
+  source $HOME/.config/zsh/override.zsh
 fi
 
 export EDITOR=vim
@@ -37,7 +37,7 @@ eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
 
 for f in $HOME/.config/zsh/functions/*.zsh; do
-	[ -f "$f" ] && source "$f"
+  [ -f "$f" ] && source "$f"
 done
 
 bindkey -e
