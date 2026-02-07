@@ -10,6 +10,9 @@ nix/darwin:
 	. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh \
 		&& sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .#aries
 
+nix/build:
+	@./scripts/nix-build.sh
+
 nix/switch:
 	@./scripts/nix-switch.sh
 
