@@ -1,8 +1,6 @@
-{ delib, host, ... }:
+{ delib, ... }:
 delib.module {
   name = "programs.eza";
 
-  options = delib.singleEnableOption host.shellFeatured;
-
-  home.ifEnabled.programs.eza.enable = true;
+  home.always.programs.eza.enable = true;
 }

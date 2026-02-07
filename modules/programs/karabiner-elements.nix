@@ -2,7 +2,7 @@
 delib.module {
   name = "programs.karabiner-elements";
 
-  options = delib.singleEnableOption host.desktopFeatured;
+  options = delib.singleEnableOption host.isDesktop;
 
   darwin.ifEnabled.homebrew.casks = [
     "karabiner-elements"

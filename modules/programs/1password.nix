@@ -1,8 +1,6 @@
-{ delib, host, ... }:
+{ delib, ... }:
 delib.module {
   name = "programs.1password";
 
-  options = delib.singleEnableOption host.shellFeatured;
-
-  nixos.ifEnabled.programs._1password.enable = true;
+  nixos.always.programs._1password.enable = true;
 }

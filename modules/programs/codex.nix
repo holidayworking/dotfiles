@@ -1,6 +1,5 @@
 {
   delib,
-  host,
   mcpServers,
   inputs,
   pkgs,
@@ -9,9 +8,7 @@
 delib.module {
   name = "programs.codex";
 
-  options = delib.singleEnableOption host.shellFeatured;
-
-  home.ifEnabled.programs.codex = {
+  home.always.programs.codex = {
     enable = true;
 
     settings.mcp_servers =

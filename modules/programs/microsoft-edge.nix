@@ -7,7 +7,7 @@
 delib.module {
   name = "programs.microsoft-edge";
 
-  options = delib.singleEnableOption host.desktopFeatured;
+  options = delib.singleEnableOption host.isDesktop;
 
   home.ifEnabled.home.packages = with pkgs; [
     brewCasks.microsoft-edge

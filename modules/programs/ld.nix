@@ -1,8 +1,6 @@
-{ delib, host, ... }:
+{ delib, ... }:
 delib.module {
   name = "programs.ld";
 
-  options = delib.singleEnableOption host.shellFeatured;
-
-  nixos.ifEnabled.programs.nix-ld.enable = true;
+  nixos.always.programs.nix-ld.enable = true;
 }

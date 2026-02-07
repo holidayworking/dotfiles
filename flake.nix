@@ -104,13 +104,6 @@
                   (base.withConfig {
                     args.enable = true;
                     rices.enable = false;
-
-                    hosts.features = {
-                      features = [
-                        "shell"
-                        "desktop"
-                      ];
-                    };
                   })
                   (overlays.withConfig {
                     defaultTargets = [

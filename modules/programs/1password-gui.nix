@@ -7,7 +7,7 @@
 delib.module {
   name = "programs.1password-gui";
 
-  options = delib.singleEnableOption host.desktopFeatured;
+  options = delib.singleEnableOption host.isDesktop;
 
   darwin.ifEnabled = {
     homebrew.masApps."1Password for Safari" = 1569813296;

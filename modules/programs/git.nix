@@ -1,15 +1,8 @@
-{
-  delib,
-  host,
-  pkgs,
-  ...
-}:
+{ delib, pkgs, ... }:
 delib.module {
   name = "programs.git";
 
-  options = delib.singleEnableOption host.shellFeatured;
-
-  home.ifEnabled.home = {
+  home.always.home = {
     packages = with pkgs; [
       git
     ];

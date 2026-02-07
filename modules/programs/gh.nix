@@ -1,10 +1,8 @@
-{ delib, host, ... }:
+{ delib, ... }:
 delib.module {
   name = "programs.gh";
 
-  options = delib.singleEnableOption host.shellFeatured;
-
-  home.ifEnabled.programs.gh = {
+  home.always.programs.gh = {
     enable = true;
     settings.git_protocol = "ssh";
   };

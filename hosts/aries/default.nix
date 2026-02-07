@@ -3,12 +3,7 @@ delib.host {
   name = "aries";
 
   system = "aarch64-darwin";
-  type = "laptop";
-
-  features = [
-    "shell"
-    "desktop"
-  ];
+  type = "desktop";
 
   home.home.stateVersion = "25.05";
 
