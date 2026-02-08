@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euC
+set -euCo pipefail
 
 HOSTNAME="$(hostname)"
 readonly HOSTNAME

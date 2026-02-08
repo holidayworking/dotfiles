@@ -1,25 +1,25 @@
 #!/usr/bin/env bash
 
-set -euC
+set -euCo pipefail
 
-readonly DOTFILES="
-.config/sheldon/plugins.toml
-.config/starship.toml
-.config/zsh/config.zsh
-.config/zsh/functions/peco_select_ghq_repository.zsh
-.config/zsh/functions/peco_select_history.zsh
-.gitconfig
-.gitignore_global
-.tmux.conf
-.tigrc
-.zshrc
-"
+readonly DOTFILES=(
+  .config/sheldon/plugins.toml
+  .config/starship.toml
+  .config/zsh/config.zsh
+  .config/zsh/functions/peco_select_ghq_repository.zsh
+  .config/zsh/functions/peco_select_history.zsh
+  .gitconfig
+  .gitignore_global
+  .tmux.conf
+  .tigrc
+  .zshrc
+)
 
-for dir in $(echo "$DOTFILES" | xargs -n1 dirname | sort -u); do
-  mkdir -p "$HOME/$dir"
+for file in "${DOTFILES[@]}"; do
+  mkdir -p "$HOME/$(dirname "$file")"
 done
 
-for file in $DOTFILES; do
+for file in "${DOTFILES[@]}"; do
   echo "Linking $file to $HOME/$file"
   ln -sf "$(pwd)/dotfiles/$file" "$HOME/$file"
 done

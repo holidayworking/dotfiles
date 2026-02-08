@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euC
+set -euCo pipefail
 
 readonly VM_NAME="${VM_NAME:-NixOS}"
 readonly VM_CPU="${VM_CPU:-4}"
