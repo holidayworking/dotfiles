@@ -46,6 +46,7 @@ delib.module {
         # cspell:enable
 
         userSettings = {
+          "cursor.composer.usageSummaryDisplay" = "always";
           "editor.codeActionsOnSave"."source.fixAll.eslint" = "explicit";
           "editor.defaultFormatter" = "esbenp.prettier-vscode"; # cspell:disable-line
           "editor.fontFamily" = "FiraCode Nerd Font";
@@ -68,6 +69,7 @@ delib.module {
           "terminal.integrated.fontFamily" = "FiraCode Nerd Font";
           "terminal.integrated.fontLigatures.enabled" = true;
           "terminal.integrated.fontSize" = 14;
+          "remote.autoForwardPortsSource" = "process";
           "gitlens.rebaseEditor.openOnPausedRebase" = false;
           "remote.SSH.remotePlatform"."gemini" = "linux";
           "shfmt.executableArgs" = [
