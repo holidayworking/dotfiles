@@ -16,7 +16,17 @@ mkdir -p "$DOWNLOAD_DIR"
 
 if [ ! -f "$ISO_PATH" ]; then
   echo "Starting download..."
-  curl --output "$ISO_PATH" "$ISO_URL"
+  curl --fail --location --retry 3 --output "$ISO_PATH" "$ISO_URL"
+
+  echo "Verifying ISO checksum..."
+  EXPECTED_SHA256=$(curl --fail --location --retry 3 -s "${ISO_URL}.sha256" | awk '{print $1}')
+  ACTUAL_SHA256=$(shasum -a 256 "$ISO_PATH" | awk '{print $1}')
+  if [ "$EXPECTED_SHA256" != "$ACTUAL_SHA256" ]; then
+    echo "ERROR: SHA256 checksum mismatch"
+    rm -f "$ISO_PATH"
+    exit 1
+  fi
+  echo "Checksum verified."
 else
   echo "ISO file already exists: $ISO_PATH"
 fi
