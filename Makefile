@@ -11,10 +11,10 @@ nix/darwin:
 		&& sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .#aries
 
 nix/build:
-	@./scripts/nix-build.sh
+	@./scripts/nh.sh build
 
 nix/switch:
-	@./scripts/nix-switch.sh
+	@./scripts/nh.sh switch --ask
 
 nix/clean:
 	@nh clean all --ask
