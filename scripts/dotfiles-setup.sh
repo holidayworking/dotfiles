@@ -2,24 +2,12 @@
 
 set -euCo pipefail
 
-readonly DOTFILES=(
-  .config/sheldon/plugins.toml
-  .config/starship.toml
-  .config/zsh/config.zsh
-  .config/zsh/functions/peco_select_ghq_repository.zsh
-  .config/zsh/functions/peco_select_history.zsh
-  .gitconfig
-  .gitignore_global
-  .tmux.conf
-  .tigrc
-  .zshrc
-)
+DOTFILES_DIR="$(pwd)/dotfiles"
+readonly DOTFILES_DIR
 
-for file in "${DOTFILES[@]}"; do
+find "$DOTFILES_DIR" -type f | while read -r src; do
+  file="${src#"$DOTFILES_DIR"/}"
   mkdir -p "$HOME/$(dirname "$file")"
-done
-
-for file in "${DOTFILES[@]}"; do
   echo "Linking $file to $HOME/$file"
-  ln -sf "$(pwd)/dotfiles/$file" "$HOME/$file"
+  ln -sf "$src" "$HOME/$file"
 done
