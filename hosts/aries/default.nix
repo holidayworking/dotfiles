@@ -15,5 +15,8 @@ delib.host {
     ];
   };
 
-  myconfig.programs.yt-dlp.enable = true;
+  myconfig.programs = {
+    ffmpeg.enable = true;
+    yt-dlp.enable = true;
+  };
 }
