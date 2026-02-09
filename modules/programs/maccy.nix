@@ -7,9 +7,9 @@
 delib.module {
   name = "programs.maccy";
 
-  options = delib.singleEnableOption host.isDesktop;
+  options = delib.singleEnableOption (pkgs.stdenv.isDarwin && host.isDesktop);
 
   home.ifEnabled.home.packages = with pkgs; [
-    brewCasks.maccy
+    maccy
   ];
 }

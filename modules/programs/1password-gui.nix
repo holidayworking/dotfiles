@@ -1,9 +1,4 @@
-{
-  delib,
-  host,
-  pkgs,
-  ...
-}:
+{ delib, host, ... }:
 delib.module {
   name = "programs.1password-gui";
 
@@ -11,10 +6,6 @@ delib.module {
 
   darwin.ifEnabled = {
     homebrew.masApps."1Password for Safari" = 1569813296;
-
-    programs._1password-gui = {
-      enable = true;
-      package = pkgs.brewCasks."1password";
-    };
+    programs._1password-gui.enable = true;
   };
 }

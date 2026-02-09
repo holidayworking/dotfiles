@@ -11,7 +11,7 @@ delib.module {
 
   home.ifEnabled.programs.ghostty = {
     enable = true;
-    package = pkgs.brewCasks.ghostty;
+    package = pkgs.ghostty-bin;
 
     settings = {
       font-family = "FiraCode Nerd Font";
