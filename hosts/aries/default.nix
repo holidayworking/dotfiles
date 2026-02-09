@@ -14,4 +14,6 @@ delib.host {
       "Wi-Fi"
     ];
   };
+
+  myconfig.programs.yt-dlp.enable = true;
 }
