@@ -9,6 +9,7 @@ delib.module {
 
   options = delib.singleEnableOption host.isDesktop;
 
+  # Nixpkgs google-chrome is marked insecure (out of date), so install via brew-nix instead.
   home.ifEnabled.programs.chromium = {
     enable = true;
     package = pkgs.brewCasks.google-chrome.overrideAttrs (oldAttrs: {
