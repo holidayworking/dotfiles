@@ -1,4 +1,9 @@
-{ delib, inputs, ... }:
+{
+  delib,
+  inputs,
+  pkgs-master,
+  ...
+}:
 delib.host {
   name = "gemini";
 
@@ -58,7 +63,10 @@ delib.host {
       };
     };
 
-    hardware.parallels.enable = true;
+    hardware.parallels = {
+      enable = true;
+      package = pkgs-master.prl-tools;
+    };
 
     nix.settings = {
       extra-platforms = [ "x86_64-linux" ];

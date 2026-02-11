@@ -451,6 +451,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-master": {
+      "locked": {
+        "lastModified": 1770852372,
+        "narHash": "sha256-d+hc27+7LyPQoX8b6BPkI3ozC0OTs37CO7BlJS3iOaM=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "d11a1a84ba3083fac0ef0ccf8ddba54a3371b1ff",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1754340878,
@@ -519,6 +535,7 @@
         "nix-homebrew": "nix-homebrew",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixpkgs": "nixpkgs_3",
+        "nixpkgs-master": "nixpkgs-master",
         "treefmt-nix": "treefmt-nix_3"
       }
     },
