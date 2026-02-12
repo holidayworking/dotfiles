@@ -7,6 +7,8 @@ delib.host {
 
   home.home.stateVersion = "25.05";
 
+  myconfig.services.openssh.enable = true;
+
   nixos =
     { myconfig, ... }:
     {
@@ -15,10 +17,5 @@ delib.host {
       };
 
       system.stateVersion = "25.05";
-
-      services.openssh.enable = true;
-
-      users.users.${myconfig.constants.username}.openssh.authorizedKeys.keys =
-        myconfig.constants.authorizedKeys;
     };
 }
