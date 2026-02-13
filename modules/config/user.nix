@@ -21,6 +21,7 @@ delib.module {
             "wheel"
           ];
           group = username;
+          initialPassword = username;
           isNormalUser = true;
           shell = pkgs.zsh;
           uid = 1000;
