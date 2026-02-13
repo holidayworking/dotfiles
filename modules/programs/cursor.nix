@@ -7,13 +7,19 @@
   ...
 }:
 delib.module {
-  name = "programs.code-cursor";
+  name = "programs.cursor";
 
-  options = delib.singleEnableOption host.isDesktop;
+  home.always = {
+    home = {
+      packages = with pkgs; [
+        llm-agents.cursor-agent
+      ];
 
-  home.ifEnabled = {
+      file.".cursor/mcp.json".source = inputs.mcp-servers-nix.lib.mkConfig pkgs mcpServers;
+    };
+
     programs.vscode = {
-      enable = true;
+      enable = host.isDesktop;
       package = pkgs.code-cursor;
 
       profiles.default = {
@@ -83,7 +89,5 @@ delib.module {
         };
       };
     };
-
-    home.file.".cursor/mcp.json".source = inputs.mcp-servers-nix.lib.mkConfig pkgs mcpServers;
   };
 }
