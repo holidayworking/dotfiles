@@ -1,8 +1,13 @@
-{ delib, host, ... }:
+{
+  delib,
+  host,
+  pkgs,
+  ...
+}:
 delib.module {
   name = "programs.safari";
 
-  options = delib.singleEnableOption host.isDesktop;
+  options = delib.singleEnableOption pkgs.stdenv.isDarwin;
 
   home.ifEnabled.targets.darwin = {
     defaults."com.apple.Safari" = {
