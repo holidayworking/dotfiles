@@ -9,10 +9,7 @@ delib.module {
     in
     {
       home.homeDirectory = pkgs.lib.mkForce (
-        if isDarwin then
-          "/Users/${myconfig.constants.username}/"
-        else
-          "/home/${myconfig.constants.username}"
+        if isDarwin then "/Users/${myconfig.constants.username}" else "/home/${myconfig.constants.username}"
       );
 
       targets.darwin = pkgs.lib.mkIf isDarwin {
