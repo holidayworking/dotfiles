@@ -9,13 +9,11 @@ delib.host {
 
   myconfig.services.openssh.enable = true;
 
-  nixos =
-    { myconfig, ... }:
-    {
-      environment.sessionVariables = {
-        PATH = [ "$HOME/.local/share/aquaproj-aqua/bin" ];
-      };
-
-      system.stateVersion = "25.05";
+  nixos = {
+    environment.sessionVariables = {
+      PATH = [ "$HOME/.local/share/aquaproj-aqua/bin" ];
     };
+
+    system.stateVersion = "25.05";
+  };
 }

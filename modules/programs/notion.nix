@@ -1,9 +1,4 @@
-{
-  delib,
-  host,
-  pkgs,
-  ...
-}:
+{ delib, pkgs, ... }:
 delib.module {
   name = "programs.notion";
 
