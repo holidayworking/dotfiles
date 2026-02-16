@@ -1,23 +1,24 @@
-name: update flake lock
+name: update-flake-lock
 on:
   workflow_dispatch:
   schedule:
     - cron: "0 19 * * 0"
 jobs:
-  update-flake-lock:
-    permissions:
-      contents: write
-      id-token: write
-      issues: write
-      pull-requests: write
+  update:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf # v2.2.1
+        id: app-token
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.PRIVATE_KEY }}
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - uses: DeterminateSystems/nix-installer-action@c5a866b6ab867e88becbed4467b93592bce69f8a # v21
         with:
           determinate: false
       - uses: DeterminateSystems/update-flake-lock@834c491b2ece4de0bbd00d85214bb5e83b4da5c6 # v28
         with:
+          token: ${{ steps.app-token.outputs.token }}
           commit-msg: "chore(deps): update flake.lock"
           branch: "chore/update-flake-lock"
           pr-title: "chore(deps): update flake.lock"
