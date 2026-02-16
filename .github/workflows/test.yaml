@@ -1,17 +1,61 @@
 name: test
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
 jobs:
-  test:
+  check:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: "false"
       - uses: DeterminateSystems/nix-installer-action@c5a866b6ab867e88becbed4467b93592bce69f8a # v21
         with:
           determinate: false
+      - uses: DeterminateSystems/magic-nix-cache-action@565684385bcd71bad329742eefe8d12f2e765b39 # v13
       - run: nix flake check --all-systems --print-build-logs
+    timeout-minutes: 10
+  diff:
+    permissions:
+      contents: read
+    needs:
+      - check
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: "false"
+      - uses: DeterminateSystems/nix-installer-action@c5a866b6ab867e88becbed4467b93592bce69f8a # v21
+        with:
+          determinate: false
+      - uses: DeterminateSystems/magic-nix-cache-action@565684385bcd71bad329742eefe8d12f2e765b39 # v13
+      - uses: natsukium/nix-diff-action@374bf5037dc84fc520da2002beef2f2bd96f4e9b # v1.0.2
+        with:
+          mode: diff-only
+          attributes: |
+            - displayName: ${{ matrix.host }}
+              attribute: ${{ matrix.attribute }}
+    timeout-minutes: 30
+    strategy:
+      matrix:
+        include:
+          - host: aries
+            attribute: darwinConfigurations.aries.system
+            runner: macos-latest
+          - host: gemini
+            attribute: nixosConfigurations.gemini.config.system.build.toplevel
+            runner: ubuntu-latest
+  comment:
+    permissions:
+      actions: read
+      pull-requests: write
+    needs:
+      - diff
+    runs-on: ubuntu-latest
+    steps:
+      - uses: natsukium/nix-diff-action@374bf5037dc84fc520da2002beef2f2bd96f4e9b # v1.0.2
+        with:
+          mode: comment-only
