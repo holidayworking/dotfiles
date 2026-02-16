@@ -2,6 +2,7 @@ name: auto approve
 on: pull_request_target
 jobs:
   auto-approve:
+    permissions: {}
     if: github.actor == 'holidayworking'
     runs-on: ubuntu-latest
     steps:
@@ -10,6 +11,11 @@ jobs:
         with:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: |
+            ${{ github.event.repository.name }}
+          permission-pull-requests: write
       - uses: hmarr/auto-approve-action@f0939ea97e9205ef24d872e76833fa908a770363 # v4.0.0
         with:
           github-token: ${{ steps.app-token.outputs.token }}
+    timeout-minutes: 10

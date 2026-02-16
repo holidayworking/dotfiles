@@ -17,6 +17,7 @@
     "fetchurl",
     "fira",
     "fontconfig",
+    "ghalint",
     "ghostty",
     "gnumake",
     "hidekazu",
@@ -59,8 +60,5 @@
     "wvous",
     "xhci"
   ],
-  "ignorePaths": [
-    ".git",
-    "_migrate"
-  ]
+  "ignorePaths": [".git", "_migrate"]
 }
