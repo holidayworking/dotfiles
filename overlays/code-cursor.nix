@@ -4,8 +4,10 @@ delib.overlayModule {
   overlay = final: _prev: {
     code-cursor = final.callPackage "${inputs.code-cursor}/package.nix" {
       vscode-generic =
-        final.callPackage "${inputs.nixpkgs}/pkgs/applications/editors/vscode/generic.nix"
-          { };
+        _: attrs:
+        (final.callPackage "${inputs.nixpkgs}/pkgs/applications/editors/vscode/generic.nix" { }) (
+          attrs // { commandLineArgs = attrs.commandLineArgs or "--update=false"; }
+        );
     };
   };
 }
