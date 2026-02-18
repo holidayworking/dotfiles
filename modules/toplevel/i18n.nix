@@ -23,5 +23,19 @@ delib.module {
       LC_TELEPHONE = "ja_JP.UTF-8";
       LC_TIME = "ja_JP.UTF-8";
     };
+
+    inputMethod = {
+      enable = true;
+      type = "fcitx5";
+
+      fcitx5 = {
+        waylandFrontend = true;
+
+        addons = with pkgs; [
+          fcitx5-gtk
+          fcitx5-mozc-ut
+        ];
+      };
+    };
   };
 }
