@@ -75,5 +75,19 @@ delib.host {
         "/mnt/psf/RosettaLinux"
       ];
     };
+
+    # Re-enable the prlcp user service. It was removed in https://github.com/NixOS/nixpkgs/pull/438941.
+    # In this environment, prlcc does not start prlcp automatically,
+    # so we start it explicitly to enable clipboard support.
+    systemd.user.services.prlcp = {
+      description = "Parallels Copy Paste Tool";
+      wantedBy = [ "graphical-session.target" ];
+      path = [ pkgs-master.prl-tools ];
+      serviceConfig = {
+        ExecStart = "${pkgs-master.prl-tools}/bin/prlcp";
+        Restart = "always";
+        WorkingDirectory = "${pkgs-master.prl-tools}/bin";
+      };
+    };
   };
 }
