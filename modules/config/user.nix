@@ -38,6 +38,7 @@ delib.module {
       users.users.${username} = {
         name = username;
         home = "/Users/${username}";
+        initialPassword = username;
       };
     };
 }

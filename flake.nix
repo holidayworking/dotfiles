@@ -48,6 +48,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    cosmic-manager = {
+      url = "github:HeitorAugustoLN/cosmic-manager"; # cspell:disable-line
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
+
     llm-agents = {
       url = "github:numtide/llm-agents.nix"; # cspell:disable-line
       inputs.nixpkgs.follows = "nixpkgs";
