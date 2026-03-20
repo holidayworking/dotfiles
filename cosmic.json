@@ -1,0 +1,162 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cosmic-utils/cosmic-ctl/refs/heads/main/schema.json",
+  "operations": [
+    {
+      "component": "com.system76.CosmicComp",
+      "version": 1,
+      "operation": "write",
+      "entries": {
+        "xkb_config": "(\n    rules: \"\",\n    model: \"pc104\",\n    layout: \"us\",\n    variant: \"\",\n    options: Some(\"terminate:ctrl_alt_bksp\"),\n    repeat_delay: 600,\n    repeat_rate: 25,\n)",
+        "autotile_behavior": "PerWorkspace"
+      },
+      "xdg_directory": "config"
+    },
+    {
+      "component": "com.system76.CosmicPanel.DocPanelk",
+      "version": 1,
+      "operation": "write",
+      "entries": {
+        "plugins_wings": "Some((\n    [\n        \"com.system76.CosmicPanelWorkspacesButton\",\n        \"com.system76.CosmicPanelAppButton\",\n    ],\n    [\n        \"com.system76.CosmicAppletInputSources\",\n        \"com.system76.CosmicAppletA11y\",\n        \"com.system76.CosmicAppletStatusArea\",\n        \"com.system76.CosmicAppletTiling\",\n        \"com.system76.CosmicAppletAudio\",\n        \"com.system76.CosmicAppletBluetooth\",\n        \"com.system76.CosmicAppletNetwork\",\n        \"com.system76.CosmicAppletBattery\",\n        \"com.system76.CosmicAppletNotifications\",\n        \"com.system76.CosmicAppletPower\",\n    ],\n))",
+        "margin": "0",
+        "plugins_center": "Some([\n    \"com.system76.CosmicAppletTime\",\n])",
+        "name": "\"DocPanelk\"",
+        "size": "XS"
+      },
+      "xdg_directory": "config"
+    },
+    {
+      "component": "com.system76.CosmicPanel",
+      "version": 1,
+      "operation": "write",
+      "entries": {
+        "entries": "[\n    \"DocPanelk\",\n    \"Dock\",\n]"
+      },
+      "xdg_directory": "config"
+    },
+    {
+      "component": "com.system76.CosmicPanel.Panel",
+      "version": 1,
+      "operation": "write",
+      "entries": {
+        "size_wings": "None",
+        "autohide": "None",
+        "margin": "0",
+        "background": "ThemeDefault",
+        "expand_to_edges": "true",
+        "anchor": "Top",
+        "anchor_gap": "false",
+        "plugins_wings": "Some(([\n    \"com.system76.CosmicPanelWorkspacesButton\",\n    \"com.system76.CosmicPanelAppButton\",\n], [\n    \"com.system76.CosmicAppletInputSources\",\n    \"com.system76.CosmicAppletA11y\",\n    \"com.system76.CosmicAppletStatusArea\",\n    \"com.system76.CosmicAppletTiling\",\n    \"com.system76.CosmicAppletAudio\",\n    \"com.system76.CosmicAppletBluetooth\",\n    \"com.system76.CosmicAppletNetwork\",\n    \"com.system76.CosmicAppletBattery\",\n    \"com.system76.CosmicAppletNotifications\",\n    \"com.system76.CosmicAppletPower\",\n]))",
+        "size_center": "None",
+        "layer": "Top",
+        "border_radius": "0",
+        "size": "XS",
+        "spacing": "0",
+        "padding": "0",
+        "plugins_center": "Some([\n    \"com.system76.CosmicAppletTime\",\n])",
+        "autohover_delay_ms": "Some(500)",
+        "name": "\"Panel\"",
+        "exclusive_zone": "true",
+        "padding_overlap": "0.5",
+        "output": "All",
+        "keyboard_interactivity": "OnDemand",
+        "opacity": "1.0"
+      },
+      "xdg_directory": "config"
+    },
+    {
+      "component": "com.system76.CosmicSettings.Shortcuts",
+      "version": 1,
+      "operation": "write",
+      "entries": {
+        "custom": "{\n    (\n        modifiers: [\n            Super,\n        ],\n        key: \"slash\",\n    ): Disable,\n    (\n        modifiers: [\n            Super,\n        ],\n        key: \"comma\",\n    ): Disable,\n    (\n        modifiers: [\n            Super,\n        ],\n        key: \"space\",\n    ): System(Launcher),\n    (\n        modifiers: [\n            Super,\n        ],\n        key: \"equal\",\n    ): Disable,\n    (\n        modifiers: [\n            Super,\n        ],\n    ): Disable,\n    (\n        modifiers: [\n            Super,\n        ],\n        key: \"period\",\n    ): Disable,\n    (\n        modifiers: [\n            Super,\n            Alt,\n        ],\n        key: \"s\",\n    ): Disable,\n    (\n        modifiers: [\n            Super,\n        ],\n        key: \"minus\",\n    ): Disable,\n}"
+      },
+      "xdg_directory": "config"
+    },
+    {
+      "component": "com.system76.CosmicBackground",
+      "version": 1,
+      "operation": "write",
+      "entries": {
+        "same-on-all": "true"
+      },
+      "xdg_directory": "config"
+    },
+    {
+      "component": "com.system76.CosmicPanel.Dock",
+      "version": 1,
+      "operation": "write",
+      "entries": {
+        "layer": "Top",
+        "keyboard_interactivity": "OnDemand",
+        "padding_overlap": "0.5",
+        "spacing": "0",
+        "exclusive_zone": "false",
+        "output": "All",
+        "expand_to_edges": "false",
+        "plugins_wings": "None",
+        "anchor": "Bottom",
+        "autohide": "Some((\n    wait_time: 500,\n    transition_time: 200,\n    handle_size: 2,\n    unhide_delay: 200,\n))",
+        "background": "ThemeDefault",
+        "anchor_gap": "false",
+        "size": "L",
+        "autohover_delay_ms": "Some(500)",
+        "plugins_center": "Some([\n    \"com.system76.CosmicPanelLauncherButton\",\n])",
+        "size_wings": "None",
+        "size_center": "None",
+        "opacity": "1.0",
+        "border_radius": "12",
+        "name": "\"Dock\"",
+        "margin": "0",
+        "padding": "4"
+      },
+      "xdg_directory": "config"
+    },
+    {
+      "component": "com.system76.CosmicAppList",
+      "version": 1,
+      "operation": "write",
+      "entries": {
+        "enable_drag_source": "true",
+        "favorites": "[\n    \"com.system76.CosmicFiles\",\n]"
+      },
+      "xdg_directory": "config"
+    },
+    {
+      "component": "com.system76.CosmicAppletTime",
+      "version": 1,
+      "operation": "write",
+      "entries": {
+        "first_day_of_week": "6",
+        "military_time": "true"
+      },
+      "xdg_directory": "config"
+    },
+    {
+      "component": "com.system76.CosmicBackground",
+      "version": 1,
+      "operation": "write",
+      "entries": {
+        "wallpapers": "[\n    (\"Virtual-1\", Path(\"/nix/store/wrm9gzpnbnmc0djcsnhzcjfzzcl1ikp1-cosmic-wallpapers-1.0.8/share/backgrounds/cosmic/orion_nebula_nasa_heic0601a.jpg\")),\n]"
+      },
+      "xdg_directory": "state"
+    },
+    {
+      "component": "com.system76.CosmicSettings",
+      "version": 1,
+      "operation": "write",
+      "entries": {
+        "active_page": "\"accessibility-shortcuts\""
+      },
+      "xdg_directory": "state"
+    },
+    {
+      "component": "com.system76.CosmicSettingsDaemon",
+      "version": 1,
+      "operation": "write",
+      "entries": {
+        "default_sink_name": "\"alsa_output.pci-0000_00_01.0.analog-stereo\""
+      },
+      "xdg_directory": "state"
+    }
+  ]
+}
