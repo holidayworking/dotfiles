@@ -17,6 +17,5 @@ delib.host {
 
   myconfig.programs = {
     ffmpeg.enable = true;
-    yt-dlp.enable = true;
   };
 }
