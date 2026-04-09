@@ -17,7 +17,7 @@ delib.module {
         (pkgs.brewCasks.google-chrome.overrideAttrs (oldAttrs: {
           src = pkgs.fetchurl {
             url = builtins.head oldAttrs.src.urls;
-            hash = "sha256-U1KJ6LWPWErizOq4XHoRBMnotvXmGuFB/wSmc31pGXU=";
+            hash = "sha256-TS8Fd1ECrBxgWhxGYYvR2Y51WUU74PdeKhGE7XHFj90=";
           };
         }))
       else if pkgs.stdenv.hostPlatform.system == "x86_64-linux" then
