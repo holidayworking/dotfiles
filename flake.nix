@@ -43,11 +43,6 @@
       flake = false;
     };
 
-    code-cursor = {
-      url = "github:danneu/code-cursor-nix"; # cspell:disable-line
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     llm-agents = {
       url = "github:numtide/llm-agents.nix"; # cspell:disable-line
       inputs.nixpkgs.follows = "nixpkgs";
