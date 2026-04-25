@@ -46,6 +46,7 @@ delib.module {
           timonwong.shellcheck
           tombonnike.vscode-status-bar-format-toggle
           tyriar.sort-lines
+          void-zero.vite-plus-extension-pack
           vscode-icons-team.vscode-icons
         ];
         # cspell:enable
