@@ -17,7 +17,7 @@ delib.module {
         ];
 
         onActivation = {
-          autoUpdate = true;
+          autoUpdate = false;
           cleanup = "zap";
         };
       };
