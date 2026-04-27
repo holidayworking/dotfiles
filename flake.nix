@@ -141,7 +141,7 @@
               actionlint.enable = true;
               deadnix.enable = true;
               nixfmt.enable = true;
-              pinact.enable = true;
+              # pinact.enable = true;
               prettier.enable = true;
               shellcheck.enable = true;
               shfmt.enable = true;
